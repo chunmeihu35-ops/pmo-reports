@@ -61,10 +61,10 @@
             <table>
                 <thead><tr><th>月份</th><th>交付数量</th><th>交付总周期</th><th>平均交付周期</th><th>方案设计周期</th><th>开发周期</th><th>测试周期</th><th>等待周期</th></tr></thead>
                 <tbody>
-                    <tr><td>2025-10</td><td>37</td><td>411</td><td>11</td><td>1</td><td>4</td><td>3</td><td>4</td></tr>
+                    <tr><td>2025-10</td><td>42</td><td>567</td><td>14</td><td>1</td><td>3</td><td>2</td><td>7</td></tr>
                     <tr><td>2025-11</td><td>37</td><td>442</td><td>12</td><td>1</td><td>4</td><td>2</td><td>5</td></tr>
-                    <tr><td>2025-12</td><td>54</td><td>690</td><td>13</td><td>0</td><td>5</td><td>2</td><td>6</td></tr>
-                    <tr><td>2026-01</td><td>30</td><td>508</td><td>17</td><td>0</td><td>7</td><td>3</td><td>7</td></tr>
+                    <tr><td>2025-12</td><td>58</td><td>816</td><td>14</td><td>0</td><td>5</td><td>2</td><td>7</td></tr>
+                    <tr><td>2026-01</td><td>31</td><td>512</td><td>17</td><td>0</td><td>7</td><td>3</td><td>7</td></tr>
                     <tr><td>2026-02</td><td>14</td><td>349</td><td>25</td><td>0</td><td>11</td><td>2</td><td>12</td></tr>
                     <tr><td>2026-03</td><td>31</td><td>540</td><td>17</td><td>0</td><td>5</td><td>3</td><td style="color:#e68a2e;font-weight:700">9</td></tr>
                 </tbody>
@@ -76,10 +76,10 @@
             <table>
                 <thead><tr><th>月份</th><th>创建→启动间隔</th><th>设计→开发间隔</th><th>开发→测试间隔</th><th>测试→发布间隔</th></tr></thead>
                 <tbody>
-                    <tr><td>2025-10</td><td>3.41</td><td>0.03</td><td>0.00</td><td>1.27</td></tr>
+                    <tr><td>2025-10</td><td>3.38</td><td>0.02</td><td>0.00</td><td>1.12</td></tr>
                     <tr><td>2025-11</td><td>3.68</td><td>0.08</td><td>0.00</td><td>1.16</td></tr>
-                    <tr><td>2025-12</td><td>5.37</td><td>0.09</td><td>0.00</td><td>0.35</td></tr>
-                    <tr><td>2026-01</td><td>2.50</td><td>0.00</td><td>0.00</td><td>0.67</td></tr>
+                    <tr><td>2025-12</td><td>5.10</td><td>0.09</td><td>0.00</td><td>0.33</td></tr>
+                    <tr><td>2026-01</td><td>2.45</td><td>0.00</td><td>0.00</td><td>0.65</td></tr>
                     <tr><td>2026-02</td><td style="color:#cd3b3b;font-weight:700">11.57</td><td>0.00</td><td>0.00</td><td>0.07</td></tr>
                     <tr><td>2026-03</td><td style="color:#e68a2e;font-weight:700">7.26</td><td>0.00</td><td>0.00</td><td>0.74</td></tr>
                 </tbody>
@@ -249,10 +249,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var deliverySpec = {
     type: 'bar',
     data: [{ id: 'barData', values: [
-      { month: '2025-10', value: 37, highlight: false },
+      { month: '2025-10', value: 42, highlight: false },
       { month: '2025-11', value: 37, highlight: false },
-      { month: '2025-12', value: 54, highlight: false },
-      { month: '2026-01', value: 30, highlight: false },
+      { month: '2025-12', value: 58, highlight: false },
+      { month: '2026-01', value: 31, highlight: false },
       { month: '2026-02', value: 14, highlight: false },
       { month: '2026-03', value: 32, highlight: true }
     ]}],
@@ -273,6 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var growthSpec = {
     type: 'bar',
     data: [{ id: 'growthData', values: [
+      { month: '2025-10', growth: 49.0, color: 'positive' },
       { month: '2025-11', growth: -11.5, color: 'negative' },
       { month: '2025-12', growth: 17.8, color: 'positive' },
       { month: '2026-01', growth: 17.4, color: 'positive' },
