@@ -16,7 +16,7 @@
         h1 { font-size:2rem; font-weight:600; letter-spacing:-0.01em; background:linear-gradient(135deg,#0f2b4b,#1e4a6f); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:0.4rem; }
         .subhead { color:#5b687c; font-size:1rem; font-weight:400; border-bottom:1px solid #e6edf4; padding-bottom:1.5rem; margin-bottom:2rem; display:flex; justify-content:space-between; align-items:flex-end; }
         .date-badge { background:#d4e2f0; padding:0.3rem 1rem; border-radius:40px; font-size:0.85rem; color:#1e3a5f; font-weight:500; }
-        .project-type-badge { background:#e3f2fd; color:#1565c0; border:1px solid #90caf9; padding:0.3rem 1rem; border-radius:40px; font-size:0.85rem; font-weight:500; margin-left:0.5rem; border:1px solid #c8e6c9; }
+        .project-type-badge { background:#e8f5e9; color:#2e7d32; padding:0.3rem 1rem; border-radius:40px; font-size:0.85rem; font-weight:500; margin-left:0.5rem; border:1px solid #c8e6c9; }
         .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-bottom:2.5rem; }
         .kpi-card { background:#f9fcff; border:1px solid #e2eaf2; border-radius:24px; padding:1.5rem 1.2rem; transition:all 0.25s ease; box-shadow:0 2px 5px rgba(0,0,0,0.02); }
         .kpi-card:hover { border-color:#2d7eb5; transform:translateY(-4px); box-shadow:0 8px 20px rgba(45,126,181,0.2); background:#f0f7ff; }
@@ -85,14 +85,12 @@
 <body>
 <div class="report-container">
 
-    <!-- 报告头部 -->
     <h1>紫鸟浏览器 · 产研健康诊断报告</h1>
     <div class="subhead">
-        <span>分析周期：2026年3月 <span class="project-type-badge">成熟型项目</span></span>
+        <span>分析周期：2026年3月 <span class="project-type-badge" style="background:#e3f2fd;color:#1565c0;border:1px solid #90caf9">成熟型项目</span></span>
         <span class="date-badge">PMO 分析 · 2026.04.30</span>
     </div>
 
-    <!-- 核心KPI卡片区 -->
     <div class="kpi-grid">
         <div class="kpi-card">
             <div class="kpi-label">月度需求交付个数</div>
@@ -128,21 +126,17 @@
         </div>
     </div>
 
-    <!-- 基数效应说明 -->
-    
-    <!-- 1. 春节基数说明 -->
     <div class="springfest-note">
-        📊 <strong>基数效应说明：</strong>2月春节低基数（约16工作日 vs 3月21天），3月交付16个回升至近6月最高，环比+166.67%主要受低基数驱动。参照1月正常月（46人团队，人均0.26），3月人均0.28，实际提升约8%。<strong>人均时长日均投入：</strong>2月5.70÷16=0.36天/工作日，3月6.42÷21=0.31天/工作日，日均投入3月反而更低，+12.63%的环比涨幅主要由工作日差异驱动。人均缺陷数从9.55升至16.68（+74.66%），需结合交付量增加（+167%）分析——总缺陷数增幅可能大于交付量增幅，需关注。
+        📊 <strong>基数效应说明：</strong>2月春节低基数（约16工作日 vs 3月21天），3月交付16个回升至近6月最高，环比+166.67%主要受低基数驱动。参照1月正常月（46人团队，人均0.26），3月人均0.28，实际提升约8%。<strong>人均时长日均投入：</strong>2月5.70÷16≈0.36天/工作日，3月6.42÷21≈0.31天/工作日，日均投入3月反而更低，+12.63%的环比涨幅主要由工作日差异驱动。人均缺陷数从9.55升至16.68（+74.66%），需结合交付量增加（+167%）分析——总缺陷数增幅可能大于交付量增幅，需关注。
     </div>
 
-    <!-- 2. 上月措施跟进表 -->
     <div class="chart-title">📋 上月措施跟进 <span>2月报告提出的5项措施</span></div>
     <div class="followup-table">
         <table>
             <thead><tr><th>上月措施</th><th>采纳情况</th><th>本月数据变化</th><th>效果评估</th></tr></thead>
             <tbody>
                 <tr><td>建立节前需求储备机制</td><td>待确认</td><td>3月交付16个（目标≥10）✅</td><td>目标达成，需确认是否因机制推动</td></tr>
-                <tr><td>需求颗粒度标准：单需求开发≤10天</td><td>待确认</td><td>3月开发周期8天（目标≤12天）✅</td><td>达标，截至前4月中4月超标</td></tr>
+                <tr><td>需求颗粒度标准：单需求开发≤10天</td><td>待确认</td><td>3月开发周期8天（目标≤12天）✅</td><td>达标，但前4月中3月超标</td></tr>
                 <tr><td>开发中期检查点：超10天自动预警</td><td>待确认</td><td>开发周期23天→8天（-65%）</td><td>✅ 大幅改善</td></tr>
                 <tr><td>强化Code Review + 开发自测清单</td><td>待确认</td><td>缺陷密度81→52（-35.8%）</td><td>✅ 改善明显</td></tr>
                 <tr><td>启用需求返工率替代验收通过率</td><td>待确认</td><td>验收通过率仍100%</td><td>⏳ 指标替换待实施</td></tr>
@@ -151,23 +145,20 @@
         <p class="small-note" style="margin-top:0.8rem;">⚠️ 5项措施均未获确认反馈。3月数据整体向好（交付量+167%、开发周期-65%、缺陷密度-36%），建议本月报告审核时一并确认措施执行情况。</p>
     </div>
 
-    <!-- 3. 需求交付数量趋势 -->
     <div class="chart-title">📊 需求交付数量趋势 <span>规模-效率联动</span></div>
     <div class="bar-chart">
         <div id="chart-delivery-trend" style="width:100%;height:300px;"></div>
         <div class="small-note" style="margin-top:1rem;">近6个月交付量：11→8→10→12→6→16。3月16个创近6月新高，较均值10.5个高出52%。2月受春节影响仅6个为谷底，3月强劲反弹。但作为57人团队，人均0.28仍处于偏低水平，与1月（46人团队，人均0.26）基本持平——团队扩容24%后人效尚未同步提升，需关注新增人力的产出贡献周期。</div>
     </div>
 
-    <!-- 4. 需求交付周期增长率趋势 -->
     <div class="chart-title">📉 需求交付周期增长率趋势 <span>整体周期变化</span></div>
     <div class="growth-chart">
         <div id="chart-cycle-growth" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;">近6月增长率：+31.8%→+61.3%→-15.6%→+13.5%→-17.9%→-35.1%。3月平均交付周期精确值22.06天，较2月34天大幅下降35.1%，是近6月最大降幅。周期从11月峰值43天回落至30天（整数），降幅达30%。但前4个月中3个月增长率为正，整体仍呈波动态势，需持续观察。</div>
+        <div class="small-note" style="margin-top:1rem;">近6月增长率：+31.8%→+61.3%→-15.6%→+13.5%→-17.9%→-35.1%。3月平均交付周期22.06天，较2月34天大幅下降35.1%，是近6月最大降幅。周期从11月峰值43天回落至30天（整数），降幅达30%。但前4个月中3个月增长率为正，整体仍呈波动态势，需持续观察。</div>
     </div>
 
-    <!-- 5. 两列数据表区域 -->
+
     <div class="two-column">
-        <!-- 左表：需求交付周期明细 -->
         <div class="data-table">
             <h3 style="margin-bottom:0.8rem;">📋 需求交付周期明细 (天)</h3>
             <table>
@@ -178,54 +169,50 @@
                     <tr><td>2025-12</td><td>10</td><td>37</td><td>9</td><td>9</td><td>10</td><td>8</td></tr>
                     <tr><td>2026-01</td><td>12</td><td>43</td><td>17</td><td>11</td><td>5</td><td>10</td></tr>
                     <tr><td>2026-02</td><td>6</td><td>41</td><td>23</td><td>8</td><td>3</td><td>7</td></tr>
-                    <tr style="background:#e8f4fd; font-weight:600;"><td>2026-03</td><td>16</td><td>30</td><td>8</td><td>4</td><td>4</td><td>13</td></tr>
+                    <tr style="background:#eef5ff;font-weight:600;"><td>2026-03</td><td>16</td><td>30</td><td>8</td><td>4</td><td>4</td><td>13</td></tr>
                 </tbody>
             </table>
-            <p class="small-note">3月周期结构：开发8+测试4+产品4+等待13≈30天。开发周期从23天骤降至8天（-65%），创近6月新低；测试4天同为最佳。但等待周期升至13天（近6月最高，占总周期43%），成为最大瓶颈。等待周期拆解详见跨角色协作表。</p>
+            <p class="small-note">3月周期结构：开发8+测试4+产品4+等待13≈30天。开发周期从23天骤降至8天（-65%），创近6月新低；测试4天同为最佳。但等待周期升至13天（近6月最高，占总周期43%），成为最大瓶颈。</p>
         </div>
-        <!-- 右表：跨角色协作响应 -->
         <div class="data-table">
             <h3 style="margin-bottom:0.8rem;">🔄 跨角色协作响应 (天)</h3>
             <table>
                 <thead><tr><th>月份</th><th>需求规划</th><th>待产品设计</th><th>待澄清</th><th>产品→开发</th><th>开发→测试</th><th>测试→发布</th></tr></thead>
                 <tbody>
-                    <tr><td>2025-10</td><td>3.36</td><td>0.91</td><td>1.73</td><td>0.00</td><td>0.45</td><td>1.55</td></tr>
-                    <tr><td>2025-11</td><td>4.25</td><td>0.25</td><td>6.13</td><td>0.00</td><td>0.75</td><td>2.63</td></tr>
-                    <tr><td>2025-12</td><td>6.10</td><td>1.40</td><td>1.60</td><td>0.20</td><td>0.20</td><td>1.50</td></tr>
-                    <tr><td>2026-01</td><td>3.42</td><td>1.67</td><td>5.25</td><td>3.58</td><td>0.08</td><td>1.50</td></tr>
-                    <tr><td>2026-02</td><td>2.00</td><td>2.17</td><td>2.00</td><td>0.00</td><td>0.17</td><td style="color:#cd3b3b; font-weight:700;">9.00</td></tr>
-                    <tr style="background:#e8f4fd; font-weight:600;"><td>2026-03</td><td style="color:#e68a2e; font-weight:700;">6.25</td><td>1.75</td><td style="color:#e68a2e; font-weight:700;">4.81</td><td>0.00</td><td>0.00</td><td>1.06</td></tr>
+                    <tr><td>2025-10</td><td>3.36</td><td>0.91</td><td>1.73</td><td>0</td><td>0.45</td><td>1.55</td></tr>
+                    <tr><td>2025-11</td><td>4.25</td><td>0.25</td><td>6.13</td><td>0</td><td>0.75</td><td>2.63</td></tr>
+                    <tr><td>2025-12</td><td style="color:#e68a2e;font-weight:700;">6.1</td><td>1.4</td><td>1.6</td><td>0.2</td><td>0.2</td><td>1.5</td></tr>
+                    <tr><td>2026-01</td><td>3.42</td><td>1.67</td><td>5.25</td><td>3.58</td><td>0.08</td><td>1.5</td></tr>
+                    <tr><td>2026-02</td><td>2</td><td>2.17</td><td>2</td><td>0</td><td>0.17</td><td style="color:#e68a2e;font-weight:700;">9</td></tr>
+                    <tr style="background:#eef5ff;font-weight:600;"><td>2026-03</td><td style="color:#e68a2e;font-weight:700;">6.25</td><td>1.75</td><td>4.81</td><td>0</td><td>0</td><td>1.06</td></tr>
                 </tbody>
             </table>
-            <p class="small-note">3月等待周期13天的明细拆解：需求规划6.25天+待产品设计1.75天+待澄清4.81天+产品→开发0天+开发→测试0天+测试→发布1.06天=13.87天（与等待13天基本吻合）。需求规划6.25天是最大单项（占45%），待澄清4.81天次之（占35%），两项合计11.06天占等待的80%。2月测试→发布异常9天已回落至1.06天。</p>
+            <p class="small-note">3月等待周期13天拆解：需求规划6.25天（45%）+待产品设计1.75天+待澄清4.81天（35%）+产品→开发0天+开发→测试0天+测试→发布1.06天=13.87天。需求规划+待澄清合计11.06天占等待的80%。</p>
         </div>
     </div>
 
-    <!-- 6. 需求质量表 -->
     <div class="quality-table">
-        <h3 style="margin-bottom:1rem;">📊 需求质量数据</h3>
+        <h3 style="margin-bottom:1rem;">📐 需求质量数据</h3>
         <table>
             <thead><tr><th>月份</th><th>一次验收通过率</th><th>需求交付缺陷密度</th></tr></thead>
             <tbody>
-                <tr><td>2025-10</td><td style="color:#e68a2e; font-weight:600;">81.82%</td><td>53</td></tr>
-                <tr><td>2025-11</td><td style="color:#cd3b3b; font-weight:600;">62.50%</td><td>47</td></tr>
-                <tr><td>2025-12</td><td>100%</td><td style="color:#cd3b3b; font-weight:600;">103</td></tr>
-                <tr><td>2026-01</td><td>100%</td><td style="color:#cd3b3b; font-weight:600;">107</td></tr>
+                <tr><td>2025-10</td><td style="color:#e68a2e;font-weight:700;">81.82%</td><td>53</td></tr>
+                <tr><td>2025-11</td><td style="color:#cd3b3b;font-weight:700;">62.50%</td><td>47</td></tr>
+                <tr><td>2025-12</td><td>100%</td><td style="color:#cd3b3b;font-weight:700;">103</td></tr>
+                <tr><td>2026-01</td><td>100%</td><td style="color:#cd3b3b;font-weight:700;">107</td></tr>
                 <tr><td>2026-02</td><td>100%</td><td>81</td></tr>
-                <tr style="background:#e8f4fd; font-weight:600;"><td>2026-03</td><td>100%</td><td>52</td></tr>
+                <tr style="background:#eef5ff;font-weight:600;"><td>2026-03</td><td>100%</td><td>52</td></tr>
             </tbody>
         </table>
-        <p class="small-note" style="margin-top:0.8rem;">3月验收通过率100%，已连续4月保持。缺陷密度52，较2月81下降35.8%，较1月峰值107下降51.4%，呈持续收敛趋势（53→47→103→107→81→52）。每需求缺陷密度52/16=3.25个/需求，处于合理区间。但团队人均缺陷数从9.55飙升至16.68（+74.66%），说明绝对缺陷量大幅增加（约544→951个），密度下降主要靠交付量稀释。注：验收通过率参考价值有限（业务上基本不回滚），质量以缺陷密度+人均缺陷数双维度为主。</p>
+        <p class="small-note">3月验收通过率100%，连续4月保持。缺陷密度52，较2月81下降35.8%。但人均缺陷数从9.55飙升至16.68（+74.66%），密度下降主要靠交付量稀释。</p>
     </div>
 
-    <!-- 7. Meego核心操作平均时长趋势 -->
     <div class="chart-title">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div>
     <div class="meego-chart">
         <div id="chart-meego-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;">近6月操作时长：5.0→2.6→2.9→3.1→2.8→2.6天。3月2.6天与11月持平，为近6月最佳值，团队工具使用趋于稳定。10月5.0天为异常高值，此后稳定在2.6-3.1天区间。操作次数1242次为近6月最高（仅低于11月1484次），与交付量提升同步。</div>
+        <div class="small-note" style="margin-top:1rem;">近6月操作时长：5.0→2.6→2.9→3.1→2.8→2.6天。3月2.6天为近6月最佳，团队工具使用趋于稳定。操作次数1242次为近6月最高，与交付量提升同步。</div>
     </div>
 
-    <!-- 8. Meego联动指标条 -->
     <div style="display:flex; gap:1.5rem; flex-wrap:wrap; background:#ffffff; border:1px solid #cbddec; border-radius:20px; padding:1rem 2rem; margin:1.5rem 0; font-size:0.88rem;">
         <div><span class="linkage-tag">操作次数</span> 1242次 | 日均59.1</div>
         <div><span class="linkage-tag">人均操作</span> 15.72 | 2月 11.42 | <strong style="color:#1e7b48;">+37.65%</strong></div>
@@ -233,14 +220,11 @@
     </div>
 
     <hr>
-
-    <!-- 9. 核心问题定位 -->
     <div style="margin:2.5rem 0;">
         <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">🔍 核心问题定位 (三类) 及落地整改</h2>
         <p style="color:#476788; margin-bottom:2rem;">依据"投入-产出双维度""质量双维度""协作-周期瓶颈"联动解读</p>
     </div>
 
-    <!-- 问题一：红色 -->
     <div class="issue-box one">
         <div class="issue-title">🚩 问题一：人均缺陷暴增74.66%，绝对缺陷量大幅上升</div>
         <p><span class="linkage-tag">人均缺陷数</span><span class="linkage-tag">缺陷密度</span><span class="linkage-tag">人均交付数量</span><span class="linkage-tag">人均完成时长</span></p>
@@ -254,11 +238,10 @@
         </ul>
     </div>
 
-    <!-- 问题二：橙色 -->
     <div class="issue-box two">
         <div class="issue-title">🚩 问题二：等待周期13天占总周期43%，需求前端流程成最大瓶颈</div>
         <p><span class="linkage-tag">等待周期</span><span class="linkage-tag">需求规划</span><span class="linkage-tag">待澄清</span><span class="linkage-tag">跨角色协作</span></p>
-        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>3月等待周期13天，占平均交付周期30天的43%，是近6月最高（此前最高11月12天）。明细拆解：需求规划6.25天（45%）+待产品设计1.75天+待澄清4.81天（35%）+产品→开发0天+开发→测试0天+测试→发布1.06天=13.87天。需求规划+待澄清合计11.06天占等待的80%。对比开发+测试合计12天，等待时间（13天）已超过实际开发+测试总和。与交付量相关：10月交付11个时等待仅5天，3月交付16个时等待升至13天，并行需求增多导致规划和澄清排队。</p>
+        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>3月等待周期13天，占平均交付周期30天的43%，是近6月最高。明细拆解：需求规划6.25天（45%）+待产品设计1.75天+待澄清4.81天（35%）+产品→开发0天+开发→测试0天+测试→发布1.06天=13.87天。需求规划+待澄清合计11.06天占等待的80%。对比开发+测试合计12天，等待时间（13天）已超过实际开发+测试总和。与交付量相关：10月交付11个时等待仅5天，3月交付16个时等待升至13天，并行需求增多导致规划和澄清排队。</p>
         <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>假设57人团队中产品角色配比不变。等待周期升高与3月交付量大增（6→16个）导致需求排队有关。如果交付量回落至正常水平（10-12个），等待周期可能自然缓解至8-10天。2月测试→发布异常9天已回落至1.06天，说明部分等待是临时性的。</p>
         <ul class="measures">
             <h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
@@ -268,7 +251,6 @@
         </ul>
     </div>
 
-    <!-- 问题三：绿色 -->
     <div class="issue-box three">
         <div class="issue-title">🚩 问题三：人均产出0.28处于低位，团队扩容后人效消化期未结束</div>
         <p><span class="linkage-tag">人均交付数量</span><span class="linkage-tag">人均完成时长</span><span class="linkage-tag">月度交付</span><span class="linkage-tag">团队规模</span></p>
@@ -282,12 +264,12 @@
         </ul>
     </div>
 
-    <!-- 10. 专家视角 -->
+
     <div class="expert-section">
         <h3>🧠 专家视角</h3>
         <h4 style="margin:1rem 0 0.5rem;">📊 模式识别</h4>
         <p>近6月紫鸟浏览器呈现典型的"结构性转移"模式：开发+测试周期大幅压缩（开发23→8天、测试8→4天），但等待周期同步膨胀（7→13天），总周期改善幅度被抵消。这种模式在成熟型大团队中常见——当多需求并行推进（3月16个 vs 2月6个），需求排队和澄清环节成为新瓶颈。历史数据佐证：10月交付11个时等待仅5天，3月交付16个时等待升至13天，等待周期与交付量正相关。</p>
-        <p style="margin-top:0.8rem;">更值得警惕的是"缺陷量隐性膨胀"：缺陷密度从81降至52看似改善，但人均缺陷数从9.55飙升至16.68（+75%），推算总缺陷从约544→951个。Meego缺陷创建数也佐证这一趋势（3月991个 vs 2月647个，+53%）。密度下降主要是交付量增大（+167%）的稀释效应，质量并未真正改善。这是典型的"Goodhart指标陷阱"——单看密度会得出乐观结论，但绝对缺陷量在快速增长。</p>
+        <p style="margin-top:0.5rem;">更值得警惕的是"缺陷量隐性膨胀"：缺陷密度从81降至52看似改善，但人均缺陷数从9.55飙升至16.68（+75%），推算总缺陷从约544→951个。Meego缺陷创建数也佐证这一趋势（3月991个 vs 2月647个，+53%）。密度下降主要是交付量增大（+167%）的稀释效应，质量并未真正改善。这是典型的"Goodhart指标陷阱"——单看密度会得出乐观结论，但绝对缺陷量在快速增长。</p>
 
         <h4 style="margin:1.5rem 0 0.5rem;">🔮 场景推演</h4>
         <table class="scenario-table">
@@ -310,10 +292,9 @@
 
     <hr>
 
-    <!-- 11. 优化方向和责任人 -->
     <div style="display:flex; gap:2rem; flex-wrap:wrap; background:#ffffff; border-radius:32px; padding:2rem; border:1px solid #c5d8ec;">
         <div style="flex:1;">
-            <h3 style="margin-bottom:1.2rem;">📈 基于联动解析的优化方向</h3>
+            <h3 style="margin-bottom:1.2rem;">📈 基于联动解读的优化方向</h3>
             <ul style="list-style-type:none;">
                 <li style="margin-bottom:1rem;">✅ <strong>人均缺陷数控制</strong> — 目标：人均缺陷≤13（当前16.68），缺陷密度≤45（当前52）</li>
                 <li style="margin-bottom:1rem;">✅ <strong>压缩需求前端等待</strong> — 目标：需求规划≤3天、待澄清≤2天，总等待≤8天（当前13天）</li>
@@ -330,16 +311,17 @@
         </div>
     </div>
 
-    <div style="margin:2rem 0;background:#f8faff;border:1px solid #d0ddee;border-radius:24px;padding:1.5rem 2rem;">
-        <h3 style="color:#1e3a5f;margin-bottom:1rem;">📊 指标建议优化</h3>
+    <div style="margin:2rem 0; background:#f8faff; border:1px solid #d0ddee; border-radius:24px; padding:1.5rem 2rem;">
+        <h3 style="color:#1e3a5f; margin-bottom:1rem;">📊 指标建议优化</h3>
         <p style="margin-bottom:0.8rem;"><strong>1. 增加"需求前端周期"独立监控（高优）</strong>：3月等待13天占总周期43%，但当前只在跨角色协作表中拆解。建议将"需求规划时长"和"待澄清时长"提升为独立KPI，设置3天和2天的SLA阈值，超标自动预警。这是本月最明确的瓶颈所在。</p>
         <p style="margin-bottom:0.8rem;"><strong>2. 人均缺陷数与缺陷密度双看（高优）</strong>：本月揭示了一个重要模式——缺陷密度下降但人均缺陷数暴增。单看密度会误判质量改善，建议将人均缺陷数提升为与缺陷密度并列的核心质量指标，两者交叉验证才能得出准确结论。</p>
         <p><strong>3. 上月建议延续：启用需求返工率（中优）</strong>：验收通过率连续4月100%已失去区分度。建议替换为需求返工率（需求在开发→测试→产品验收链路中回退的比例），更真实反映质量。</p>
     </div>
 
-    <div style="margin-top:2.5rem;font-size:0.8rem;color:#6d8bb0;text-align:right;border-top:1px solid #c9d9e9;padding-top:1rem;">
-        数据来源：Meego飞书项目（MCP自动获取）· 分析周期：2026年3月 · 特殊因素：2月春节低基数效应 · 团队规模：约57人 · 本报告由PMO生成 · 分析模型：Claude Opus 4
+    <div style="margin-top:2.5rem; font-size:0.8rem; color:#6d8bb0; text-align:right; border-top:1px solid #c9d9e9; padding-top:1rem;">
+        数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年3月 · 特殊因素：2月春节低基数效应 · 团队规模：约57人 · 本报告由PMO生成 · 分析模型：Claude Opus 4
     </div>
+
 
 </div>
 
@@ -378,99 +360,88 @@
     });
 })();
 </script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // === 图表1：需求交付数量趋势 ===
   var deliverySpec = {
-    type: 'bar',
-    padding: { left: 20, right: 20, top: 30, bottom: 10 },
-    data: [{ id: 'd', values: [
-      { month: '2025-10', value: 3, hl: 'normal' },
-      { month: '2025-11', value: 7, hl: 'normal' },
-      { month: '2025-12', value: 7, hl: 'normal' },
-      { month: '2026-01', value: 10, hl: 'normal' },
-      { month: '2026-02', value: 6, hl: 'normal' },
-      { month: '2026-03', value: 8, hl: 'current' }
+    type:'bar', padding:{left:20,right:20,top:30,bottom:10},
+    data:[{id:'d',values:[
+      {month:'2025-10',value:11,hl:'normal'},
+      {month:'2025-11',value:8,hl:'normal'},
+      {month:'2025-12',value:10,hl:'normal'},
+      {month:'2026-01',value:12,hl:'normal'},
+      {month:'2026-02',value:6,hl:'normal'},
+      {month:'2026-03',value:16,hl:'current'}
     ]}],
-    xField: 'month', yField: 'value',
-    bar: { style: { cornerRadius: [6,6,0,0], fill: function(d){ return d.hl==='current' ? '#2d7eb5' : '#8bb8d9'; } } },
-    label: { visible: true, position: 'top', style: { fill: '#335e83', fontSize: 14, fontWeight: 700 } },
-    axes: [
-      { orient: 'bottom', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
-      { orient: 'left', visible: false, max: 13 }
-    ],
-    tooltip: { trigger: 'mark', mark: { title: { visible: true }, content: [{ key: '交付数量', value: function(d){ return d.value + ' 个'; } }] } },
-    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(45,126,181,0.08)' } } } }
+    xField:'month', yField:'value',
+    bar:{style:{cornerRadius:[6,6,0,0],fill:function(d){return d.hl==='current'?'#2d7eb5':'#8bb8d9';}}},
+    label:{visible:true,position:'top',style:{fill:'#335e83',fontSize:14,fontWeight:700}},
+    axes:[{orient:'bottom',label:{visible:true,style:{fill:'#506c8a',fontSize:11}}},{orient:'left',visible:false,max:21}],
+    tooltip:{trigger:'mark',mark:{title:{visible:true},content:[{key:'交付数量',value:function(d){return d.value+'个';}}]}},
+    crosshair:{xField:{visible:true,line:{type:'rect',style:{fill:'rgba(45,126,181,0.08)'}}}}
   };
-  var c1 = new VChart.default(deliverySpec, { dom: 'chart-delivery-trend' }); c1.renderSync();
+  new VChart.default(deliverySpec,{dom:'chart-delivery-trend'}).renderSync();
 
-  // === 图表2：交付周期增长率 ===
   var growthSpec = {
-    type: 'bar',
-    padding: { left: 20, right: 20, top: 30, bottom: 10 },
-    data: [{ id: 'd', values: [
-      { month: '2025-10', growth: 9.8, c: 'pos' },
-      { month: '2025-11', growth: 51.5, c: 'pos' },
-      { month: '2025-12', growth: -40.4, c: 'neg' },
-      { month: '2026-01', growth: 110.0, c: 'pos' },
-      { month: '2026-02', growth: -59.5, c: 'neg' },
-      { month: '2026-03', growth: 76.2, c: 'pos' }
+    type:'bar', padding:{left:20,right:20,top:30,bottom:10},
+    data:[{id:'d',values:[
+      {month:'2025-10',growth:31.8,c:'pos'},
+      {month:'2025-11',growth:61.3,c:'pos'},
+      {month:'2025-12',growth:-15.6,c:'neg'},
+      {month:'2026-01',growth:13.5,c:'pos'},
+      {month:'2026-02',growth:-17.9,c:'neg'},
+      {month:'2026-03',growth:-35.1,c:'neg'}
     ]}],
-    xField: 'month', yField: 'growth',
-    bar: { style: { cornerRadius: [4,4,4,4], fill: function(d){ return d.c==='pos' ? '#4caf92' : '#e86b6b'; } } },
-    label: { visible: true, position: 'outside', style: { fontSize: 12, fontWeight: 600 }, formatMethod: function(v){ return (v>0?'+':'')+v.toFixed(1)+'%'; } },
-    axes: [
-      { orient: 'bottom', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
-      { orient: 'left', visible: false }
-    ],
-    tooltip: { trigger: 'mark', mark: { content: [{ key: '环比变化', value: function(d){ return (d.growth>0?'+':'')+d.growth.toFixed(1)+'%'; } }] } },
-    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(0,0,0,0.04)' } } } }
+    xField:'month', yField:'growth',
+    bar:{style:{cornerRadius:[4,4,4,4],fill:function(d){return d.c==='pos'?'#4caf92':'#e86b6b';}}},
+    label:{visible:true,position:'outside',style:{fontSize:12,fontWeight:600},formatMethod:function(v){return (v>0?'+':'')+v.toFixed(1)+'%';}},
+    axes:[{orient:'bottom',label:{visible:true,style:{fill:'#506c8a',fontSize:11}}},{orient:'left',visible:false}],
+    tooltip:{trigger:'mark',mark:{content:[{key:'环比变化',value:function(d){return (d.growth>0?'+':'')+d.growth.toFixed(1)+'%';}}]}},
+    crosshair:{xField:{visible:true,line:{type:'rect',style:{fill:'rgba(0,0,0,0.04)'}}}}
   };
-  var c2 = new VChart.default(growthSpec, { dom: 'chart-cycle-growth' }); c2.renderSync();
+  new VChart.default(growthSpec,{dom:'chart-cycle-growth'}).renderSync();
 
-  // === 图表3：Meego操作时长+次数（独立数据源） ===
   var meegoSpec = {
-    type: 'common',
-    padding: { left: 10, right: 10, top: 40, bottom: 10 },
-    data: [
-      { id: 'durData', values: [
-        { month: '2025-10', duration: 2.5 },
-        { month: '2025-11', duration: 1.8 },
-        { month: '2025-12', duration: 1.6 },
-        { month: '2026-01', duration: 1.8 },
-        { month: '2026-02', duration: 1.7 },
-        { month: '2026-03', duration: 1.7 }
+    type:'common', padding:{left:10,right:10,top:40,bottom:10},
+    data:[
+      {id:'durData',values:[
+        {month:'2025-10',duration:5},
+        {month:'2025-11',duration:2.6},
+        {month:'2025-12',duration:2.9},
+        {month:'2026-01',duration:3.1},
+        {month:'2026-02',duration:2.8},
+        {month:'2026-03',duration:2.6}
       ]},
-      { id: 'cntData', values: [
-        { month: '2025-10', count: 217 },
-        { month: '2025-11', count: 213 },
-        { month: '2025-12', count: 209 },
-        { month: '2026-01', count: 230 },
-        { month: '2026-02', count: 110 },
-        { month: '2026-03', count: 219 }
+      {id:'cntData',values:[
+        {month:'2025-10',count:833},
+        {month:'2025-11',count:1484},
+        {month:'2025-12',count:1255},
+        {month:'2026-01',count:812},
+        {month:'2026-02',count:822},
+        {month:'2026-03',count:1242}
       ]}
     ],
-    series: [
-      { type: 'bar', id: 'durBar', name: '平均时长', dataId: 'durData', xField: 'month', yField: 'duration',
-        bar: { style: { cornerRadius: [6,6,0,0], fill: { gradient: 'linear', x0:0.5,y0:0, x1:0.5,y1:1, stops:[{offset:0,color:'#d79c4a'},{offset:1,color:'#b57c2d'}] } } },
-        label: { visible: true, position: 'top', style: { fill: '#7a5a1e', fontSize: 13, fontWeight: 700 }, formatMethod: function(v){return v+'天';} }
+    series:[
+      {type:'bar',id:'durBar',name:'平均时长',dataId:'durData',xField:'month',yField:'duration',
+        bar:{style:{cornerRadius:[6,6,0,0],fill:{gradient:'linear',x0:0.5,y0:0,x1:0.5,y1:1,stops:[{offset:0,color:'#d79c4a'},{offset:1,color:'#b57c2d'}]}}},
+        label:{visible:true,position:'top',style:{fill:'#7a5a1e',fontSize:13,fontWeight:700},formatMethod:function(v){return v+'天';}}
       },
-      { type: 'line', id: 'cntLine', name: '操作次数', dataId: 'cntData', xField: 'month', yField: 'count',
-        line: { style: { stroke: '#506c8a', lineWidth: 2, lineDash: [6,3] } },
-        point: { style: { fill: '#506c8a', stroke: '#fff', lineWidth: 2, size: 7 } },
-        label: { visible: true, position: 'top', offset: 8, style: { fill: '#506c8a', fontSize: 11 }, formatMethod: function(v){return v+'次';} }
+      {type:'line',id:'cntLine',name:'操作次数',dataId:'cntData',xField:'month',yField:'count',
+        line:{style:{stroke:'#506c8a',lineWidth:2,lineDash:[6,3]}},
+        point:{style:{fill:'#506c8a',stroke:'#fff',lineWidth:2,size:7}},
+        label:{visible:true,position:'top',offset:8,style:{fill:'#506c8a',fontSize:11},formatMethod:function(v){return v+'次';}}
       }
     ],
-    axes: [
-      { orient: 'bottom', type: 'band', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
-      { orient: 'left', type: 'linear', seriesId: ['durBar'], title: { visible: true, text: '平均时长(天)', style: { fill: '#7a5a1e' } }, min: 0, max: 3.5 },
-      { orient: 'right', type: 'linear', seriesId: ['cntLine'], title: { visible: true, text: '操作次数', style: { fill: '#506c8a' } }, grid: { visible: false }, min: 0 }
+    axes:[
+      {orient:'bottom',type:'band',label:{visible:true,style:{fill:'#506c8a',fontSize:11}}},
+      {orient:'left',type:'linear',seriesId:['durBar'],title:{visible:true,text:'平均时长(天)',style:{fill:'#7a5a1e'}},min:0,max:6},
+      {orient:'right',type:'linear',seriesId:['cntLine'],title:{visible:true,text:'操作次数',style:{fill:'#506c8a'}},grid:{visible:false},min:0}
     ],
-    tooltip: { trigger: 'axis' },
-    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(181,124,45,0.08)' } } } },
-    legends: { visible: true, orient: 'top', position: 'end' }
+    tooltip:{trigger:'axis'},
+    crosshair:{xField:{visible:true,line:{type:'rect',style:{fill:'rgba(181,124,45,0.08)'}}}},
+    legends:{visible:true,orient:'top',position:'end'}
   };
-  var c3 = new VChart.default(meegoSpec, { dom: 'chart-meego-trend' }); c3.renderSync();
+  new VChart.default(meegoSpec,{dom:'chart-meego-trend'}).renderSync();
 });
 </script>
 </body>
