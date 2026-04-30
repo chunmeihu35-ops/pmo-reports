@@ -127,7 +127,7 @@
     </div>
 
     <div class="springfest-note">
-        📊 <strong>基数效应说明：</strong>2月春节低基数（约16工作日 vs 3月21天），3月交付16个回升至近6月最高，环比+166.67%主要受低基数驱动。参照1月正常月（46人团队，人均0.26），3月人均0.28，实际提升约8%。<strong>人均时长日均投入：</strong>2月5.70÷16≈0.36天/工作日，3月6.42÷21≈0.31天/工作日，日均投入3月反而更低，+12.63%的环比涨幅主要由工作日差异驱动。人均缺陷数从9.55升至16.68（+74.66%），需结合交付量增加（+167%）分析——总缺陷数增幅可能大于交付量增幅，需关注。
+        📊 <strong>基数效应说明：</strong>2月春节低基数（约16工作日 vs 3月21天），3月交付16个回升至近6月最高，环比+166.67%主要受低基数驱动。参照1月正常月（人均0.26），3月人均0.28，实际提升约8%。<strong>人均时长日均投入：</strong>2月5.70÷16≈0.36天/工作日，3月6.42÷21≈0.31天/工作日，日均投入3月反而更低，+12.63%的环比涨幅主要由工作日差异驱动。<strong>数据口径说明：</strong>本报告统计范围为大版本执行需求，不包含临时需求。团队成员不会100%投入大版本交付，因此人均指标不适合与行业基线直接对比，以本项目历史数据为基线。
     </div>
 
     <div class="chart-title">📋 上月措施跟进 <span>2月报告提出的5项措施</span></div>
@@ -148,13 +148,13 @@
     <div class="chart-title">📊 需求交付数量趋势 <span>规模-效率联动</span></div>
     <div class="bar-chart">
         <div id="chart-delivery-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;">近6个月交付量：11→8→10→12→6→16。3月16个创近6月新高，较均值10.5个高出52%。2月受春节影响仅6个为谷底，3月强劲反弹。但作为57人团队，人均0.28仍处于偏低水平，与1月（46人团队，人均0.26）基本持平——团队扩容24%后人效尚未同步提升，需关注新增人力的产出贡献周期。</div>
+        <div class="small-note" style="margin-top:1rem;">近6个月交付量：11→8→10→12→6→16。3月16个创近6月新高，较均值10.5个高出52%。2月受春节影响仅6个为谷底，3月强劲反弹。参照1月正常月（人均0.26），3月人均0.28基本持平——交付量回升主要由工作日恢复驱动，人效尚未出现实质性提升。</div>
     </div>
 
     <div class="chart-title">📉 需求交付周期增长率趋势 <span>整体周期变化</span></div>
     <div class="growth-chart">
         <div id="chart-cycle-growth" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;">近6月增长率：+31.8%→+61.3%→-15.6%→+13.5%→-17.9%→-35.1%。3月平均交付周期22.06天，较2月34天大幅下降35.1%，是近6月最大降幅。周期从11月峰值43天回落至30天（整数），降幅达30%。但前4个月中3个月增长率为正，整体仍呈波动态势，需持续观察。</div>
+        <div class="small-note" style="margin-top:1rem;">近6月增长率：+35.0%→+59.3%→-14.0%→+16.2%→-4.7%→-26.8%。3月平均交付周期30天，较2月41天下降26.8%，是近6月最大降幅。周期从11月峰值43天回落至30天，降幅达30%。近6月周期在27-43天区间波动，3月30天处于较低水平，需持续观察能否稳定。</div>
     </div>
 
 
@@ -222,45 +222,47 @@
     <hr>
     <div style="margin:2.5rem 0;">
         <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">🔍 核心问题定位 (三类) 及落地整改</h2>
-        <p style="color:#476788; margin-bottom:2rem;">依据"投入-产出双维度""质量双维度""协作-周期瓶颈"联动解读</p>
+        <p style="color:#476788; margin-bottom:2rem;">依据"投入-产出双维度""质量多维度""系统产能瓶颈"联动解读</p>
     </div>
 
     <div class="issue-box one">
-        <div class="issue-title">🚩 问题一：人均缺陷暴增74.66%，绝对缺陷量大幅上升</div>
-        <p><span class="linkage-tag">人均缺陷数</span><span class="linkage-tag">缺陷密度</span><span class="linkage-tag">人均交付数量</span><span class="linkage-tag">人均完成时长</span></p>
-        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均缺陷数9.55→16.68（+74.66%），为近期最大涨幅。推算团队总缺陷数：2月≈9.55×57=544个，3月≈16.68×57=951个，绝对量增长75%。虽然缺陷密度从81降至52（-36%），但这是交付量从6→16个（+167%）的稀释效应——交付量增长更快掩盖了缺陷数量增长。投入-产出判定：人均时长6.42天（日均投入0.31天/工作日，较2月0.36略降），人均产出0.28个——属于"低投入-低产出"格局，叠加缺陷暴增，质量风险是最突出的问题。</p>
-        <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>假设缺陷统计口径不变（未新增录入规则导致基数膨胀）。2月春节期间需求可能偏简单，3月回归正常复杂度后缺陷增加有合理成分。需区分测试发现（正面信号）和线上暴露（负面信号）。2月报告设定的目标"人均缺陷≤8"已远远偏离（16.68是目标的2倍）。</p>
+        <div class="issue-title">🚩 问题一：人均缺陷数上升74.66%，需区分"量增驱动"还是"质量下降"</div>
+        <p><span class="linkage-tag">人均缺陷数</span><span class="linkage-tag">缺陷密度</span><span class="linkage-tag">人均交付数量</span><span class="linkage-tag">工作日折算</span></p>
+        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均缺陷数9.55→16.68（+74.66%），但同期人均交付也从0.13→0.28（+115%），交付量从6→16个（+167%）。<strong>每需求缺陷密度实际改善：</strong>81→52（-35.8%），说明单位需求的缺陷数显著下降。折算工作日后：2月日均人均缺陷9.55÷16≈0.60，3月16.68÷21≈0.79，日均缺陷率上升约32%（低于环比74.66%），部分被工作日差异放大。<strong>综合判断：</strong>每需求质量实际改善（密度-36%），但团队承担的缺陷总量确实在增加（推算544→951个，+75%），一方面是交付量大增的必然伴随，另一方面日均缺陷率+32%仍需关注——不能简单判定"质量恶化"，也不能忽略绝对量压力。</p>
+        <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>假设缺陷统计口径不变。2月春节期间需求可能偏简单，3月回归正常复杂度后缺陷增加有合理成分。关键区分：测试发现（正面信号，说明测试有效）vs 线上暴露（负面信号），二者性质完全不同。</p>
         <ul class="measures">
             <h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
-            <li>缺陷来源分类：Meego标记"测试发现"vs"线上发现"，判断951个缺陷中各自占比 — QA负责人 5月第3周</li>
-            <li>强化开发自测：上月措施"Code Review+自测清单"必须落实执行，核心模块CR覆盖率≥80% — 研发Leader 5月第3周</li>
-            <li>设定分级目标：4月人均缺陷≤13（较3月-22%），每需求密度≤3个，逐月收敛 — PMO 持续跟踪</li>
+            <li>缺陷来源分类：Meego标记"测试发现"vs"线上发现"，判断951个缺陷中各自占比——如果80%+是测试发现，说明质量体系运转正常 — QA负责人 5月第3周</li>
+            <li>持续跟踪"缺陷密度"和"人均缺陷数"双指标：密度反映单位需求质量，人均反映团队负担，交叉验证才能准确判断 — PMO 持续跟踪</li>
+            <li>强化开发自测：落实上月措施"Code Review+自测清单"，核心模块CR覆盖率≥80%，从源头降低缺陷引入 — 研发Leader 5月第3周</li>
         </ul>
     </div>
 
     <div class="issue-box two">
-        <div class="issue-title">🚩 问题二：等待周期13天占总周期43%，需求前端流程成最大瓶颈</div>
-        <p><span class="linkage-tag">等待周期</span><span class="linkage-tag">需求规划</span><span class="linkage-tag">待澄清</span><span class="linkage-tag">跨角色协作</span></p>
-        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>3月等待周期13天，占平均交付周期30天的43%，是近6月最高。明细拆解：需求规划6.25天（45%）+待产品设计1.75天+待澄清4.81天（35%）+产品→开发0天+开发→测试0天+测试→发布1.06天=13.87天。需求规划+待澄清合计11.06天占等待的80%。对比开发+测试合计12天，等待时间（13天）已超过实际开发+测试总和。与交付量相关：10月交付11个时等待仅5天，3月交付16个时等待升至13天，并行需求增多导致规划和澄清排队。</p>
-        <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>假设57人团队中产品角色配比不变。等待周期升高与3月交付量大增（6→16个）导致需求排队有关。如果交付量回落至正常水平（10-12个），等待周期可能自然缓解至8-10天。2月测试→发布异常9天已回落至1.06天，说明部分等待是临时性的。</p>
+        <div class="issue-title">🚩 问题二：等待周期13天占总周期43%——是局部瓶颈还是系统产能约束？</div>
+        <p><span class="linkage-tag">等待周期</span><span class="linkage-tag">需求规划</span><span class="linkage-tag">待澄清</span><span class="linkage-tag">系统产能</span></p>
+        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>3月等待周期13天，占平均交付周期30天的43%，是近6月最高。拆解：需求规划6.25天+待产品设计1.75天+待澄清4.81天+产品→开发0天+开发→测试0天+测试→发布1.06天=13.87天。需求规划+待澄清合计11.06天占等待的80%。</p>
+        <p style="margin-top:0.5rem;"><strong>系统视角：</strong>等待周期高不一定是需求前端"慢"，可能是系统整体产能约束的表现——没有开发资源，需求就停留在"待澄清"；无法启动产品设计，需求就积压在"需求规划"。如果只加速上游（压缩规划和澄清），下游（开发、测试）可能因资源不变而形成新的排队，问题从上游转移到下游而非真正解决。历史佐证：10月交付11个时等待仅5天，3月交付16个时等待13天——并行需求增多本身就会拉长等待。</p>
+        <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>需要先判断团队当前并行消化能力上限是多少个需求。如果上限在10-12个，那16个并行本身就超出产能，等待是必然结果，优化方向不是"加快流转"而是"控制并行度"或"扩容"。</p>
         <ul class="measures">
             <h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
-            <li>建立需求规划SLA：需求进入规划后3天内完成评审启动开发，超时自动预警 — PM 5月第3周</li>
-            <li>澄清前置：在需求写入前先完成核心业务逻辑澄清，将待澄清从4.81天压缩至≤2天 — 产品负责人 5月第3周</li>
-            <li>需求分级快速通道：S/M级需求简化评审流程，仅L级需求走完整规划 — PM + 产品负责人 持续执行</li>
+            <li>评估团队并行消化能力：统计近6月不同交付量下的等待周期，确定合理并行需求数上限 — PM 5月第3周</li>
+            <li>如果并行需求确实超出产能：控制每月在制需求数≤12个，多余需求排入下期，避免全链路排队 — PM + 产品负责人</li>
+            <li>如果是流程效率问题：澄清前置+需求规划SLA（3天），但需同步监控下游是否出现新排队 — PM 5月第3周</li>
         </ul>
     </div>
 
     <div class="issue-box three">
-        <div class="issue-title">🚩 问题三：人均产出0.28处于低位，团队扩容后人效消化期未结束</div>
-        <p><span class="linkage-tag">人均交付数量</span><span class="linkage-tag">人均完成时长</span><span class="linkage-tag">月度交付</span><span class="linkage-tag">团队规模</span></p>
-        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>3月人均交付0.28，较2月0.13提升115%，但参照1月正常月（46人，人均0.26）仅提升8%。团队从约46人扩至约57人（+24%），交付量从12→16个（+33%），交付量增幅略高于人力增幅，初步正向。但57人成熟型项目人均0.28低于行业通常基线（0.4-0.6）。人均完成时长6.42天（日均0.31天/工作日），投入强度不高，属于"低投入-低产出"——团队产能还有释放空间。</p>
-        <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>57人为全部团队成员（含产品/设计/测试/运维），实际参与需求交付的开发可能只占60-70%，按35-40人算人均约0.4-0.46，接近合理区间。另外，等待周期13天占43%说明大量时间消耗在非开发环节——如果压缩等待至8天，总周期可从30天降至25天，同期可释放更多交付能力。</p>
+        <div class="issue-title">🚩 问题三：人均产出0.28——需结合数据口径理解，不宜与行业基线直接对比</div>
+        <p><span class="linkage-tag">人均交付数量</span><span class="linkage-tag">人均完成时长</span><span class="linkage-tag">数据口径</span><span class="linkage-tag">历史基线</span></p>
+        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>3月人均交付0.28，较2月0.13提升115%，参照1月正常月（人均0.26）提升8%。人均完成时长6.42天（日均0.31天/工作日），投入强度中等。</p>
+        <p style="margin-top:0.5rem;"><strong>口径说明：</strong>本报告统计范围仅为<strong>大版本执行需求</strong>，不包含临时需求、技术优化、Bug修复等日常工作。57人为参与团队全部成员（含产品/设计/测试/运维），并非全部时间投入大版本交付。因此，人均0.28<strong>不适合与行业通常基线直接对比</strong>，应以本项目历史数据为参照。历史基线：近6月人均交付均值约0.19（月度交付均值10.5÷57），3月0.28高于历史均值47%，处于本项目较好水平。</p>
+        <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>等待周期13天占43%说明大量时间消耗在流转环节而非实际开发。这可能不是"人效低"，而是系统等待导致的效率损耗——问题根源与问题二相同。</p>
         <ul class="measures">
             <h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
-            <li>确认有效开发人数：统计实际参与需求交付的核心开发人员数量，校准人均产出基线 — PM 5月第3周</li>
-            <li>新人产出追踪：识别近3个月新入职成员，评估ramp up进度和产出贡献 — 研发Leader 5月第3周</li>
-            <li>压缩等待释放产能：配合问题二的等待优化，目标4月人均交付≥0.30 — PMO 持续跟踪</li>
+            <li>建立项目自身人效基线：基于近6月数据确认"正常月"人均交付范围（参考10月0.19、1月0.26、3月0.28） — PM 5月第3周</li>
+            <li>等待优化释放产能：配合问题二的系统产能评估，如果等待从13天压缩至8天，相当于每需求释放5天流转时间 — PMO 持续跟踪</li>
+            <li>区分投入口径：了解团队实际在大版本需求上的投入比例，辅助判断人效真实水平 — PM 5月第3周</li>
         </ul>
     </div>
 
@@ -268,25 +270,26 @@
     <div class="expert-section">
         <h3>🧠 专家视角</h3>
         <h4 style="margin:1rem 0 0.5rem;">📊 模式识别</h4>
-        <p>近6月紫鸟浏览器呈现典型的"结构性转移"模式：开发+测试周期大幅压缩（开发23→8天、测试8→4天），但等待周期同步膨胀（7→13天），总周期改善幅度被抵消。这种模式在成熟型大团队中常见——当多需求并行推进（3月16个 vs 2月6个），需求排队和澄清环节成为新瓶颈。历史数据佐证：10月交付11个时等待仅5天，3月交付16个时等待升至13天，等待周期与交付量正相关。</p>
-        <p style="margin-top:0.5rem;">更值得警惕的是"缺陷量隐性膨胀"：缺陷密度从81降至52看似改善，但人均缺陷数从9.55飙升至16.68（+75%），推算总缺陷从约544→951个。Meego缺陷创建数也佐证这一趋势（3月991个 vs 2月647个，+53%）。密度下降主要是交付量增大（+167%）的稀释效应，质量并未真正改善。这是典型的"Goodhart指标陷阱"——单看密度会得出乐观结论，但绝对缺陷量在快速增长。</p>
+        <p>近6月紫鸟浏览器呈现典型的"结构性转移"模式：开发+测试周期大幅压缩（开发23→8天、测试8→4天），但等待周期同步膨胀（7→13天），总周期改善幅度被部分抵消（41→30天，降26.8%）。这种模式在成熟型大团队中常见——当并行需求增多（3月16个 vs 2月6个），需求在各环节排队等待资源释放。</p>
+        <p style="margin-top:0.5rem;">值得注意的是缺陷指标的"双面性"：缺陷密度从81降至52（-36%）说明<strong>单位需求质量在改善</strong>，但人均缺陷数从9.55升至16.68（+75%）说明<strong>团队承担的缺陷总量在增加</strong>（推算544→951个）。Meego缺陷创建数佐证（3月991个 vs 2月647个，+53%）。这不是简单的"质量恶化"——交付量增长167%远大于缺陷量增长75%，每需求质量实际改善。但绝对缺陷量增加意味着测试和修复工作量确实在加大，如果不加以控制，可能影响后续迭代节奏。</p>
+        <p style="margin-top:0.5rem;"><strong>系统瓶颈视角：</strong>等待周期与交付量正相关（10月11个/等待5天 → 3月16个/等待13天）。这提示当前团队的并行消化能力可能在10-12个需求左右。超过这个阈值后，各环节开始排队。单纯加速某个环节（如压缩需求规划）可能只会把排队从上游转移到下游——真正的杠杆点是控制在制品数量（WIP limit）或扩充瓶颈环节的产能。</p>
 
         <h4 style="margin:1.5rem 0 0.5rem;">🔮 场景推演</h4>
         <table class="scenario-table">
             <thead><tr><th>方案</th><th>预期影响</th></tr></thead>
             <tbody>
-                <tr><td>维持现状</td><td>交付量稳在14-16个/月，但等待周期可能进一步升至15天+，人均缺陷数可能持续高于15个。总周期停留在30天无法突破</td></tr>
-                <tr><td>压缩需求规划+澄清至≤5天</td><td>等待从13天降至7-8天，总周期有望压至25天。需产品侧配合前置澄清，短期增加产品工作量</td></tr>
-                <tr><td>控制并行需求≤10个+强化自测</td><td>等待回落至5-8天（参照10月），人均缺陷可能降至12以下。但月度交付量可能降至10-12个</td></tr>
-                <tr><td>开发阶段增加代码评审</td><td>人均缺陷数有望降至≤12（-28%），但可能延长开发周期1-2天。以质量换速度，适合成熟型项目</td></tr>
+                <tr><td>维持现状</td><td>交付量稳在14-16个/月，等待周期可能维持在12-15天，总周期停留在28-32天。缺陷总量随交付量同步增长</td></tr>
+                <tr><td>控制并行WIP≤12个</td><td>等待回落至5-8天（参照10月），总周期有望压至22-25天。但月度交付量可能降至10-12个</td></tr>
+                <tr><td>扩充产品侧产能（加人或优化流程）</td><td>需求规划+澄清从11天压缩至5-6天，同时不影响下游。需额外投入，但不减少交付量</td></tr>
+                <tr><td>开发阶段强化代码评审</td><td>单位需求缺陷密度可进一步从52降至40以下，但可能延长开发周期1-2天。以质量换速度，适合成熟型项目</td></tr>
             </tbody>
         </table>
 
         <h4 style="margin:1.5rem 0 0.5rem;">💡 反思问题</h4>
         <ol style="padding-left:1.5rem; color:#335e83;">
-            <li style="margin-bottom:0.5rem;">人均缺陷数从9.55暴增至16.68（+75%），同期缺陷密度却从81降至52（-36%），这两个指标给出相反信号。管理决策应以哪个为准？建议：绝对量（人均缺陷数）比率值（密度）更真实反映质量负担。</li>
-            <li style="margin-bottom:0.5rem;">等待周期13天中"需求规划6.25天+待澄清4.81天=合计11天"——产品侧是否已成为交付链路的瓶颈？如果开发+测试效率继续提升（已是近6月最优），产品侧的处理能力能否匹配？</li>
-            <li>"低投入-低产出"（人均时长6.42天、人均交付0.28个）说明团队产能有释放空间。是需求供给不足（等待证实），还是人力冗余，或是新人未进入有效产出状态？答案决定了优化方向。</li>
+            <li style="margin-bottom:0.5rem;">人均缺陷数+75%，但缺陷密度-36%、交付量+167%——质量到底是好还是差？答案取决于缺陷构成：如果主要是测试发现的缺陷（说明测试覆盖充分），则质量体系运转正常；如果大量是线上暴露，则需要重视。<strong>建议优先完成缺陷来源分类。</strong></li>
+            <li style="margin-bottom:0.5rem;">等待周期13天，是因为需求前端流程"慢"，还是因为团队消化能力已到上限？如果是后者，优化上游流程不会根本解决问题。建议先评估团队并行消化能力的实际上限。</li>
+            <li>本报告仅统计大版本执行需求，团队实际还承担临时需求、Bug修复等工作。人均0.28可能不代表真实人效——需要了解大版本需求在团队总工作量中的占比，才能做出准确判断。</li>
         </ol>
     </div>
 
@@ -296,30 +299,30 @@
         <div style="flex:1;">
             <h3 style="margin-bottom:1.2rem;">📈 基于联动解读的优化方向</h3>
             <ul style="list-style-type:none;">
-                <li style="margin-bottom:1rem;">✅ <strong>人均缺陷数控制</strong> — 目标：人均缺陷≤13（当前16.68），缺陷密度≤45（当前52）</li>
-                <li style="margin-bottom:1rem;">✅ <strong>压缩需求前端等待</strong> — 目标：需求规划≤3天、待澄清≤2天，总等待≤8天（当前13天）</li>
-                <li style="margin-bottom:1rem;">✅ <strong>人效基线提升</strong> — 目标：确认有效开发人数，人均交付≥0.30（当前0.28）</li>
+                <li style="margin-bottom:1rem;">✅ <strong>缺陷来源分类</strong> — 目标：明确951个缺陷中测试发现 vs 线上暴露的比例，据此判断质量真实状况</li>
+                <li style="margin-bottom:1rem;">✅ <strong>系统产能评估</strong> — 目标：确认团队合理并行需求数上限，决定是"控制WIP"还是"扩容"</li>
+                <li style="margin-bottom:1rem;">✅ <strong>建立项目历史基线</strong> — 目标：基于自身数据确认正常月人均交付、等待周期、缺陷密度的合理范围</li>
             </ul>
         </div>
         <div style="flex:1; border-left:2px solid #b7cde0; padding-left:2rem;">
             <h3 style="margin-bottom:1.2rem;">⏱️ 责任人 &amp; 时间节点</h3>
             <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>缺陷来源分类标记（测试发现 vs 线上发现），判断951个缺陷中各自占比 → 5月第3周</p>
+            <p style="margin-bottom:0.8rem;"><strong>PM：</strong>评估团队并行消化能力上限（统计不同交付量下的等待周期），建立项目人效历史基线 → 5月第3周</p>
             <p style="margin-bottom:0.8rem;"><strong>研发Leader：</strong>落实Code Review+开发自测清单，核心模块CR覆盖率≥80% → 5月第3周</p>
-            <p style="margin-bottom:0.8rem;"><strong>产品负责人：</strong>优化需求澄清前置流程，将待澄清从4.81天压缩至≤2天 → 5月第3周</p>
-            <p style="margin-bottom:0.8rem;"><strong>PM：</strong>建立需求规划SLA（3天），统计有效开发人数校准人效基线 → 5月第3周</p>
-            <p><strong>PMO：</strong>跟踪人均缺陷数趋势，关注是否从16.68开始收敛 → 持续</p>
+            <p style="margin-bottom:0.8rem;"><strong>产品负责人：</strong>如确认是流程问题而非产能问题，优化需求澄清前置流程 → 5月第3周</p>
+            <p><strong>PMO：</strong>持续跟踪缺陷密度+人均缺陷数双指标，关注等待周期与交付量的关系 → 持续</p>
         </div>
     </div>
 
     <div style="margin:2rem 0; background:#f8faff; border:1px solid #d0ddee; border-radius:24px; padding:1.5rem 2rem;">
         <h3 style="color:#1e3a5f; margin-bottom:1rem;">📊 指标建议优化</h3>
-        <p style="margin-bottom:0.8rem;"><strong>1. 增加"需求前端周期"独立监控（高优）</strong>：3月等待13天占总周期43%，但当前只在跨角色协作表中拆解。建议将"需求规划时长"和"待澄清时长"提升为独立KPI，设置3天和2天的SLA阈值，超标自动预警。这是本月最明确的瓶颈所在。</p>
-        <p style="margin-bottom:0.8rem;"><strong>2. 人均缺陷数与缺陷密度双看（高优）</strong>：本月揭示了一个重要模式——缺陷密度下降但人均缺陷数暴增。单看密度会误判质量改善，建议将人均缺陷数提升为与缺陷密度并列的核心质量指标，两者交叉验证才能得出准确结论。</p>
+        <p style="margin-bottom:0.8rem;"><strong>1. 人均缺陷数与缺陷密度双看（高优）</strong>：本月揭示了一个重要模式——缺陷密度下降但人均缺陷数上升，两个指标给出不同信号。建议将人均缺陷数提升为与缺陷密度并列的核心质量指标，两者交叉验证。同时标注数据口径（仅大版本执行需求）。</p>
+        <p style="margin-bottom:0.8rem;"><strong>2. 增加"在制品数量"(WIP)监控（高优）</strong>：3月等待13天与并行16个需求高度相关。建议增加"月度在制需求数"指标，结合等待周期趋势图分析产能瓶颈。当WIP超过阈值时自动预警。</p>
         <p><strong>3. 上月建议延续：启用需求返工率（中优）</strong>：验收通过率连续4月100%已失去区分度。建议替换为需求返工率（需求在开发→测试→产品验收链路中回退的比例），更真实反映质量。</p>
     </div>
 
     <div style="margin-top:2.5rem; font-size:0.8rem; color:#6d8bb0; text-align:right; border-top:1px solid #c9d9e9; padding-top:1rem;">
-        数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年3月 · 特殊因素：2月春节低基数效应 · 团队规模：约57人 · 本报告由PMO生成 · 分析模型：Claude Opus 4
+        数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年3月 · 特殊因素：2月春节低基数效应 · 统计口径：大版本执行需求 · 团队规模：约57人（参与人员） · 本报告由PMO生成 · 分析模型：Claude Opus 4
     </div>
 
 
@@ -329,6 +332,8 @@
 <style>
 .nav-dots { position:fixed; right:1.5rem; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:0.75rem; z-index:100; }
 .nav-dot { width:10px; height:10px; border-radius:50%; background:#c9d9e9; cursor:pointer; transition:all 0.3s ease; }
+.nav-tooltip { display:none; position:absolute; right:20px; background:#1e3a5f; color:white; padding:4px 10px; border-radius:6px; font-size:0.75rem; white-space:nowrap; pointer-events:none; }
+.nav-dot:hover .nav-tooltip { display:block; }
 .nav-dot:hover,.nav-dot.active { background:#2d7eb5; transform:scale(1.5); box-shadow:0 0 8px rgba(45,126,181,0.5); }
 @media (max-width:768px) { .nav-dots { display:none; } }
 @media print { .nav-dots { display:none; } }
@@ -385,12 +390,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var growthSpec = {
     type:'bar', padding:{left:20,right:20,top:30,bottom:10},
     data:[{id:'d',values:[
-      {month:'2025-10',growth:31.8,c:'pos'},
-      {month:'2025-11',growth:61.3,c:'pos'},
-      {month:'2025-12',growth:-15.6,c:'neg'},
-      {month:'2026-01',growth:13.5,c:'pos'},
-      {month:'2026-02',growth:-17.9,c:'neg'},
-      {month:'2026-03',growth:-35.1,c:'neg'}
+      {month:'2025-10',growth:35,c:'pos'},
+      {month:'2025-11',growth:59.3,c:'pos'},
+      {month:'2025-12',growth:-14,c:'neg'},
+      {month:'2026-01',growth:16.2,c:'pos'},
+      {month:'2026-02',growth:-4.7,c:'neg'},
+      {month:'2026-03',growth:-26.8,c:'neg'}
     ]}],
     xField:'month', yField:'growth',
     bar:{style:{cornerRadius:[4,4,4,4],fill:function(d){return d.c==='pos'?'#4caf92':'#e86b6b';}}},
