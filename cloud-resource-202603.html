@@ -249,7 +249,7 @@
 <!-- 右侧导航圆点 -->
 <nav class="nav-dots" id="navDots"></nav>
 <style>
-.nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.75rem;z-index:100}.nav-dot{width:10px;height:10px;border-radius:50%;background:#c9d9e9;cursor:pointer;transition:all .3s ease}.nav-dot:hover,.nav-dot.active{background:#2d7eb5;transform:scale(1.5);box-shadow:0 0 8px rgba(45,126,181,.5)}@media(max-width:768px){.nav-dots{display:none}}@media print{.nav-dots{display:none}}
+.nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.75rem;z-index:100}.nav-dot{width:10px;height:10px;border-radius:50%;background:#c9d9e9;cursor:pointer;transition:all .3s ease}.nav-dot:hover,.nav-dot.active{background:#2d7eb5;transform:scale(1.5);box-shadow:0 0 8px rgba(45,126,181,.5)}.nav-dot{position:relative}.nav-tooltip{display:none;position:absolute;right:20px;top:50%;transform:translateY(-50%);background:#1e3a5f;color:#fff;padding:3px 10px;border-radius:6px;font-size:12px;white-space:nowrap;pointer-events:none}.nav-dot:hover .nav-tooltip{display:block}@media(max-width:768px){.nav-dots{display:none}}@media print{.nav-dots{display:none}}
 </style>
 <script>
 (function(){
@@ -259,7 +259,13 @@
         section.id=section.id||'section-'+i;
         var dot=document.createElement('div');
         dot.className='nav-dot';
+        var label=section.textContent.trim().replace(/[\n\r]/g,'').substring(0,20);
+        dot.setAttribute('title',label);
         dot.onclick=function(){section.scrollIntoView({behavior:'smooth'});};
+        var tooltip=document.createElement('span');
+        tooltip.className='nav-tooltip';
+        tooltip.textContent=label;
+        dot.appendChild(tooltip);
         navDots.appendChild(dot);
     });
     window.addEventListener('scroll',function(){
