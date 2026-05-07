@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -116,7 +116,7 @@
 
     <!-- 3. 特殊说明条 -->
     <div class="springfest-note">
-        📊 <strong>团队扩容说明：</strong>4月团队从18人扩至约23人（+28%），交付量31→70个（+126%），远超人力增长幅度。4月工作日21天（与3月持平），交付量70个为近6个月历史峰值，人均3.04创历史新高。<strong>核心判断：</strong>交付量爆发幅度（+126%）远超扩容幅度（+28%），存在效率真实提升 + 积压需求集中释放的双重效应。
+        📊 <strong>团队扩容+项目合并说明：</strong>4月团队从18人扩至约23人（+28%），交付量31→70个（+126%）。4月工作日21天与3月持平。<br><br>ℹ️ <strong>重要背景：</strong>4月LinkFoxApp项目合并入LinkFox，新团队成员适应新流程。LinkFoxApp需求特点为周期短、缺陷少、粒度小，合并后会淡化整体交付周期、拉高交付数量、降低人均时长等指标。本月数据含合并效应，需持续观察2-3个月后才能建立新基线。
     </div>
 
     <!-- 4. 上月措施跟进 -->
@@ -146,38 +146,42 @@
         <div id="chart-cycle-growth" style="width:100%;height:300px;"></div>
         <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月周期环比增长+10.10%（9.29→10.23天），结束了3月的-33.39%大幅缩短趋势，出现小幅回升。绝对值10天仍处于近6个月较优水平（均值12.17天）。周期小幅回升的合理解释：交付量倍增（31→70）时，大批量并行需求的排队效应推升了平均周期，但幅度可控（+10%），说明协作流转效率仍在维持。</div>
     </div>
-    <!-- 7. 周期明细表 -->
-    <div class="chart-title">📋 需求交付周期明细 <span>含产品+等待列</span></div>
-    <div class="data-table" style="margin-bottom:2rem;">
-        <table>
-            <thead><tr><th>月份</th><th>交付数</th><th>平均周期</th><th>开发</th><th>测试</th><th>产品</th><th>等待</th></tr></thead>
-            <tbody>
-                <tr><td>2025-11</td><td>40</td><td>13</td><td>4</td><td>3</td><td>1</td><td>6</td></tr>
-                <tr><td>2025-12</td><td>43</td><td>14</td><td>5</td><td>4</td><td>1</td><td>5</td></tr>
-                <tr><td>2026-01</td><td>26</td><td>13</td><td>6</td><td>4</td><td>1</td><td>2</td></tr>
-                <tr><td>2026-02</td><td>19</td><td>14</td><td>6</td><td>3</td><td>0</td><td>5</td></tr>
-                <tr><td>2026-03</td><td>31</td><td>9</td><td>6</td><td>2</td><td>0</td><td>1</td></tr>
-                <tr style="background:#f0f7ff; font-weight:600;"><td>2026-04</td><td>70</td><td>10</td><td>6</td><td>3</td><td>1</td><td>0</td></tr>
-            </tbody>
-        </table>
-        <p class="small-note" style="margin-top:0.8rem;"><strong>分析：</strong>4月等待周期归零（1→0天），协作流转已无阻塞——近6个月首次零等待。开发周期稳定在6天（连续4个月），测试周期小幅回升2→3天（对应交付量翻倍后的测试压力）。产品周期从0回升至1天，与大批量需求产品验收排队相关。总周期9→10天仅+1天，在交付量翻倍背景下表现优秀。</p>
-    </div>
-
-    <!-- 8. 跨角色协作表（5列） -->
-    <div class="chart-title">🔄 跨角色协作响应 <span>5个环节 · 天</span></div>
-    <div class="data-table" style="margin-bottom:2rem;">
-        <table>
-            <thead><tr><th>月份</th><th>需求提出</th><th>待产品设计</th><th>产品→开发</th><th>showcase</th><th>测试→发布</th></tr></thead>
-            <tbody>
-                <tr><td>2025-11</td><td>2.63</td><td>4.63</td><td>1.62</td><td>1.73</td><td>0.98</td></tr>
-                <tr><td>2025-12</td><td>2.09</td><td>2.51</td><td>2.21</td><td>1.84</td><td>0.86</td></tr>
-                <tr><td>2026-01</td><td>1.85</td><td>2.62</td><td>2.19</td><td>1.35</td><td>1.46</td></tr>
-                <tr><td>2026-02</td><td>1.79</td><td>0.53</td><td>3.84</td><td>1.63</td><td>0.89</td></tr>
-                <tr><td>2026-03</td><td>1.00</td><td>1.39</td><td>2.29</td><td>1.39</td><td>0.94</td></tr>
-                <tr style="background:#f0f7ff; font-weight:600;"><td>2026-04</td><td>1.44</td><td>0.90</td><td style="color:#e68a2e; font-weight:700;">2.39</td><td style="color:#2b7a62; font-weight:700;">0.74</td><td>0.84</td></tr>
-            </tbody>
-        </table>
-        <p class="small-note" style="margin-top:0.8rem;"><strong>分析：</strong>4月协作效率整体优秀。showcase间隔0.74天创历史最优（均值1.59天），验收反馈极快。待产品设计0.90天处于历史次优。测试→发布0.84天稳定。<strong>唯一瓶颈：</strong>产品→开发间隔2.39天持续高位（6个月均值2.42天），是各环节中最大的交接阻力，但已从2月峰值3.84天明显改善。需求提出1.44天较3月1.00天小幅回升，与大批量需求排队相关。</p>
+    <!-- 7+8. 周期明细表 + 跨角色协作表（并排） -->
+    <div class="two-column">
+      <div>
+        <div class="chart-title">📋 需求交付周期明细 <span>含产品+等待列</span></div>
+        <div class="data-table">
+            <table>
+                <thead><tr><th>月份</th><th>交付数</th><th>平均周期</th><th>开发</th><th>测试</th><th>产品</th><th>等待</th></tr></thead>
+                <tbody>
+                    <tr><td>2025-11</td><td>40</td><td>13</td><td>4</td><td>3</td><td>1</td><td>6</td></tr>
+                    <tr><td>2025-12</td><td>43</td><td>14</td><td>5</td><td>4</td><td>1</td><td>5</td></tr>
+                    <tr><td>2026-01</td><td>26</td><td>13</td><td>6</td><td>4</td><td>1</td><td>2</td></tr>
+                    <tr><td>2026-02</td><td>19</td><td>14</td><td>6</td><td>3</td><td>0</td><td>5</td></tr>
+                    <tr><td>2026-03</td><td>31</td><td>9</td><td>6</td><td>2</td><td>0</td><td>1</td></tr>
+                    <tr style="background:#f0f7ff; font-weight:600;"><td>2026-04</td><td>70</td><td>10</td><td>6</td><td>3</td><td>1</td><td>0</td></tr>
+                </tbody>
+            </table>
+            <p class="small-note" style="margin-top:0.8rem;">等待周期归零，开发稳定6天，测试2→3天（交付量翻倍带来的测试压力）。总周期9→10天仅+1天，在交付量翻倍背景下表现优秀。ℹ️ 注意：4月LinkFoxApp合并入LinkFox，该项目需求周期短、粒度小，拉低了整体平均周期。</p>
+        </div>
+      </div>
+      <div>
+        <div class="chart-title">🔄 跨角色协作响应 <span>5个环节 · 天</span></div>
+        <div class="data-table">
+            <table>
+                <thead><tr><th>月份</th><th>需求提出</th><th>待产品设计</th><th>产品→开发</th><th>showcase</th><th>测试→发布</th></tr></thead>
+                <tbody>
+                    <tr><td>2025-11</td><td>2.63</td><td>4.63</td><td>1.62</td><td>1.73</td><td>0.98</td></tr>
+                    <tr><td>2025-12</td><td>2.09</td><td>2.51</td><td>2.21</td><td>1.84</td><td>0.86</td></tr>
+                    <tr><td>2026-01</td><td>1.85</td><td>2.62</td><td>2.19</td><td>1.35</td><td>1.46</td></tr>
+                    <tr><td>2026-02</td><td>1.79</td><td>0.53</td><td>3.84</td><td>1.63</td><td>0.89</td></tr>
+                    <tr><td>2026-03</td><td>1.00</td><td>1.39</td><td>2.29</td><td>1.39</td><td>0.94</td></tr>
+                    <tr style="background:#f0f7ff; font-weight:600;"><td>2026-04</td><td>1.44</td><td>0.90</td><td style="color:#e68a2e; font-weight:700;">2.39</td><td style="color:#2b7a62; font-weight:700;">0.74</td><td>0.84</td></tr>
+                </tbody>
+            </table>
+            <p class="small-note" style="margin-top:0.8rem;">showcase间隔0.74天创历史最优。<strong>瓶颈：</strong>产品→开发2.39天持续高位，但已从2月峰值3.84天明显改善。</p>
+        </div>
+      </div>
     </div>
 
     <!-- 9. 质量数据表 -->
@@ -194,7 +198,7 @@
                 <tr style="background:#fff0f0;"><td><strong>2026-04</strong></td><td style="color:#cd3b3b; font-weight:700;">78.57%</td><td>4</td></tr>
             </tbody>
         </table>
-        <p class="small-note" style="margin-top:0.8rem;"><strong>分析：</strong>一次验收通过率78.57%创近6个月历史新低，较3月87.10%下降近10个百分点。这是本月最突出的质量风险信号。在交付量翻倍背景下，验收通过率大幅下滑，高度疑似“速度换质量”——开发赶工导致需求理解偏差或完成度不足。缺陷密度4个/需求回归正常水平（基线5.67），代码级缺陷可控，但<strong>需求级验收偏差</strong>（通过率下降）更值得警惕。</p>
+        <p class="small-note" style="margin-top:0.8rem;"><strong>分析：</strong>一次验收通过率78.57%较3月87.10%下降近10个百分点。<strong>❗ 重要背景：</strong>该指标实际反映的是“节点回滚”，包含开关操作、环境回滚等非质量因素，<strong>不能作为代码质量的唯一依据</strong>。另外，4月LinkFoxApp合并后新团队成员对流程不熟悉，也可能导致节点操作不规范。缺陷密度4个/需求回归正常水平（基线5.67），代码质量实际可控。需持续观察2-3月确认是流程适应期还是系统性问题。</p>
     </div>
 
     <!-- 10. Meego双轴图 -->
@@ -254,7 +258,7 @@
     <div class="issue-box orange">
         <div class="issue-title">🟠 发现三：人均完成时长14.52天（+47%），负荷加重但产出增长更快</div>
         <p><span class="linkage-tag">人均完成时长</span><span class="linkage-tag">人均交付</span><span class="linkage-tag">交付周期</span></p>
-        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均时长9.89→14.52天（+47%），连续两月上升（5.32→9.89→14.52）。但同期人均交付1.72→3.04（+77%），产出增幅>负荷增幅，<strong>效率比实际提升</strong>：每投入1天产出从0.17个需求提升至0.21个需求（+24%）。</p>
+        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均时长9.89→14.52天（+47%），连续两月上升（5.32→9.89→14.52）。但同期人均交付1.72→3.04（+77%），产出增幅>负荷增幅，<strong>效率比实际提升</strong>：每投入1天产出从0.17→0.21个需求（+24%）。<br><strong>⚠️ 合并效应：</strong>4月LinkFoxApp合并入LinkFox，该项目需求周期短、颗粒度小，拉高了交付数量和人均交付，同时淡化了人均时长。当前数据含合并稀释效应，需持续观察2-3个月建立新基线。</p>
         <p style="margin-top:0.5rem;"><strong>⚠️ 关注点：</strong>时长连续3个月上升轨迹（5.32→9.89→14.52）本身是预警信号。当前靠高产出对冲，但如果交付量回落而时长维持高位，人效将急剧恶化。且时长上升+通过率下降的组合暗示：团队可能在用加班补偿返工成本。</p>
         <div class="hypothesis-box">💡 <strong>隐含假设：</strong>时长上升的主因是并行需求量增加导致上下文切换，而非单个需求复杂度提升（平均周期仅+1天佐证）。如果单需求复杂度未变，则问题在于并行度管理。</div>
         <ul class="measures">
@@ -270,14 +274,14 @@
     <div class="expert-section">
         <h3>🧠 专家视角</h3>
         <h4 style="margin:1rem 0 0.5rem;">📊 模式识别</h4>
-        <p>LinkFox 4月呈现典型的“爆发期”特征：交付量跳升+质量指标下滑+负荷增加。这在成熟型项目中通常出现在两种场景：(1)团队扩容后产能释放期；(2)季度末/里程碑前的冲刺期。当前情况属于前者——团队3月18人→4月23人（+28%），新人渡过ramp up（人均交付1.72→3.04证实），产能集中释放。</p>
-        <p style="margin-top:0.5rem;">历史对比：2025年11-12月也出现过类似放量（40→43），当时周期从13→14天、缺陷密度保持4，质量未受冲击。本次放量幅度更大（31→70），但通过率出现明显下滑（87%→79%），说明团队当前的质量保障能力存在“产能天花板”——约50-60个/月以内可维持质量，超过后质量开始受损。</p>
+        <p>LinkFox 4月呈现典型的“爆发期+合并期”双重叠加特征：交付量跳升+部分指标波动+负荷增加。核心背景：①团队3月18人→4月23人（+28%）扩容后产能释放；②LinkFoxApp项目合并入LinkFox，带来新成员+小粒度需求。合并效应会淡化交付周期、拉高交付数量，使4月数据不能直接与前期对比。需持续观察2-3个月建立新常态基线。</p>
+        <p style="margin-top:0.5rem;">历史对比：2025年11-12月也出现过类似放量（40→43），当时缺陷密度保持4。本次放量幅度更大（31→70），通过率出现下滑（87%→79%），但该指标反映节点回滚（含开关/环境操作），且合并新人对流程不熟悉，不能简单判定为"产能天花板"。需待新团队完成流程适应（预计1-2月）后，再评估真实的质量-产能关系。</p>
 
         <h4 style="margin:1.5rem 0 0.5rem;">🔮 场景推演</h4>
         <table class="scenario-table">
             <thead><tr><th>场景</th><th>预期影响</th><th>建议</th></tr></thead>
             <tbody>
-                <tr><td>5月维持70+交付</td><td>通过率可能继续下降至75%以下，返工量增大，实际有效交付反而减少</td><td>主动限速至50-60个，优先保质</td></tr>
+                <tr><td>5月维持70+交付</td><td>合并效应消化后如仍维持高产出，确认为新常态；通过率需观察是否自然回升</td><td>关注通过率趋势，暂不限速</td></tr>
                 <tr><td>5月回落至40-50个</td><td>通过率大概率回升至85%+，人均时长回落，健康运行</td><td>确认为正常节奏，设为基线</td></tr>
                 <tr><td>继续扩容至30人</td><td>短期人均下降、协作成本上升，需3-4月ramp up</td><td>分批扩容，每月+3人以内</td></tr>
                 <tr><td>引入WIP限制（≤2/人）</td><td>时长下降、通过率回升，但总交付量可能降至50-55个</td><td>用质量换长期效率，推荐实施</td></tr>
@@ -287,7 +291,7 @@
         <h4 style="margin:1.5rem 0 0.5rem;">💡 反思问题</h4>
         <ol style="padding-left:1.5rem; color:#335e83;">
             <li style="margin-bottom:0.5rem;">交付量70个中有多少是“正常迭代需求” vs“积压释放/简单bugfix”？如果后者占比>30%，则人均3.04的含金量需打折。</li>
-            <li style="margin-bottom:0.5rem;">验收通过率下降10%的根因是什么？是赶工跳过了验收前检查，还是新人对需求理解偏差？两种原因对应不同的解法。</li>
+            <li style="margin-bottom:0.5rem;">节点回滚率上升10%中，真实质量回滚占比多少？需区分开关/环境操作回滚 vs 代码质量回滚，两者对应完全不同的解法。新合并成员是否需要专项流程培训？</li>
             <li style="margin-bottom:0.5rem;">产品→开发间隔2.39天持续高位——在交付量翻倍的背景下，产品侧是否存在产能瓶颈？1个产品需要支撑23人的开发团队是否合理？</li>
         </ol>
     </div>
@@ -298,7 +302,7 @@
         <div style="flex:1;">
             <h3 style="margin-bottom:1.2rem;">📈 基于联动解读的优化方向</h3>
             <ul style="list-style-type:none;">
-                <li style="margin-bottom:1rem;">✅ <strong>质量守护</strong> — 目标：一次验收通过率恢复≥85%（当前78.57%，需+7%）</li>
+                <li style="margin-bottom:1rem;">✅ <strong>流程适应</strong> — 观察：节点回滚率是否随新人适应自然回升（目标5-6月≥83%）</li>
                 <li style="margin-bottom:1rem;">✅ <strong>负荷可控</strong> — 目标：人均完成时长≤12天（当前14.52天，需-17%）</li>
                 <li style="margin-bottom:1rem;">✅ <strong>产出维持</strong> — 目标：人均交付≥2.5个/月（4月3.04为峰值，预期小幅回落）</li>
                 <li style="margin-bottom:1rem;">✅ <strong>协作瓶颈</strong> — 目标：产品→开发间隔≤1.5天（当前2.39天，需-37%）</li>
