@@ -89,7 +89,7 @@
                 <span class="kpi-value">5</span>
                 <span class="trend down">▼ 37.5%</span>
             </div>
-            <div class="kpi-benchmark"><span>3月 8个</span> <span>基线 6.83</span></div>
+            <div class="kpi-benchmark"><span>3月 8个</span> <span>差异 -3</span></div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">人均交付个数</div>
@@ -97,7 +97,7 @@
                 <span class="kpi-value">0.71</span>
                 <span class="trend down">▼ 20.22%</span>
             </div>
-            <div class="kpi-benchmark"><span>3月 0.89</span> <span>基线 0.76</span></div>
+            <div class="kpi-benchmark"><span>3月 0.89个</span> <span>差异 -0.18</span></div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">人均完成时长 (天)</div>
@@ -105,7 +105,7 @@
                 <span class="kpi-value">12.00</span>
                 <span class="trend up">▲ 6.95%</span>
             </div>
-            <div class="kpi-benchmark"><span>3月 11.22天</span> <span>基线 11.5</span></div>
+            <div class="kpi-benchmark"><span>3月 11.22天</span> <span>差异 +0.78</span></div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">人均缺陷数</div>
@@ -113,7 +113,7 @@
                 <span class="kpi-value">8.06</span>
                 <span class="trend down">▼ 19.4%</span>
             </div>
-            <div class="kpi-benchmark"><span>3月 10.00</span> <span>差异 -1.94</span></div>
+            <div class="kpi-benchmark"><span>3月 10.00个</span> <span>差异 -1.94</span></div>
         </div>
     </div>
 
@@ -132,13 +132,13 @@
                 <tr><td>关注开发→测试间隔翻倍</td><td>待确认</td><td>开发→测试 2.00→2.60天（+30%）</td><td>⚠️ 继续恶化，但非最大瓶颈</td></tr>
             </tbody>
         </table>
-        <p class="small-note" style="margin-top:0.8rem;">⚠️ <strong>连续两月措施未获确认反馈</strong>。4项措施已连续两期未执行，本月3项相关指标均持续恶化。建议PMO升级跟进力度：将措施执行情况纳入周会议程，责任人明确到具体日期。</p>
+        <p class="small-note" style="margin-top:0.8rem;">⚠️ <strong>连续两月措施未获确认反馈</strong>。4项措施已连续两期未执行，本月3项相关指标均持续恶化。建议项目负责人升级跟进力度：将措施执行情况纳入周会议程，责任人明确到具体日期。</p>
     </div>
 
     <div class="chart-title" id="sec-delivery">📊 需求交付数量趋势 <span>规模-效率联动</span></div>
     <div class="bar-chart">
         <div id="chart-delivery-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;">4月交付5个为近6个月最低值，低于基线均值6.83。考虑团队9→7人影响：若维持3月人均效率（0.89），理论应产出6.2个，实际仅5个。交付下降是"人少"和"人效降"的双重叠加。</div>
+        <div class="small-note" style="margin-top:1rem;">4月交付5个为近6个月最低值。需注意各月工作日差异对绝对量的影响：2月仅约9个工作日（春节），日均交付0.67个/天；3月21天日均0.38个/天；4月21天日均0.24个/天。4月与3月工作日相同，排除工作日因素后交付确实下降37.5%。考虑团队9→7人：若维持3月人均效率（0.89），理论产出6.2个，实际仅5个。下降=人少+人效降双重叠加。</div>
     </div>
 
     <div class="chart-title" id="sec-growth">📉 需求交付周期增长率趋势 <span>整体周期变化</span></div>
@@ -199,12 +199,12 @@
     <div class="chart-title" id="sec-meego">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div>
     <div class="meego-chart">
         <div id="chart-meego-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;">4月Meego操作平均时长2.4天为近6个月最高值，较3月（1.7天）上升41%。操作次数174次较3月（219次）下降21%。人均操作24.9次/人（3月24.3次/人）基本持平——每人频率没降，但每次操作响应变慢。最可能原因：缩编后管理范围增大，状态更新不及时；或协作延迟传导至工具层面。</div>
+        <div class="small-note" style="margin-top:1rem;">4月Meego操作平均时长2.4天为近6个月最高值，较3月（1.7天）上升41%。操作次数174次较3月（219次）下降21%。团队人均有效操作次数4月9.16次/人（3月12.88次/人），下降28.88%——每人操作频次显著降低。最可能原因：缩编后人力余量为零，状态更新和需求流转不及时；或协作延迟传导至工具层面。</div>
     </div>
 
     <div style="display:flex; gap:1.5rem; flex-wrap:wrap; background:#fff; border:1px solid #cbddec; border-radius:20px; padding:1rem 2rem; margin:1.5rem 0; font-size:0.88rem;">
         <div><span class="linkage-tag">操作次数</span> 174次 | 日均8.3次</div>
-        <div><span class="linkage-tag">人均操作</span> 24.9次 | 3月 24.3次 | <strong style="color:#1e7b48;">+2.5%</strong></div>
+        <div><span class="linkage-tag">人均操作</span> 9.16次 | 3月 12.88次 | <strong style="color:#b33838;">-28.9%</strong></div>
         <div><span class="linkage-tag">操作时长</span> 2.4天 | 3月 1.7天 | <strong style="color:#b33838;">+41.2%</strong></div>
     </div>
 
@@ -250,7 +250,7 @@
             <h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
             <li>确认4月实际全职投入人数：区分全职/兼职/半投入 — PM 5月第3周</li>
             <li>识别时间消耗大户：统计4月每个需求的开发耗时分布，找出异常值 — 研发Leader 5月第3周</li>
-            <li>调整交付预期：7人团队月交付目标从8个下调至5-6个，配合周期目标≤14天 — PMO 5月第4周</li>
+            <li>调整交付预期：7人团队月交付目标从8个下调至5-6个，配合周期目标≤14天 — 项目负责人 5月第4周</li>
         </ul>
     </div>
 
@@ -298,7 +298,7 @@
             <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>区分缺陷来源（测试 vs 线上）；评估2天测试周期下的覆盖率 — 5月第3周</p>
             <p style="margin-bottom:0.8rem;"><strong>研发Leader：</strong>拆解12天开发周期构成；确认CR机制现状；确认减员角色 — 5月第3周</p>
             <p style="margin-bottom:0.8rem;"><strong>PM：</strong>排查5个需求启动延迟原因；建立"需求就绪"检查清单；确认实际全职投入人数 — 5月第3周</p>
-            <p style="margin-bottom:0.8rem;"><strong>PMO：</strong>将本月措施纳入周会跟踪；调整交付预期至5-6个/月 — 5月第4周</p>
+            <p style="margin-bottom:0.8rem;"><strong>项目负责人：</strong>将本月措施纳入周会跟踪；调整交付预期至5-6个/月 — 5月第4周</p>
             <p><strong>全体：</strong>Meego状态及时更新（目标操作时长≤2.0天） — 持续</p>
         </div>
     </div>
@@ -366,10 +366,10 @@ document.addEventListener('DOMContentLoaded', function() {
     ]}],
     xField: 'month', yField: 'value',
     bar: { style: { cornerRadius: [4,4,0,0], fill: function(d){ return d.highlight ? '#2d7eb5' : '#5090c5'; } } },
-    label: { visible: true, position: 'top', style: { fill: '#335e83', fontSize: 14, fontWeight: 700 }, formatMethod: function(v){ return v + '个'; } },
+    label: { visible: true, position: 'top', offset: 4, style: { fill: '#335e83', fontSize: 14, fontWeight: 700 }, formatMethod: function(v){ return v + '个'; } },
     axes: [
       { orient: 'bottom', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
-      { orient: 'left', visible: false }
+      { orient: 'left', visible: false, softMax: 13 }
     ],
     tooltip: { trigger: 'mark', mark: { title: { visible: true }, content: [{ key: '交付数量', value: function(d){ return d.value + ' 个'; } }] } },
     crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(45,126,181,0.08)' } } } }
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
     type: 'bar',
     padding: { left: 20, right: 20, top: 30, bottom: 10 },
     data: [{ id: 'growthData', values: [
-      { month: '2025-11', growth: 57.14, color: 'positive' },
+      { month: '2025-11', growth: 52.0, color: 'positive' },
       { month: '2025-12', growth: -40.40, color: 'negative' },
       { month: '2026-01', growth: 109.93, color: 'positive' },
       { month: '2026-02', growth: -59.51, color: 'negative' },
