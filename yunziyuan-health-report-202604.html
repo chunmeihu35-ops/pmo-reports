@@ -17,6 +17,7 @@
         .subhead { color:#5b687c; font-size:1rem; font-weight:400; border-bottom:1px solid #e6edf4; padding-bottom:1.5rem; margin-bottom:2rem; display:flex; justify-content:space-between; align-items:flex-end; }
         .date-badge { background:#d4e2f0; padding:0.3rem 1rem; border-radius:40px; font-size:0.85rem; color:#1e3a5f; font-weight:500; }
         .project-type-badge { background:#fff3e0; color:#e65100; padding:0.3rem 1rem; border-radius:40px; font-size:0.85rem; font-weight:500; margin-left:0.5rem; border:1px solid #ffe0b2; }
+        .section-bg { background:#f8fafb; border-radius:20px; padding:1.5rem; margin:1.5rem 0; }
         .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-bottom:2.5rem; }
         .kpi-card { background:#f9fcff; border:1px solid #e2eaf2; border-radius:24px; padding:1.5rem 1.2rem; transition:all 0.25s ease; box-shadow:0 2px 5px rgba(0,0,0,0.02); }
         .kpi-card:hover { border-color:#2d7eb5; transform:translateY(-4px); box-shadow:0 8px 20px rgba(45,126,181,0.2); background:#f0f7ff; }
@@ -130,7 +131,7 @@
                 <tr><td>质量双指标交叉验证</td><td>QA负责人</td><td>通过率93.75→96.30%↑, 缺陷密度0.13→0.00↓</td><td style="color:#2b7a62; font-weight:600;">✅ 双改善</td></tr>
             </tbody>
         </table>
-        <p class="small-note" style="margin-top:0.8rem;">🎯 <strong>4项措施全部正向反馈</strong>。等待周期和启动SLA是最显著的改善点——连续3月的"等待占比>50%"问题彻底解决。但4项均为"待确认"采纳状态，不排除是自然好转而非措施驱动，需与项目方确认是否有主动执行。</p>
+        <p class="small-note" style="margin-top:0.8rem;">⚠️ <strong>项目方反馈：4项措施均未主动执行。</strong>数据改善更可能由以下原因驱动：①4月无大需求，需求粒度小（自然缩短等待和启动间隔）；②缺陷为0是因为无大需求+小问题线下沟通修复未录入系统；③开发/测试比改善属需求特征变化而非流程干预。本月数据好转是"自然好转"而非"措施驱动"。</p>
     </div>
 
     <!-- 5. 需求交付数量趋势 -->
@@ -202,16 +203,16 @@
     <div class="chart-title">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div>
     <div class="meego-chart">
         <div id="chart-meego-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月平均操作时长2.3分钟，较3月2.6分钟继续改善（-12%），连续2个月维持极低水平。对比1月8.7分钟→4月2.3分钟，团队工具使用效率有质的提升（-74%）。操作次数115次较3月137次下降（-16%），与交付量下降16%一致——操作频率与交付量呈正比，操作习惯稳定。<strong>📊 项目基线：</strong>6月均值操作时长6.1分钟，4月2.3分钟远低于基线，已稳定在最优区间。</div>
+        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月平均操作时长2.3天，较3月2.6天继续改善（-12%），连续2个月维持低位。对比1月8.7天→4月2.3天，团队工具使用效率有质的提升（-74%）。操作次数115次较3月137次下降（-16%），与交付量下降16%一致——操作频率与交付量呈正比，操作习惯稳定。<strong>📊 项目基线：</strong>6月均值操作时长6.1天，4月2.3天远低于基线，已稳定在最优区间。</div>
     </div>
 
     <!-- 11. 工具效率快照 -->
     <div style="display:flex; gap:1.5rem; flex-wrap:wrap; background:#ffffff; border:1px solid #cbddec; border-radius:20px; padding:1rem 2rem; margin:1.5rem 0; font-size:0.88rem;">
         <div><span class="linkage-tag">操作次数</span> 115次 | 3月 137次</div>
-        <div><span class="linkage-tag">人均操作</span> 7.19 | 3月 9.13 | <strong style="color:#b33838;">▼ 21.3%</strong></div>
-        <div><span class="linkage-tag">操作时长</span> 2.3分钟 | 3月 2.6分钟 | <strong style="color:#1e7b48;">▼ 11.5%</strong></div>
+        <div><span class="linkage-tag">人均操作</span> 4.79 | 3月 5.96 | <strong style="color:#b33838;">▼ 19.63%</strong></div>
+        <div><span class="linkage-tag">操作时长</span> 2.3天 | 3月 2.6天 | <strong style="color:#1e7b48;">▼ 11.5%</strong></div>
     </div>
-    <p class="small-note">人均操作下降与交付量下降一致（都约-16~21%），说明团队不是"变懒了"而是需求输入减少。操作时长继续收敛至最优区间。</p>
+    <p class="small-note">人均操作4.79较3月5.96下降19.63%，与交付量下降（-16%）趋势一致。操作时长2.3天继续收敛（3月2.6天），维持在合理区间。</p>
 
     <hr>
     <!-- 12. 核心问题定位 -->
@@ -308,7 +309,7 @@
             <p style="margin-bottom:0.8rem;"><strong>项目负责人：</strong>确认等待周期归零的具体做法（排期方式/需求前置）；排查10个未交付需求状态 — 5月第2周</p>
             <p style="margin-bottom:0.8rem;"><strong>PM：</strong>对比4月/3月需求平均粒度差异；确认创建→启动SLA是主动执行还是自然好转 — 5月第3周</p>
             <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>确认4月测试执行记录完整性；对比3月缺陷来源 — 5月第2周</p>
-            <p><strong>全体成员：</strong>维持Meego操作效率（2.3分钟已是最优，保持即可）</p>
+            <p><strong>全体成员：</strong>维持Meego操作效率（2.3天已在合理区间，保持即可）</p>
         </div>
     </div>
 
@@ -436,16 +437,16 @@ document.addEventListener('DOMContentLoaded', function() {
         bar: { style: { cornerRadius: [6,6,0,0], fill: { gradient: 'linear', x0:0.5,y0:0, x1:0.5,y1:1, stops:[{offset:0,color:'#d79c4a'},{offset:1,color:'#b57c2d'}] } } },
         label: { visible: true, position: 'top', offset: 4, style: { fill: '#7a5a1e', fontSize: 13, fontWeight: 700 }, formatMethod: function(v){return v+'次';} }
       },
-      { type: 'line', id: 'durLine', name: '平均时长(分钟)', dataId: 'durData', xField: 'month', yField: 'duration',
+      { type: 'line', id: 'durLine', name: '平均时长(天)', dataId: 'durData', xField: 'month', yField: 'duration',
         line: { style: { stroke: '#506c8a', lineWidth: 2, lineDash: [6,3] } },
         point: { style: { fill: '#506c8a', stroke: '#fff', lineWidth: 2, size: 7 } },
-        label: { visible: true, position: 'top', offset: 8, style: { fill: '#506c8a', fontSize: 11 }, formatMethod: function(v){return v+'分钟';} }
+        label: { visible: true, position: 'top', offset: 8, style: { fill: '#506c8a', fontSize: 11 }, formatMethod: function(v){return v+'天';} }
       }
     ],
     axes: [
       { orient: 'bottom', type: 'band', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
       { orient: 'left', type: 'linear', seriesId: ['cntBar'], title: { visible: true, text: '操作次数', style: { fill: '#7a5a1e' } }, min: 0, softMax: 300 },
-      { orient: 'right', type: 'linear', seriesId: ['durLine'], title: { visible: true, text: '平均时长(分钟)', style: { fill: '#506c8a' } }, grid: { visible: false }, min: 0, softMax: 14 }
+      { orient: 'right', type: 'linear', seriesId: ['durLine'], title: { visible: true, text: '平均时长(天)', style: { fill: '#506c8a' } }, grid: { visible: false }, min: 0, softMax: 14 }
     ],
     tooltip: { trigger: 'axis' },
     crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(181,124,45,0.08)' } } } },
