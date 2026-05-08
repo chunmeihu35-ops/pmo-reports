@@ -194,7 +194,7 @@
                 <tr style="background:#fff0f0;"><td><strong>2026-04</strong></td><td style="color:#cd3b3b; font-weight:700;">78.57%</td><td>4</td></tr>
             </tbody>
         </table>
-        <p class="small-note" style="margin-top:0.8rem;"><strong>分析：</strong>一次验收通过率78.57%较3月87.10%下降近10个百分点。<strong>🔵 合并效应：</strong>4月LinkFoxApp、Skills、Agent三个项目合并入LinkFox，新团队成员对原有流程不熟悉，可能导致节点操作不规范（开关/环境回滚等）拉低通过率。该指标反映“节点回滚”而非纯代码质量，<strong>不能作为代码质量的唯一依据</strong>。缺陷密度4个/需求回归正常水平（基线5.67），代码质量实际可控。合并适应期通常需要1-2月，若通过率在5-6月自然回升至≥83%，则确认为流程适应问题；若持续低于80%则需介入。</p>
+        <p class="small-note" style="margin-top:0.8rem;"><strong>分析：</strong>一次验收通过率78.57%较3月87.10%下降近10个百分点。<strong>🔵 合并效应：</strong>4月LinkFoxApp、Skills、Agent三个项目合并入LinkFox，新团队成员对原有流程不熟悉，可能导致节点操作不规范（开关/环境回滚等）拉低通过率。该指标反映“节点回滚”而非纯代码质量，<strong>不能作为代码质量的唯一依据</strong>。缺陷密度4个/需求回归正常水平（基线5.67），但含合并项目稀释效应——合并项目需求缺陷少、粒度小，拉低了整体缺陷密度。代码质量实际可控，但原团队真实缺陷密度可能高于4。合并适应期通常需要1-2月，若通过率在5-6月自然回升至≥83%，则确认为流程适应问题；若持续低于80%则需介入。</p>
     </div>
 
     <!-- 10. Meego双轴图 -->
@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
       { id: 'durData', values: [
         { month: '2025-11', duration: 2.3 },
         { month: '2025-12', duration: 2.2 },
-        { month: '2026-01', duration: 2.1 },
+        { month: '2026-01', duration: 2.2 },
         { month: '2026-02', duration: 2.5 },
         { month: '2026-03', duration: 2.2 },
         { month: '2026-04', duration: 1.4 }
