@@ -94,7 +94,7 @@
                 <span class="kpi-value">3.04</span>
                 <span class="trend up">▲ 76.74%</span>
             </div>
-            <div class="kpi-benchmark"><span>3月 1.72</span> <span>差异 +1.32</span></div>
+            <div class="kpi-benchmark"><span>3月 1.72个</span> <span>差异 +1.32</span></div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">人均完成时长 (天)</div>
@@ -110,7 +110,7 @@
                 <span class="kpi-value">11.81</span>
                 <span class="trend down">▼ 19.71%</span>
             </div>
-            <div class="kpi-benchmark"><span>3月 14.71</span> <span>差异 -2.90</span></div>
+            <div class="kpi-benchmark"><span>3月 14.71个</span> <span>差异 -2.90</span></div>
         </div>
     </div>
 
@@ -137,20 +137,19 @@
     <div class="chart-title">📊 需求交付数量趋势 <span>规模-效率联动</span></div>
     <div class="bar-chart">
         <div id="chart-delivery-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月交付量70个创历史峰值，较前5个月均值（31.6个）增长121%。在4月工作日（21天）与3月持平的条件下，日均交付从1.48提升至3.33个。团队扩容+28%无法完全解释+126%的交付增长，判断存在：①新人渡过ramp up期后产出释放；②前期积压需求在流程优化后集中交付（等待周期1天→0天佐证）。</div>
+        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月交付量70个创历史峰值，较前5个月均值（31.6个）增长121%。<strong>🔵 合并效应：</strong>4月LinkFoxApp合并入LinkFox，该项目需求粒度小、周期短，直接拉高了交付数量。+126%的增长由三部分構成：①团队扩容28%；②合并项目带入的小粒度需求（拉高交付数）；③新人渡过ramp up期后产出释放+前期积压集中交付。因合并效应存在，70个的含金量不能与前期直接对比，需拆2-3月建立新基线。</div>
     </div>
 
     <!-- 6. 需求交付周期增长率趋势 -->
     <div class="chart-title">📉 需求交付周期增长率趋势 <span>整体周期变化</span></div>
     <div class="growth-chart">
         <div id="chart-cycle-growth" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月周期环比增长+10.10%（9.29→10.23天），结束了3月的-33.39%大幅缩短趋势，出现小幅回升。绝对值10天仍处于近6个月较优水平（均值12.17天）。周期小幅回升的合理解释：交付量倍增（31→70）时，大批量并行需求的排队效应推升了平均周期，但幅度可控（+10%），说明协作流转效率仍在维持。</div>
+        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月周期环比增长+10.10%（9.29→10.23天），结束了3月的-33.39%大幅缩短趋势。<strong>🔵 合并效应：</strong>绝对值10天看似优秀，但含LinkFoxApp合并稀释效应——合并项目需求周期短、粒度小，拉低了整体平均周期。若剔除合并需求，原团队真实周期可能高于10天。同时交付量倍增（31→70）带来的并行排队效应也在推升周期，两个因素相互对冲。当前数据不能作为新基线，需观察5-6月合并效应消化后的真实趋势。</div>
     </div>
     <!-- 7+8. 周期明细表 + 跨角色协作表（并排） -->
     <div class="two-column">
-      <div>
-        <div class="chart-title">📋 需求交付周期明细 <span>含产品+等待列</span></div>
         <div class="data-table">
+            <h3 style="margin-bottom:0.8rem;">📋 需求交付周期明细 (天)</h3>
             <table>
                 <thead><tr><th>月份</th><th>交付数</th><th>平均周期</th><th>开发</th><th>测试</th><th>产品</th><th>等待</th></tr></thead>
                 <tbody>
@@ -162,12 +161,10 @@
                     <tr style="background:#f0f7ff; font-weight:600;"><td>2026-04</td><td>70</td><td>10</td><td>6</td><td>3</td><td>1</td><td>0</td></tr>
                 </tbody>
             </table>
-            <p class="small-note" style="margin-top:0.8rem;">等待周期归零，开发稳定6天，测试2→3天（交付量翻倍带来的测试压力）。总周期9→10天仅+1天，在交付量翻倍背景下表现优秀。ℹ️ 注意：4月LinkFoxApp合并入LinkFox，该项目需求周期短、粒度小，拉低了整体平均周期。</p>
+            <p class="small-note" style="margin-top:0.8rem;">🔵 <strong>合并效应显著：</strong>4月LinkFoxApp合并入LinkFox，该项目需求周期短、粒度小，拉低了整体平均周期。等待周期归零、总周期仅9→10天仅+1天，表面优秀但含合并稀释效应。开发稳定6天（原团队复杂需求被合并项目简单需求拉低均值），测试2→3天（交付量翻倍带来测试压力，但合并需求粒度小测试快，对冲了部分压力）。需拆2-3月建立新基线后才能真实评估周期趋势。</p>
         </div>
-      </div>
-      <div>
-        <div class="chart-title">🔄 跨角色协作响应 <span>5个环节 · 天</span></div>
         <div class="data-table">
+            <h3 style="margin-bottom:0.8rem;">🔄 跨角色协作响应 (天)</h3>
             <table>
                 <thead><tr><th>月份</th><th>需求提出</th><th>待产品设计</th><th>产品→开发</th><th>showcase</th><th>测试→发布</th></tr></thead>
                 <tbody>
@@ -179,9 +176,8 @@
                     <tr style="background:#f0f7ff; font-weight:600;"><td>2026-04</td><td>1.44</td><td>0.90</td><td style="color:#e68a2e; font-weight:700;">2.39</td><td style="color:#2b7a62; font-weight:700;">0.74</td><td>0.84</td></tr>
                 </tbody>
             </table>
-            <p class="small-note" style="margin-top:0.8rem;">showcase间隔0.74天创历史最优。<strong>瓶颈：</strong>产品→开发2.39天持续高位，但已从2月峰值3.84天明显改善。</p>
+            <p class="small-note" style="margin-top:0.8rem;">🔵 <strong>合并效应：</strong>showcase间隔0.74天创历史最优，主要因LinkFoxApp合并需求粒度小、流程短，拉低了均值。<strong>瓶颈：</strong>产品→开发2.39天持续高位，已从2月峰值3.84天改善，但在团队扩容+合并后产品侧产能压力加大（原1产品支搔1 8人，现需支摁23人+新项目需求），2.39天可能是产品侧当前产能的天花板。</p>
         </div>
-      </div>
     </div>
 
     <!-- 9. 质量数据表 -->
@@ -198,14 +194,14 @@
                 <tr style="background:#fff0f0;"><td><strong>2026-04</strong></td><td style="color:#cd3b3b; font-weight:700;">78.57%</td><td>4</td></tr>
             </tbody>
         </table>
-        <p class="small-note" style="margin-top:0.8rem;"><strong>分析：</strong>一次验收通过率78.57%较3月87.10%下降近10个百分点。<strong>❗ 重要背景：</strong>该指标实际反映的是“节点回滚”，包含开关操作、环境回滚等非质量因素，<strong>不能作为代码质量的唯一依据</strong>。另外，4月LinkFoxApp合并后新团队成员对流程不熟悉，也可能导致节点操作不规范。缺陷密度4个/需求回归正常水平（基线5.67），代码质量实际可控。需持续观察2-3月确认是流程适应期还是系统性问题。</p>
+        <p class="small-note" style="margin-top:0.8rem;"><strong>分析：</strong>一次验收通过率78.57%较3月87.10%下降近10个百分点。<strong>🔵 合并效应：</strong>4月LinkFoxApp合并入LinkFox，新团队成员对原有流程不熟悉，可能导致节点操作不规范（开关/环境回滚等）拉低通过率。该指标反映“节点回滚”而非纯代码质量，<strong>不能作为代码质量的唯一依据</strong>。缺陷密度4个/需求回归正常水平（基线5.67），代码质量实际可控。合并适应期通常需要1-2月，若通过率在5-6月自然回升至≥83%，则确认为流程适应问题；若持续低于80%则需介入。</p>
     </div>
 
     <!-- 10. Meego双轴图 -->
     <div class="chart-title">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div>
     <div class="meego-chart">
         <div id="chart-meego-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月Meego操作平均时长1.4天，为近6个月最优（较3月2.2天改善-36%）。操作次数368次为历史峰值，日均17.5次。时长大幅缩短+次数创新高=团队操作熟练度和工具使用习惯显著提升。新人已快速适应工具使用。</div>
+        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月Meego操作平均时长1.4天，为近6个月最优（较3月2.2天改善-36%）。操作次数368次为历史峰值，日均17.5次。<strong>🔵 合并效应：</strong>LinkFoxApp合并后需求粒度小、流转快，拉低了操作平均时长；同时新团队成员带入的小需求增加了操作总次数。原团队操作熟练度确实在提升，但“1.4天历史最优”含合并稀释效应，不能直接与前期对比。</div>
     </div>
 
     <!-- 11. 工具效率快照 -->
@@ -214,7 +210,7 @@
         <div><span class="linkage-tag">人均有效操作</span> 11.15 | 3月 13.30 | <strong style="color:#cd3b3b;">-16.2%</strong></div>
         <div><span class="linkage-tag">操作时长</span> 1.4天 | 3月 2.2天 | <strong style="color:#1e7b48;">-36%</strong></div>
     </div>
-    <p class="small-note">人均有效操作下降（13.30→11.15）主要因团队扩容（18→23人）稀释了人均值，总操作次数实际增长（359→368）。操作时长1.4天是近6个月最优表现。</p>
+    <p class="small-note">人均有效操作下降（13.30→11.15）主要因团队扩容（18→23人）稀释了人均值，总操作次数实际增长（359→368）。🔵 合并效应：LinkFoxApp合并带入新成员稀释人均值，同时合并项目小粒度需求拉低了操作平均时长，两个效应叠加导致数据与前期可比性降低。</p>
 
     <hr>
     <!-- 12. 核心问题定位 -->
@@ -227,8 +223,8 @@
     <div class="issue-box green">
         <div class="issue-title">🟢 发现一：交付量爆发+人均创新高，团队进入高产期</div>
         <p><span class="linkage-tag">月度交付</span><span class="linkage-tag">人均交付</span><span class="linkage-tag">等待周期</span><span class="linkage-tag">团队扩容</span></p>
-        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>交付70个（+126%），人均3.04个（+77%），均创历史新高。等待周期归零，协作无阻塞。团队扩容28%但产出增长126%，说明扩容+流程优化+新人上手三重效应叠加。</p>
-        <p style="margin-top:0.5rem;"><strong>⚠️ 可持续性判断：</strong>需区分“效率真实提升”和“积压需求释放”的占比。如果5月交付量回落至40-50个区间，说明4月含有释放效应；如果维持60+，则确认为效率跃升。</p>
+        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>交付70个（+126%），人均3.04个（+77%），均创历史新高。等待周期归零，协作无阻塞。<strong>🔵 合并效应：</strong>4月LinkFoxApp合并入LinkFox，该项目需求粒度小、周期短，直接拉高交付数量和人均交付。+126%的增长由三部分構成：①团队扩容28%；②合并项目带入小粒度需求；③新人上手+积压释放。因合并效应存在，当前数据不能直接与前期对比。</p>
+        <p style="margin-top:0.5rem;"><strong>⚠️ 可持续性判断：</strong>需区分“合并拉高”“效率真实提升”“积压需求释放”三者占比。如果5月交付量回落至40-50个区间，说明4月含释放效应；如果维持60+，则确认为新常态。建议拆分原团队交付 vs 合并团队交付，分别评估。</p>
         <div class="hypothesis-box">💡 <strong>隐含假设：</strong>团队扩容28%后仍维持协作效率，前提是管理跨度可控（23人≤4个小组）。若后续继续扩容需关注沟通成本拐点。</div>
         <ul class="measures">
             <h4 style="margin-bottom:0.8rem;">✅ 巩固措施</h4>
@@ -242,15 +238,15 @@
     <div class="issue-box red">
         <div class="issue-title">🔴 发现二：一次验收通过率78.57%创历史新低，速度换质量风险</div>
         <p><span class="linkage-tag">一次验收通过率</span><span class="linkage-tag">交付量</span><span class="linkage-tag">需求理解</span></p>
-        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>通过率87.10%→78.57%（-10%），创近6个月最低。同期交付量翻倍（31→70），强烈暗示“速度换质量”——为追求高交付量，部分需求在验收时未达到预期。缺陷密度4（正常）说明代码质量可控，问题在于<strong>需求完成度/理解偏差</strong>。</p>
-        <p style="margin-top:0.5rem;"><strong>⚠️ 风险等级：</strong>高。如果持续低于80%，意味着每5个需求有1个以上需要返工，将严重侵蚀实际产能。通过率每下降5%，约增加3-5天的返工周期。</p>
-        <div class="hypothesis-box">💡 <strong>隐含假设：</strong>验收通过率下降主要因赶工导致需求理解偏差，而非验收标准提高。需确认验收标准是否在4月有变化。</div>
+        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>通过率87.10%→78.57%（-10%），创近6个月最低。<strong>🔵 合并效应：</strong>LinkFoxApp合并后新团队成员对原有流程/验收标准不熟悉，可能导致节点操作不规范（开关/环境回滚等）拉低通过率。该指标反映“节点回滚”而非纯代码质量。缺陷密度4（正常）说明代码质量可控，问题更可能在于<strong>新成员流程适应+需求理解偏差</strong>。</p>
+        <p style="margin-top:0.5rem;"><strong>⚠️ 风险等级：</strong>中。合并适应期通常1-2月，若5-6月自然回升至≥83%则确认为流程适应问题；若持续低于80%则需介入。通过率每下降5%，约增加3-5天的返工周期。</p>
+        <div class="hypothesis-box">💡 <strong>隐含假设：</strong>验收通过率下降主因是合并新成员对流程不熟悉（节点操作不规范），次因是交付量倍增后的赶工效应。需确认：未通过15个需求中，合并新成员占比多少？</div>
         <ul class="measures">
             <h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
-            <li>分析4月未通过验收的15个需求（70×78.57%≈55个通过，15个未通过），定位失败原因分布 — QA负责人 5月第3周</li>
-            <li>区分“需求理解偏差” vs“功能遗漏” vs“体验不达标”，找到主因 — 项目负责人 5月第3周</li>
-            <li>对交付量≥50/月时，恢复需求验收前的内部showcase机制（4月showcase间隔0.74天已很快，但可能跳过了质量把关） — 研发Leader 5月第4周</li>
-            <li>设定目标：5月通过率恢复至≥85% — 项目负责人</li>
+            <li>分析4月未通过验收的15个需求，<strong>重点区分原团队成员 vs 合并新成员的占比</strong>，定位失败原因分布 — QA负责人 5月第3周</li>
+            <li>区分“流程不熟悉（合并新人）” vs“需求理解偏差” vs“功能遗漏”，找到主因 — 项目负责人 5月第3周</li>
+            <li>对合并新成员开展流程培训（节点操作规范、验收标准、showcase流程），降低流程不熟悉导致的回滚 — 研发Leader 5月第3周</li>
+            <li>设定目标：5月通过率恢复至≥83%（考虑合并适应期，目标从85%调整为83%） — 项目负责人</li>
         </ul>
     </div>
 
@@ -292,7 +288,7 @@
         <ol style="padding-left:1.5rem; color:#335e83;">
             <li style="margin-bottom:0.5rem;">交付量70个中有多少是“正常迭代需求” vs“积压释放/简单bugfix”？如果后者占比>30%，则人均3.04的含金量需打折。</li>
             <li style="margin-bottom:0.5rem;">节点回滚率上升10%中，真实质量回滚占比多少？需区分开关/环境操作回滚 vs 代码质量回滚，两者对应完全不同的解法。新合并成员是否需要专项流程培训？</li>
-            <li style="margin-bottom:0.5rem;">产品→开发间隔2.39天持续高位——在交付量翻倍的背景下，产品侧是否存在产能瓶颈？1个产品需要支撑23人的开发团队是否合理？</li>
+            <li style="margin-bottom:0.5rem;">产品→开发间隔2.39天持续高位——合并后产品侧需同时支撑原团队+合并新成员+新项目需求，产品侧产能是否已触及天花板？</li>
         </ol>
     </div>
     <hr>
@@ -310,10 +306,10 @@
         </div>
         <div style="flex:1; border-left:2px solid #b7cde0; padding-left:2rem;">
             <h3 style="margin-bottom:1.2rem;">⏱️ 责任人 & 时间节点</h3>
-            <p style="margin-bottom:0.8rem;"><strong>项目负责人：</strong>分析15个未通过验收需求的失败原因分布；复盘70个交付的构成 — 5月第3周</p>
+            <p style="margin-bottom:0.8rem;"><strong>项目负责人：</strong>分析15个未通过验收需求的失败原因分布（重点区分原团队 vs 合并新成员占比）；复盘70个交付的构成（合并需求 vs 原团队需求 vs 积压释放） — 5月第3周</p>
             <p style="margin-bottom:0.8rem;"><strong>研发Leader：</strong>统计人均WIP并行数；评估WIP限制可行性；时长预警机制 — 5月第3周</p>
-            <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>验收未通过的根因分析（需求偏差/功能遗漏/体验不达标）；通过率回升方案 — 5月第3周</p>
-            <p><strong>全体成员：</strong>维持Meego操作及时性（当前1.4天/操作为历史最优，保持）</p>
+            <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>验收未通过的根因分析（流程不熟悉/需求偏差/功能遗漏）；对合并新成员开展流程培训 — 5月第3周</p>
+            <p><strong>全体成员：</strong>维持Meego操作及时性；合并新成员重点熟悉节点操作规范和验收标准</p>
         </div>
     </div>
 
@@ -321,9 +317,9 @@
     <div style="margin:2rem 0; background:#f8faff; border:1px solid #d0ddee; border-radius:24px; padding:1.5rem 2rem;">
         <h3 style="color:#1e3a5f; margin-bottom:1rem;">📊 指标建议优化</h3>
         <p style="margin-bottom:0.8rem;"><strong>1. 新增“WIP并行度”监控（高优）</strong>：人均时长连续3月上升（5.32→9.89→14.52），但交付周期仅+1天，高度怀疑是并行需求过多导致。建议在Meego中统计每人同时处于“进行中”状态的需求数。</p>
-        <p style="margin-bottom:0.8rem;"><strong>2. 新增“验收失败原因分类”（高优）</strong>：通过率创新低但无法定位原因。建议验收失败时标注原因标签（需求偏差/功能遗漏/体验不达标/变更），支撑精准改进。</p>
-        <p style="margin-bottom:0.8rem;"><strong>3. 区分“积压释放” vs“正常迭代”交付（中优）</strong>：4月交付量异常高（+126%），需区分是否含积压释放，否则人均基线失真。建议对跨月需求（创建月≠交付月≥3个月）单独标记。</p>
-        <p><strong>4. 上月建议延续：产品→开发间隔根因（中优）</strong>：2.39天持续高位，需拆解是产品产能不足、还是需求文档质量问题导致开发等待确认。</p>
+        <p style="margin-bottom:0.8rem;"><strong>2. 新增“验收失败原因分类”（高优）</strong>：通过率创新低（含合并新成员流程不熟悉因素）但无法定位原因。建议验收失败时标注原因标签（流程不熟悉/需求偏差/功能遗漏/变更），并区分原团队 vs 合并新成员，支撑精准改进。</p>
+        <p style="margin-bottom:0.8rem;"><strong>3. 区分“积压释放” vs“正常迭代”交付（中优）</strong>：4月交付量异常高（+126%），含合并项目小粒度需求+积压释放+扩容效应，三者需拆分否则人均基线失真。建议对合并项目需求单独标记，同时对跨月需求（创建月≠交付月≥3个月）区分积压释放。</p>
+        <p><strong>4. 上月建议延续：产品→开发间隔根因（中优）</strong>：2.39天持续高位，合并后产品侧需同时覆盖原项目+合并项目需求，需拆解是产品产能触及天花板、还是合并新需求文档质量问题导致开发等待确认。</p>
     </div>
 
     <!-- 16. 脚注 -->
