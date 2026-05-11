@@ -264,29 +264,30 @@
 
     <hr>
 
-    <div style="display:flex; gap:2rem; flex-wrap:wrap; background:#ffffff; border-radius:32px; padding:2rem; border:1px solid #c5d8ec;">
-        <div style="flex:1;">
-            <h3 style="margin-bottom:1.2rem;">📈 基于联动解读的优化方向</h3>
-            <ul style="list-style-type:none;">
-                <li style="margin-bottom:1rem;">🔴 <strong>核实人力变化与需求分配</strong> — 确认57→~41是统计口径波动（临时需求分流）还是实际人力调整</li>
-                <li style="margin-bottom:1rem;">🟠 <strong>产品侧响应优化(SLA≤3天)</strong> — 目标：待产品设计≤3天、产品→开发间隔≤1天</li>
-                <li style="margin-bottom:1rem;">🟢 <strong>缺陷来源分类（延续3月）</strong> — QA负责人 5月第3周</li>
-                <li style="margin-bottom:1rem;">🟣 <strong>维持基线产出(人均≥0.21)</strong> — PMO 持续跟踪</li>
-            </ul>
+    <div style="background:#ffffff; border-radius:32px; padding:2rem; border:1px solid #c5d8ec;">
+        <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+            <div style="flex:1;">
+                <h3 style="margin-bottom:1.2rem;">📈 基于联动解读的优化方向</h3>
+                <ul style="list-style-type:none;">
+                    <li style="margin-bottom:1rem;">🔴 <strong>核实人力变化与需求分配</strong> — 确认57→~41是统计口径波动（临时需求分流）还是实际人力调整</li>
+                    <li style="margin-bottom:1rem;">🟠 <strong>产品侧响应优化(SLA≤3天)</strong> — 目标：待产品设计≤3天、产品→开发间隔≤1天</li>
+                    <li style="margin-bottom:1rem;">🟢 <strong>缺陷来源分类（延续3月）</strong> — QA负责人 5月第3周</li>
+                    <li style="margin-bottom:1rem;">🟣 <strong>维持基线产出(人均≥0.21)</strong> — PMO 持续跟踪</li>
+                </ul>
+            </div>
+            <div style="flex:1; border-left:2px solid #b7cde0; padding-left:2rem;">
+                <h3 style="margin-bottom:1.2rem;">⏱️ 责任人 & 时间节点</h3>
+                <p style="margin-bottom:0.8rem;"><strong>项目负责人：</strong>核实团队规模变化（57→~41）的原因；排查产品侧人力变化 — 6月第1周</p>
+                <p style="margin-bottom:0.8rem;"><strong>PM：</strong>对比3/4月需求规模分布验证复杂度假设；建立产品设计SLA — 6月第1~2周</p>
+                <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>缺陷来源分类（测试 vs 线上）— 5月第3周（延续3月措施）</p>
+                <p><strong>研发Leader：</strong>CR覆盖率≥80%执行确认 — 5月第3周（延续3月措施）</p>
+            </div>
         </div>
-        <div style="flex:1; border-left:2px solid #b7cde0; padding-left:2rem;">
-            <h3 style="margin-bottom:1.2rem;">⏱️ 责任人 & 时间节点</h3>
-            <p style="margin-bottom:0.8rem;"><strong>项目负责人：</strong>核实团队规模变化（57→~41）的原因；排查产品侧人力变化 — 6月第1周</p>
-            <p style="margin-bottom:0.8rem;"><strong>PM：</strong>对比3/4月需求规模分布验证复杂度假设；建立产品设计SLA — 6月第1~2周</p>
-            <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>缺陷来源分类（测试 vs 线上）— 5月第3周（延续3月措施）</p>
-            <p><strong>研发Leader：</strong>CR覆盖率≥80%执行确认 — 5月第3周（延续3月措施）</p>
-        </div>
-        <div style="width:100%; margin-top:1.5rem; border-top:1px solid #d0ddee; padding-top:1.5rem;">
+        <div style="margin-top:1.5rem; border-top:1px solid #d0ddee; padding-top:1.5rem;">
             <h3 style="color:#1e3a5f; margin-bottom:1rem;">📊 指标建议优化</h3>
-        <p style="margin-bottom:0.8rem;"><strong>1. 需求复杂度分级（高优）：</strong>人均时长+107%无法定性归因，需引入S/M/L标签。建议按子任务数自动分级（1-2=S, 3-5=M, 6+=L），回溯标注3-4月数据以验证"复杂度假设"。</p>
-        <p style="margin-bottom:0.8rem;"><strong>2. 产品设计瓶颈持续监控（中优）：</strong>4月产品侧首次成为TOC。现有数据已可区分：设计启动等待=跨角色协作"待设计"列（1.75→4.00天），设计执行时长=交付周期"产品"列（4→7天）。建议对这两个指标设置预警阈值（待设计≥3天、产品周期≥5天触发关注），持续跟踪是否为结构性瓶颈。</p>
-        <p style="margin-bottom:0.8rem;"><strong>3. 缺陷来源分类图表（延续）：</strong>密度52→64回升无法判断好坏，来源分类是关键鉴别器。数据已可获取（3月线上缺陷21个、4月线上缺陷24个），建议下期报告新增"缺陷发现阶段分布"图表（测试/灰度/线上），正式纳入月度跟踪指标。</p>
-    
+            <p style="margin-bottom:0.8rem;"><strong>1. 需求复杂度分级（高优）：</strong>人均时长+107%无法定性归因，需引入S/M/L标签。建议按子任务数自动分级（1-2=S, 3-5=M, 6+=L），回溯标注3-4月数据以验证"复杂度假设"。</p>
+            <p style="margin-bottom:0.8rem;"><strong>2. 产品设计瓶颈持续监控（中优）：</strong>4月产品侧首次成为TOC。现有数据已可区分：设计启动等待=跨角色协作"待设计"列（1.75→4.00天），设计执行时长=交付周期"产品"列（4→7天）。建议对这两个指标设置预警阈值（待设计≥3天、产品周期≥5天触发关注），持续跟踪是否为结构性瓶颈。</p>
+            <p style="margin-bottom:0.8rem;"><strong>3. 缺陷来源分类图表（延续）：</strong>密度52→64回升无法判断好坏，来源分类是关键鉴别器。数据已可获取（3月线上缺陷21个、4月线上缺陷24个），建议下期报告新增"缺陷发现阶段分布"图表（测试/灰度/线上），正式纳入月度跟踪指标。</p>
         </div>
     </div>
 
