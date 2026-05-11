@@ -78,24 +78,28 @@
     <h1>紫鸟浏览器 · 产研健康诊断报告</h1>
     <div class="subhead">
         <span>分析周期：2026年4月 <span class="project-type-badge mature">成熟型项目</span></span>
-        <span class="date-badge">PMO 分析 · 2026.05.09</span>
+        <span class="date-badge">PMO 分析 · 2026.05.11</span>
     </div>
 
     <div class="kpi-grid">
         <div class="kpi-card"><div class="kpi-label">月度需求交付个数</div><div class="kpi-main"><span class="kpi-value">11</span><span class="trend down">▼ 31.25%</span></div><div class="kpi-benchmark"><span>3月 16个</span><span>差异 -5</span></div></div>
-        <div class="kpi-card"><div class="kpi-label">人均交付个数</div><div class="kpi-main"><span class="kpi-value">0.27</span><span class="trend down">▼ 3.57%</span></div><div class="kpi-benchmark"><span>3月 0.28</span><span>差异 -0.01</span></div></div>
-        <div class="kpi-card"><div class="kpi-label">人均完成时长 (天)</div><div class="kpi-main"><span class="kpi-value">13.27</span><span class="trend down">▼ 106.70%</span></div><div class="kpi-benchmark"><span>3月 6.42天</span><span>差异 +6.85</span></div></div>
-        <div class="kpi-card"><div class="kpi-label">人均缺陷数</div><div class="kpi-main"><span class="kpi-value">13.04</span><span class="trend up">▲ 21.82%</span></div><div class="kpi-benchmark"><span>3月 16.68</span><span>差异 -3.64</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">人均交付个数</div><div class="kpi-main"><span class="kpi-value">0.27</span><span class="trend down">▼ 3.57%</span></div><div class="kpi-benchmark"><span>3月 0.28个</span><span>差异 -0.01</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">人均完成时长 (天)</div><div class="kpi-main"><span class="kpi-value">13.27</span><span class="trend up">▲ 106.70%</span></div><div class="kpi-benchmark"><span>3月 6.42天</span><span>差异 +6.85</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">人均缺陷数</div><div class="kpi-main"><span class="kpi-value">13.04</span><span class="trend down">▼ 21.82%</span></div><div class="kpi-benchmark"><span>3月 16.68个</span><span>差异 -3.64</span></div></div>
     </div>
 
     <div class="springfest-note">
         📊 <strong>团队规模&amp;日均投入分析：</strong>MCP系统计算人均交付0.27（隐含分母~41人=11÷0.27），但上月报告团队规模57人。如按57人算人均仅0.19（-32%）；如按41人算人均-3.6%基本持平。<strong>日均投入：</strong>4月13.27÷21=0.63天/工作日，3月6.42÷21=0.31天/工作日，翻倍增长——无论团队规模如何变化，每人每天在需求上的投入确实翻了一倍，指向需求复杂度显著增加或并行度下降。
     </div>
+    <div class="springfest-note" style="border-left-color:#1e88e5; background:#e3f2fd;">
+        📋 <strong>数据范围说明：</strong>本报告采集需求类型为"执行需求"及"执行需求-创新"，不含"执行需求-临时"（临时需求粒度较小会干扰整体分析）。人力非100%投入执行需求，实际人效可能高于报告呈现值。
+    </div>
+
 
     <div class="chart-title">📋 上月措施跟进 <span>3月报告提出的4项措施</span></div>
     <div class="followup-table"><table><thead><tr><th>上月措施</th><th>责任人/时间</th><th>本月数据变化</th><th>效果评估</th></tr></thead><tbody>
-        <tr><td>缺陷来源分类（测试 vs 线上）</td><td>QA负责人 / 5月第3周</td><td>人均缺陷-21.8%，密度52→64</td><td>⏳ 尚未到期</td></tr>
-        <tr><td>CR覆盖率≥80%</td><td>研发Leader / 5月第3周</td><td>待确认执行情况</td><td>⏳ 尚未到期</td></tr>
+        <tr><td>缺陷来源分类（测试 vs 线上）</td><td>QA负责人 / 5月第3周</td><td>人均缺陷-21.8%，密度52→64（+23%）</td><td>🔄 进行中 — 密度回升但绝对缺陷量-15%，分母效应为主因；来源分类待QA产出</td></tr>
+        <tr><td>CR覆盖率≥80%</td><td>研发Leader / 5月第3周</td><td>待确认执行情况</td><td>🔄 进行中 — 验收通过率连续5月100%间接佐证有效性，待直接数据确认</td></tr>
         <tr><td>评估并行消化能力上限</td><td>PM / 5月第3周</td><td>等待周期13→11天（↓15%）</td><td>🔄 等待改善，进行中</td></tr>
         <tr><td>建立人效历史基线</td><td>PM / 5月第3周</td><td>已完成 baseline-ziniao.json</td><td>✅ 已完成</td></tr>
     </tbody></table></div>
@@ -103,13 +107,13 @@
     <div class="chart-title">📊 需求交付数量趋势 <span>规模-效率联动</span></div>
     <div class="bar-chart">
         <div id="chart-delivery-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月交付11个，较3月16个下降31%，但仍高于项目7月均值10.57个（+4%）。交叉验证：人均交付0.27仍高于基线0.21（+29%），说明产能未真正萎缩，3月16个更可能是扩编后清存量的峰值效应。<strong>📊 项目基线：</strong>月均交付10.57个（范围6-16），4月11个处于基线中上水平。</div>
+        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月交付11个，较3月16个下降31%，但仍高于项目6月均值10.50个（+4%）。交叉验证：人均交付0.27仍高于基线0.25（+29%），说明产能未真正萎缩，3月16个更可能是扩编后清存量的峰值效应。<strong>📊 项目基线：</strong>月均交付10.50个（范围6-16），4月11个处于基线中上水平。</div>
     </div>
 
     <div class="chart-title">📉 需求交付周期增长率趋势 <span>整体周期变化</span></div>
     <div class="growth-chart">
         <div id="chart-cycle-growth" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月平均周期39天，较3月30天回升30%（增长率+63.6%），但3月30天为近7月最低值（扩编蜜月期），4月39天接近项目基线37.14天（仅+5%）。交叉验证：开发14天=基线13.86天，测试8天≈基线8.86天，各阶段均回归基线——4月是"回归常态"而非恶化。<strong>📊 项目基线：</strong>平均交付周期37.14天（范围27-43），4月39天处于基线中位。</div>
+        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月平均周期39天，较3月30天回升30%（增长率+63.6%），但3月30天为近6月最低值（扩编蜜月期），4月39天接近项目基线38.83天（仅+5%）。交叉验证：开发14天=基线14.17天，测试8天≈基线9.17天，各阶段均回归基线——4月是"回归常态"而非恶化。<strong>📊 项目基线：</strong>平均交付周期38.83天（范围27-43），4月39天处于基线中位。</div>
     </div>
 
     <div class="two-column">
@@ -123,7 +127,7 @@
                 <tr><td>2026-03</td><td>16</td><td>30</td><td>8</td><td>4</td><td>4</td><td>13</td></tr>
                 <tr><td style="font-weight:700">2026-04★</td><td style="font-weight:700">11</td><td style="font-weight:700">39</td><td style="font-weight:700">14</td><td style="font-weight:700">8</td><td style="font-weight:700">7</td><td style="font-weight:700">11</td></tr>
             </tbody></table>
-            <p class="small-note"><strong>分析：</strong>开发14天=基线13.86天，测试8天≈基线8.86天，产品7天为近6月最高（均值约4.5天），等待11天≈基线9.43天。3月超低值是扩编蜜月效应，4月全面回归基线。产品周期7天为新增瓶颈。</p>
+            <p class="small-note"><strong>分析：</strong>开发14天=基线14.17天，测试8天≈基线9.17天，产品7天为近6月最高（均值约4.5天），等待11天≈基线9.43天。3月超低值是扩编蜜月效应，4月全面回归基线。产品周期7天为新增瓶颈。</p>
         </div>
         <div class="data-table">
             <h3 style="margin-bottom:0.8rem;">🔄 跨角色协作响应 (天)</h3>
@@ -149,18 +153,18 @@
             <tr><td>2026-03</td><td>100%</td><td>52</td></tr>
             <tr><td style="font-weight:700">2026-04★</td><td>100%</td><td style="font-weight:700">64</td></tr>
         </tbody></table>
-        <p class="small-note"><strong>分析：</strong>4月缺陷密度64较3月52回升23%，但仍低于基线72.43（低12%）。交叉验证：人均缺陷13.04较3月16.68下降22%，总缺陷≈704个vs3月832个（-15%）。密度回升是分母（交付数）缩小的稀释效应，非质量恶化。<strong>📊 项目基线：</strong>缺陷密度均值72.43（范围47-107）。</p>
+        <p class="small-note"><strong>分析：</strong>4月缺陷密度64较3月52回升23%，但仍低于基线60.50（低12%）。交叉验证：人均缺陷13.04较3月16.68下降22%，总缺陷≈704个vs3月832个（-15%）。密度回升是分母（交付数）缩小的稀释效应，非质量恶化。<strong>📊 项目基线：</strong>缺陷密度均值72.43（范围47-107）。</p>
     </div>
 
     <div class="chart-title">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div>
     <div class="meego-chart">
         <div id="chart-meego-trend" style="width:100%;height:300px;"></div>
-        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月操作时长2.6天与3月持平，连续2月稳定。操作次数1012较3月1246下降19%，与交付量-31%趋势一致。<strong>📊 项目基线：</strong>6月均值2.7天，4月2.6天低于基线。人均14.25次较3月15.58次-8.5%，工具使用熟练度稳定。</div>
+        <div class="small-note" style="margin-top:1rem;"><strong>分析：</strong>4月操作时长2.6天与3月持平，总操作1028次（3月1246次，↓17.5%），人均有效操作13.89次（↓10.85%），连续2月稳定。操作次数1028较3月1246下降17.5%，与交付量-31%趋势一致。<strong>📊 项目基线：</strong>6月均值2.7天，4月2.6天低于基线。人均13.89次较3月15.58次-8.5%，工具使用熟练度稳定。</div>
     </div>
 
     <div style="display:flex;gap:1.5rem;flex-wrap:wrap;background:#fff;border:1px solid #cbddec;border-radius:20px;padding:1rem 2rem;margin:1.5rem 0;font-size:0.88rem;">
-        <div><span class="linkage-tag">操作次数</span> 1012次 | 日均48.2</div>
-        <div><span class="linkage-tag">人均操作</span> 14.25 | 3月 15.58 | <strong style="color:#b33838;">-8.54%</strong></div>
+        <div><span class="linkage-tag">操作次数</span> 1028次 | 日均49.0</div>
+        <div><span class="linkage-tag">人均操作</span> 13.89 | 3月 15.58 | <strong style="color:#b33838;">-10.85%</strong></div>
         <div><span class="linkage-tag">操作时长</span> 2.6天 | 3月 2.6天 | 持平</div>
     </div>
 
@@ -174,7 +178,7 @@
         <div class="issue-title">🔴 发现一：人均完成时长翻倍(0.31→0.63天/工作日)——需求复杂度突变还是团队缩编后正常应激</div>
         <p><span class="linkage-tag">人均完成时长</span><span class="linkage-tag">交付数量</span><span class="linkage-tag">开发周期</span><span class="linkage-tag">总工时</span></p>
         <p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均完成时长6.42→13.27天（+106.70%），日均投入0.31→0.63天/工作日翻倍。交付量16→11（-31%），总投入工时476→431天（仅-9%）。单需求周期30→39天（+30%）。</p>
-        <p style="margin-top:0.5rem;"><strong>交叉验证：</strong>①总投入仅降9%但交付量降31%→单需求复杂度确实增加；②开发14天=基线13.86天，测试8天≈基线8.86天，各环节效率未变，4月是"回归基线"而非效率恶化；③以项目基线10.57个（而非3月峰值16个）为基准，4月交付11个实为基线+4%，产能未下滑；④缺陷密度52→64（+23%）但仍低于基线72.43（低12%），复杂度上升伴随轻微质量波动属正常。</p>
+        <p style="margin-top:0.5rem;"><strong>交叉验证：</strong>①总投入仅降9%但交付量降31%→单需求复杂度确实增加；②开发14天=基线14.17天，测试8天≈基线9.17天，各环节效率未变，4月是"回归基线"而非效率恶化；③以项目基线10.50个（6月滚动均值）为基准，4月交付11个实为基线+5%，产能未下滑；④缺陷密度52→64（+23%）但仍低于基线60.50（低12%），复杂度上升伴随轻微质量波动属正常。</p>
         <div class="hypothesis-box">
             <strong>🔬 隐含假设：</strong>3月超高交付（16个/开发8天）是扩编+清存量小需求的一次性蜜月效应，4月回归是正常均值回归而非产能恶化。<br>
             <strong>验证方法：</strong>对比3月和4月需求的子任务数分布——如3月大量1-2个子任务的小需求，而4月以5+子任务的大需求为主，则假设成立。<br>
@@ -192,7 +196,7 @@
         <div class="issue-title">🟠 发现二：产品侧响应结构性瓶颈——待设计+129%，产品→开发从0→2.45天</div>
         <p><span class="linkage-tag">待产品设计</span><span class="linkage-tag">产品→开发间隔</span><span class="linkage-tag">产品周期</span><span class="linkage-tag">需求规划</span></p>
         <p style="margin-top:0.8rem;"><strong>数据表现：</strong>待产品设计从1.75→4.00天（+129%，历史最高），产品→开发间隔从0→2.45天（新增瓶颈），产品总周期从4→7天（+75%，近6月最高）。同期需求规划6.25→3.45天（-45%改善），待澄清4.81→1.64天（-66%改善）。</p>
-        <p style="margin-top:0.5rem;"><strong>交叉验证（瓶颈转移）：</strong>3月瓶颈="需求规划6.25天+待澄清4.81天"已大幅改善，产品设计暴露为新约束(TOC)。基线对比：待产品设计6月均值1.53天，4月4天为历史最高（+161%）。产品周期7天为近7月最高值（通常3-5天）。</p>
+        <p style="margin-top:0.5rem;"><strong>交叉验证（瓶颈转移）：</strong>3月瓶颈="需求规划6.25天+待澄清4.81天"已大幅改善，产品设计暴露为新约束(TOC)。基线对比：待产品设计6月均值1.53天，4月4天为历史最高（+161%）。产品周期7天为近6月最高值（通常3-5天）。</p>
         <div class="hypothesis-box">
             <strong>🔬 隐含假设：</strong>产品设计变慢与需求复杂度增加有因果关系——复杂需求需要更长设计周期，产品侧并非效率下降而是在应对更复杂的输入。<br>
             <strong>验证方法：</strong>确认产品侧人力是否变化（如从3人→2人）；对比4月需求PRD文档页数/复杂度。<br>
@@ -210,7 +214,7 @@
         <div class="issue-title">🟢 发现三：缺陷密度回升23%但仍低于基线——分母稀释效应</div>
         <p><span class="linkage-tag">缺陷密度</span><span class="linkage-tag">人均缺陷数</span><span class="linkage-tag">交付数量</span><span class="linkage-tag">验收通过率</span></p>
         <p style="margin-top:0.8rem;"><strong>数据表现：</strong>缺陷密度52→64（+23%），人均缺陷16.68→13.04（-22%），验收通过率维持100%（连续5个月）。总缺陷量≈832→704个（-15%），绝对缺陷量实际在减少。</p>
-        <p style="margin-top:0.5rem;"><strong>交叉验证：</strong>①密度↑23%与人均缺陷↓22%并存→分母（交付数16→11）缩小导致密度虚高，绝对缺陷量实际-15%；②基线对比：64仍低于基线72.43（低12%），处于健康区间；③验收通过率100%连续5月=产品质量稳定。</p>
+        <p style="margin-top:0.5rem;"><strong>交叉验证：</strong>①密度↑23%与人均缺陷↓22%并存→分母（交付数16→11）缩小导致密度虚高，绝对缺陷量实际-15%；②基线对比：64仍低于基线60.50（低12%），处于健康区间；③验收通过率100%连续5月=产品质量稳定。</p>
         <div class="hypothesis-box">
             <strong>🔬 隐含假设：</strong>密度回升是分母效应（交付量减少导致密度被动抬升），质量未恶化。<br>
             <strong>验证方法：</strong>缺陷来源分类——如80%+为测试阶段发现（而非线上暴露），则质量防线有效，密度回升无风险。<br>
@@ -219,7 +223,7 @@
         <ul class="measures">
             <h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
             <li>缺陷来源分类（延续3月措施）：区分测试发现vs线上暴露，判断密度回升的性质 — QA负责人 5月第3周</li>
-            <li>持续跟踪密度趋势：目标维持≤基线72.43，连续2月超基线则预警 — PMO 持续</li>
+            <li>持续跟踪密度趋势：目标维持≤基线60.50，连续2月超基线则预警 — PMO 持续</li>
             <li>CR覆盖率≥80%（延续3月措施）：确认执行情况 — 研发Leader 5月第3周</li>
         </ul>
     </div>
@@ -233,7 +237,7 @@
         <table class="scenario-table">
             <thead><tr><th>指标现象</th><th>Gaming可能性</th><th>判断</th></tr></thead>
             <tbody>
-                <tr><td>交付量降31%（16→11）</td><td>选择性延迟交付以平滑下月数据</td><td>❌ 低风险：人均0.27仍高于基线0.21，无刻意压低动机</td></tr>
+                <tr><td>交付量降31%（16→11）</td><td>选择性延迟交付以平滑下月数据</td><td>❌ 低风险：人均0.27仍高于基线0.25，无刻意压低动机</td></tr>
                 <tr><td>人均时长+107%（6.42→13.27天）</td><td>人为膨胀工时获取更宽松排期</td><td>❌ 低风险：回归基线水平，3月低值才是异常</td></tr>
                 <tr><td>验收通过率100%连续5月</td><td>验收标准过松或自动通过</td><td>⚠️ 中风险：需确认验收是否有实质性门禁</td></tr>
             </tbody>
@@ -252,7 +256,7 @@
 
         <h4 style="margin:1.5rem 0 0.5rem;">💡 反思问题</h4>
         <ol style="padding-left:1.5rem; color:#335e83;">
-            <li style="margin-bottom:0.5rem;">3月高交付（16个）是否给出了不可持续的高预期？如果3月是扩编蜜月期的一次性效应，那么以3月为基准来评价4月会导致系统性高估"下滑幅度"。正确基准应该是项目基线10.57个。</li>
+            <li style="margin-bottom:0.5rem;">3月高交付（16个）是否给出了不可持续的高预期？如果3月是扩编蜜月期的一次性效应，那么以3月为基准来评价4月会导致系统性高估"下滑幅度"。正确基准应该是项目基线10.50个。</li>
             <li style="margin-bottom:0.5rem;">团队人力变动信息为何出现断裂？3月报告记录57人，4月MCP隐含仅41人，这16人的差异对所有人效分析有决定性影响。PMO是否有获取HR真实在编数据的通道？</li>
             <li>产品设计时间从1.75→4.00天——这是需求复杂度上升的合理匹配（复杂需求确实需要更长设计），还是产品人力/优先级调整导致的被动延迟？答案决定了"产品侧SLA"是对症下药还是加压过度。</li>
         </ol>
@@ -262,22 +266,22 @@
 
     <div style="display:flex; gap:2rem; flex-wrap:wrap; background:#ffffff; border-radius:32px; padding:2rem; border:1px solid #c5d8ec;">
         <div style="flex:1;">
-            <h3 style="margin-bottom:1.2rem;">📈 行动计划</h3>
+            <h3 style="margin-bottom:1.2rem;">📈 基于联动解读的优化方向</h3>
             <ul style="list-style-type:none;">
-                <li style="margin-bottom:1rem;">🔴 <strong>确认团队规模真相（最高优先级）</strong> — 项目负责人 6月第1周</li>
-                <li style="margin-bottom:1rem;">🟠 <strong>产品侧响应优化(SLA≤3天)</strong> — 项目负责人 6月第2周</li>
-                <li style="margin-bottom:1rem;">🟢 <strong>缺陷来源分类(延续3月)</strong> — QA负责人 5月第3周</li>
-                <li style="margin-bottom:1rem;">📊 <strong>维持基线产出(人均≥0.21)</strong> — PMO 持续跟踪</li>
+                <li style="margin-bottom:1rem;">🔴 <strong>确认团队规模真相（最高优先级）</strong> — 核实57 vs ~41的差异，决定后续所有人效指标的解读方向</li>
+                <li style="margin-bottom:1rem;">🟠 <strong>产品侧响应优化(SLA≤3天)</strong> — 目标：待产品设计≤3天、产品→开发间隔≤1天</li>
+                <li style="margin-bottom:1rem;">🟢 <strong>缺陷来源分类（延续3月）</strong> — QA负责人 5月第3周</li>
+                <li style="margin-bottom:1rem;">🟣 <strong>维持基线产出(人均≥0.21)</strong> — PMO 持续跟踪</li>
             </ul>
         </div>
         <div style="flex:1; border-left:2px solid #b7cde0; padding-left:2rem;">
-            <h3 style="margin-bottom:1.2rem;">⏱️ 优先级 &amp; 依赖关系</h3>
-            <p style="margin-bottom:0.8rem;"><strong>P0 前置：</strong>团队规模确认→决定后续所有人效指标的解读方向</p>
-            <p style="margin-bottom:0.8rem;"><strong>P1 并行：</strong>产品SLA设定 + 缺陷来源分类（两者独立，可同步推进）</p>
-            <p style="margin-bottom:0.8rem;"><strong>P2 持续：</strong>人均产出监控 + 基线维护（日常PMO工作流）</p>
-            <p><strong>阻塞风险：</strong>如团队规模无法在6月第1周确认，所有人效分析结论需标注"待修正"</p>
+            <h3 style="margin-bottom:1.2rem;">⏱️ 责任人 & 时间节点</h3>
+            <p style="margin-bottom:0.8rem;"><strong>项目负责人：</strong>核实团队规模变化（57→~41）的原因；排查产品侧人力变化 — 6月第1周</p>
+            <p style="margin-bottom:0.8rem;"><strong>PM：</strong>对比3/4月需求规模分布验证复杂度假设；建立产品设计SLA — 6月第1~2周</p>
+            <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>缺陷来源分类（测试 vs 线上）— 5月第3周（延续3月措施）</p>
+            <p><strong>研发Leader：</strong>CR覆盖率≥80%执行确认 — 5月第3周（延续3月措施）</p>
         </div>
-    </div>
+    </div></div>
 
     <div style="margin:2rem 0; background:#f8faff; border:1px solid #d0ddee; border-radius:24px; padding:1.5rem 2rem;">
         <h3 style="color:#1e3a5f; margin-bottom:1rem;">📊 指标建议优化</h3>
@@ -397,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { month: '2026-01', count: 813 },
         { month: '2026-02', count: 824 },
         { month: '2026-03', count: 1246 },
-        { month: '2026-04', count: 1012 }
+        { month: '2026-04', count: 1028 }
       ]}
     ],
     series: [
