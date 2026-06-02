@@ -326,6 +326,14 @@
         </div>
     </div>
 
+    <!-- 指标建议优化 -->
+    <div style="margin:2rem 0; background:#f8faff; border:1px solid #d0ddee; border-radius:24px; padding:1.5rem 2rem;">
+        <h3 style="color:#1e3a5f; margin-bottom:1rem;">📊 指标建议优化</h3>
+        <p style="margin-bottom:0.8rem;"><strong>1. 新增“缺陷来源分类”字段（紧急，连续3月建议）</strong>：缺陷密度连续3月恶化（22→44→62），但仍无法区分“测试发现”和“线上暴露”。如不加“发现阶段”字段，无法判断缺陷恶化是测试覆盖率提升（好事）还是真正质量下滑（坏事）。此项已连续3月建议未执行，本月强烈建议优先落地。</p>
+        <p style="margin-bottom:0.8rem;"><strong>2. 新增“开发自测通过率”指标（紧急）</strong>：5月开发周期从12天压缩到65天，同期缺陷密度暴增41%，高度疑似“赶工”而非“提效”。需增加“开发自测通过率”指标（提测前自测用例通过比例），区分“真加速”和“牢笼加速”，为开发质量提供前置度量。</p>
+        <p><strong>3. 调整基线参考窗口（中优）</strong>：团队已从4月的7人回升到8人，建议从6月起以8人团队为基准重新积累基线数据，避免与9人时期或缩编期的异常值直接对比产生误导。同时建议将“缺陷密度≤40”作为6月硬性目标线，提供明确的改善方向。</p>
+    </div>
+
     <!-- 报告脚注 -->
     <div style="margin-top:2.5rem; font-size:0.8rem; color:#6d8bb0; text-align:right; border-top:1px solid #c9d9e9; padding-top:1rem;">
         数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年5月 · 团队规模：约8人 · 本报告由PMO生成 · 分析模型：Claude Opus 4.6
