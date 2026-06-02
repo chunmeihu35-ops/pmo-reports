@@ -213,7 +213,7 @@
                 <tr><td>2026-05</td><td>100%</td><td style="color:#cd3b3b; font-weight:700;">62</td></tr>
             </tbody>
         </table>
-        <p class="small-note">缺陷密度连续3月恶化（22→44→62），5月62为历史新高。趋势：15→50→30→29→18→22→44→62。一次验收通过率维持100%（参考价值有限）。缺陷密度暴增与开发周期缩短高度相关——开发快了但质量下降了。</p>
+        <p class="small-note">缺陷密度连续3月恶化（22→44→62），5月62为历史新高。趋势：15→50→30→29→18→22→44→62。一次验收通过率维持100%（参考价值有限）。缺陷密度暴增与Bug-Pilot引入高度相关——AI修复的bug reopen导致缺陷统计上升，而非传统意义的开发质量下降。</p>
     </div>
 
     <!-- Meego核心操作平均时长趋势 -->
@@ -225,7 +225,7 @@
 
     <!-- 工具效率快照 -->
     <div style="display:flex; gap:1.5rem; flex-wrap:wrap; background:#ffffff; border:1px solid #cbddec; border-radius:20px; padding:1rem 2rem; margin:1.5rem 0; font-size:0.88rem;">
-        <div><span class="linkage-tag">操作次数</span> 316次 | 日坧15.0</div>
+        <div><span class="linkage-tag">操作次数</span> 316次 | 日均15.0</div>
         <div><span class="linkage-tag">人均操作</span> 16.63 | 4月 9.45 | <strong style="color:#1e7b48;">+76.0%</strong></div>
         <div><span class="linkage-tag">操作时长</span> 2.1天 | 4月 2.8天 | <strong style="color:#1e7b48;">-25.0%</strong></div>
     </div>
@@ -330,7 +330,7 @@
     <div style="margin:2rem 0; background:#f8faff; border:1px solid #d0ddee; border-radius:24px; padding:1.5rem 2rem;">
         <h3 style="color:#1e3a5f; margin-bottom:1rem;">📊 指标建议优化</h3>
         <p style="margin-bottom:0.8rem;"><strong>1. 新增“缺陷来源分类”字段（紧急，连续3月建议）</strong>：缺陷密度连续3月恶化（22→44→62），但仍无法区分“测试发现”和“线上暴露”。如不加“发现阶段”字段，无法判断缺陷恶化是测试覆盖率提升（好事）还是真正质量下滑（坏事）。此项已连续3月建议未执行，本月强烈建议优先落地。</p>
-        <p style="margin-bottom:0.8rem;"><strong>2. 新增“开发自测通过率”指标（紧急）</strong>：5月开发周期从12天压缩到6天，同期缺陷密度暴增41%，高度疑似“赶工”而非“提效”。需增加“开发自测通过率”指标（提测前自测用例通过比例），区分“真加速”和“牢笼加速”，为开发质量提供前置度量。</p>
+        <p style="margin-bottom:0.8rem;"><strong>2. 新增“AI修复一次通过率”指标（紧急）</strong>：5月引入Bug-Pilot后，AI修复的bug reopen率较高但目前无法量化。需增加“AI修复一次通过率”指标（AI修复→QA验证通过的比例），衡量Bug-Pilot实际产出质量，为优化修复规约和ASK补充流程提供数据支撑。</p>
         <p><strong>3. 调整基线参考窗口（中优）</strong>：团队已从4月的7人回升到8人，建议从6月起以8人团队为基准重新积累基线数据，避免与9人时期或缩编期的异常值直接对比产生误导。同时建议将“缺陷密度≤40”作为6月硬性目标线，提供明确的改善方向。</p>
     </div>
 
