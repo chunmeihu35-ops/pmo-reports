@@ -130,7 +130,7 @@
 
     <!-- 背景说明 -->
     <div class="springfest-note">
-        🤖 <strong>5月关键变化：</strong>BrowserAct 5月引入 <a href="https://yxgb3sicy7.feishu.cn/wiki/W11NwM37JiLdcvkcD7bcpv3Tn3b" target="_blank">Bug-Pilot（AI自动修复缺陷）</a>，开发提效显著但测试验证压力上升、重新打开的bug增多。团队从4月7人回升至约8人。5月工作日约17天（5.1假期5天），日均交付 4÷17≈0.24个/天（4月 5÷21≈0.24个/天，<strong>日均持平</strong>）。
+        🤖 <strong>5月关键变化：</strong>BrowserAct 5月引入 <a href="https://yxgb3sicy7.feishu.cn/wiki/W11NwM37JiLdcvkcD7bcpv3Tn3b" target="_blank">Bug-Pilot（AI自动修复缺陷）</a>，开发提效显著；同期缺陷数增多和测试周期膨胀的原因待确认（可能与AI辅助开发的代码质量有关）。需求参与人数从4月约7人升至约8人（MCP口径：交付数÷人均，非实际编制）。5月工作日约17天（5.1假期5天），日均交付 4÷17≈0.24个/天（4月 5÷21≈0.24个/天，<strong>日均持平</strong>）。
     </div>
 
     <!-- 上月措施跟进 -->
@@ -143,7 +143,7 @@
                 <tr><td>拆解12天开发周期构成</td><td>未确认</td><td>开发周期12→6天(-50%)</td><td>✅ 大幅改善（原因待确认）</td></tr>
                 <tr><td>确认CR机制现状</td><td>未确认</td><td>缺陷密度仍在恶化</td><td>❌ 质量未改善</td></tr>
                 <tr><td>排查5个需求启动延迟原因</td><td>未确认</td><td>待开始→开发 3.20→1.50天(-53%)</td><td>✅ 显著改善</td></tr>
-                <tr><td>确认减员2人角色</td><td>未确认</td><td>团队从7人回升到8人</td><td>✅ 已补人</td></tr>
+                <tr><td>确认减员2人角色</td><td>未确认</td><td>参与人数7→8（MCP口径）</td><td>△ 参与人数回升，实际编制待确认</td></tr>
                 <tr><td>建立需求就绪检查清单</td><td>未确认</td><td>启动延迟已改善</td><td>△ 间接改善</td></tr>
                 <tr><td>调整交付预期至5-6个/月</td><td>未确认</td><td>5月交付4个</td><td>❌ 低于预期</td></tr>
             </tbody>
@@ -180,7 +180,7 @@
                     <tr><td>2026-05</td><td>4</td><td>13</td><td>6</td><td>8</td><td>-1</td></tr>
                 </tbody>
             </table>
-            <p class="small-note">关键变化：开发周期从4月12天→5月6天(-50%)，测试周期从4月2天→5月8天(+300%)。5月引入Bug-Pilot（AI自动修复缺陷），开发阶段提效显著，但AI修复的bug需人工验证且reopen率较高，测试压力相应增大。开发+测试=14天&gt;平均周期13天，存在±1天统计口径误差。</p>
+            <p class="small-note">关键变化：开发周期从4月12天→5月6天(-50%)，测试周期从4月2天→5月8天(+300%)。5月引入Bug-Pilot（AI自动修复缺陷），开发阶段提效显著。测试周期膨胀可能原因：① reopen延长验证周期 ② AI辅助开发可能引入新缺陷（两者均待验证）。开发+测试=14天&gt;平均周期13天，存在±1天统计口径误差。</p>
         </div>
         <div class="data-table">
             <h3 style="margin-bottom:0.8rem;">🔄 跨角色协作响应 (天)</h3>
@@ -213,7 +213,7 @@
                 <tr><td>2026-05</td><td>100%</td><td style="color:#cd3b3b; font-weight:700;">62</td></tr>
             </tbody>
         </table>
-        <p class="small-note">缺陷密度连续3月恶化（22→44→62），5月62为历史新高。趋势：15→50→30→29→18→22→44→62。一次验收通过率维持100%（参考价值有限）。缺陷密度暴增与Bug-Pilot引入高度相关——AI修复的bug reopen导致缺陷统计上升，而非传统意义的开发质量下降。</p>
+        <p class="small-note">缺陷密度连续3月恶化（22→44→62），5月62为历史新高。趋势：15→50→30→29→18→22→44→62。一次验收通过率维持100%（参考价值有限）。缺陷密度暴增与Bug-Pilot引入时间重合。可能原因：AI辅助开发引入新缺陷（增加bug数）+ reopen延长测试周期。具体归因需数据验证。</p>
     </div>
 
     <!-- Meego核心操作平均时长趋势 -->
@@ -242,8 +242,8 @@
     <div class="issue-box one">
         <div class="issue-title">🚩 问题一：缺陷密度连续3月恶化(22→44→62)，AI修复引入新挑战</div>
         <p><span class="linkage-tag">缺陷密度</span><span class="linkage-tag">开发周期</span><span class="linkage-tag">测试周期</span></p>
-        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>开发周期12→6天（-50%），同期缺陷密度44→62（+41%），测试周期2→8天（+300%）。5月引入Bug-Pilot（AI自动修复bug），开发提效显著，但AI修复的bug需人工验证且reopen率较高，导致测试周期膨胀。5月创建缺陷316个（4月194个，+63%），人均缺陷19.35个。</p>
-        <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>缺陷增多与Bug-Pilot引入直接相关——AI修复的bug验证不通过会重新打开，导致缺陷数量统计上升。需区分：AI修复reopen导致的缺陷占多少比例，vs新生缺陷占多少。</p>
+        <p style="margin-top:0.8rem;"><strong>数据表现：</strong>开发周期12→6天（-50%），同期缺陷密度44→62（+41%），测试周期2→8天（+300%）。5月引入Bug-Pilot（AI自动修复bug），开发提效显著。缺陷增多的可能原因：AI辅助开发过程中引入新bug（待验证）；测试周期膨胀可能与reopen延长验证有关。两者需分别确认。5月创建缺陷316个（4月194个，+63%），人均缺陷19.35个。</p>
+        <p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>缺陷增多与Bug-Pilot引入时间重合，但因果关系需验证。注意：reopen不会增加bug总数（只延长周期），bug数增多更可能是AI辅助开发引入新缺陷所致（待数据确认）。需分别量化：① reopen对测试周期的影响 ② AI辅助开发对新增缺陷数的影响。</p>
         <ul class="measures">
             <h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
             <li>分析316个缺陷来源分布和严重度 — QA负责人 6月第2周</li>
@@ -283,14 +283,14 @@
     <div class="expert-section">
         <h3>🧠 专家视角</h3>
         <h4 style="margin:1rem 0 0.5rem;">📊 模式识别</h4>
-        <p>BrowserAct出现典型"瓶颈转移"模式：4月的瓶颈在开发（12天），团队引入Bug-Pilot（AI自动修复缺陷）压缩了开发周期（→6天），这是AI工具带来的真实提效。但AI修复的bug需QA人工验证，验证不通过则reopen，导致缺陷统计上升（+41%）和测试周期膨胀（2→8天）。这不是"质量下降"，而是AI辅助开发引入期的典型阵痛。与1-2月的自然波动不同（当时缺陷密度从29降到18），这次缺陷增长有明确的技术原因（Bug-Pilot reopen）。关键问题不是"要不要继续用AI修bug"，而是"如何提升AI修复的一次通过率"。</p>
+        <p>BrowserAct出现典型"瓶颈转移"模式：4月的瓶颈在开发（12天），团队引入Bug-Pilot（AI自动修复缺陷）压缩了开发周期（→6天），这是AI工具带来的真实提效。但同期缺陷密度上升（+41%）和测试周期膨胀（2→8天），可能原因：① AI辅助开发引入新缺陷（影响bug数） ② reopen延长验证周期（影响测试时长）。两个假设需分别量化验证。与1-2月的自然波动不同（当时缺陷密度从29降到18），这次缺陷增长与Bug-Pilot引入时间重合，但具体归因需数据验证。关键问题是：缺陷增量中有多少是AI辅助开发引入的新bug，以及reopen对测试周期的实际延长幅度。</p>
 
         <h4 style="margin:1.5rem 0 0.5rem;">🔮 场景推演</h4>
         <table class="scenario-table">
             <thead><tr><th>方案</th><th>预期影响</th></tr></thead>
             <tbody>
                 <tr><td>维持现状</td><td>缺陷密度可能6月突破80，测试周期进一步膨胀到10+天，形成"越修越多"的恶性循环</td></tr>
-                <tr><td>提升AI修复质量</td><td>优化Bug-Pilot修复规约和自验证流程，提升AI修复一次通过率，预期reopen率降50%，测试周期回落到4-5天</td></tr>
+                <tr><td>提升AI修复质量</td><td>优化Bug-Pilot修复规约和自验证流程，降低reopen率；同时关注AI辅助开发的代码质量，预期测试周期回落到4-5天</td></tr>
                 <tr><td>加大测试投入</td><td>治标不治本，短期缓解测试压力，但缺陷生产速度不变则长期不可持续</td></tr>
                 <tr><td>需求节奏调整（推荐）</td><td>控制月度需求数≤5个、要求开发交付前自测通过率≥80%，从源头控质量</td></tr>
             </tbody>
@@ -298,7 +298,7 @@
 
         <h4 style="margin:1.5rem 0 0.5rem;">💡 反思问题</h4>
         <ol style="padding-left:1.5rem; color:#335e83;">
-            <li style="margin-bottom:0.5rem;">Bug-Pilot引入后AI修复的一次通过率是多少？reopen的bug中，AI修复质量不足占比vs需求描述不清占比各多少？</li>
+            <li style="margin-bottom:0.5rem;">缺陷数从44增至62，增量18个中有多少是AI辅助开发引入的新bug？Bug-Pilot reopen了多少次、平均延长测试多少天？两个因素各贡献多少？</li>
             <li style="margin-bottom:0.5rem;">缺陷密度连续3月恶化(22→44→62)，如果不干预6月会到什么水平？团队可接受的上限是多少？</li>
             <li>测试周期从2天膨胀到8天，是缺陷多导致反复测试，还是测试资源不足？</li>
         </ol>
@@ -336,7 +336,7 @@
 
     <!-- 报告脚注 -->
     <div style="margin-top:2.5rem; font-size:0.8rem; color:#6d8bb0; text-align:right; border-top:1px solid #c9d9e9; padding-top:1rem;">
-        数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年5月 · 团队规模：约8人 · 工作日：约17天（含5.1假期） · 特殊因素：引入Bug-Pilot · 本报告由PMO生成 · 分析模型：Claude Opus 4.6
+        数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年5月 · 参与人数：约8人（MCP口径） · 工作日：约17天（含5.1假期） · 特殊因素：引入Bug-Pilot · 本报告由PMO生成 · 分析模型：Claude Opus 4.6
     </div>
 </div>
 
