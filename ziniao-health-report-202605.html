@@ -137,7 +137,7 @@
       <tr><td>对比3/4月需求复杂度，量化差异</td><td>🔄 待确认</td><td>5月开发7天(-50%)、测试4天(-50%)</td><td>研发效率改善明显，复杂度或降低</td></tr>
       <tr><td>缺陷来源分类（测试vs线上）</td><td>🔄 进行中</td><td>缺陷密度64→67(+4.7%)，仍低于基线79</td><td>质量整体可控，待分类确认</td></tr>
       <tr><td>CR覆盖率≥80%确认</td><td>🔄 进行中</td><td>无MCP可量化数据</td><td>待研发Leader反馈</td></tr>
-      <tr><td>核实团队人力调整</td><td>✅ 已体现</td><td>MCP口径41→52人(+27%)</td><td>人均交付稀释(0.27→0.23)，参与人数增多但缺陷总量增幅更大</td></tr>
+      <tr><td>核实团队人力调整</td><td>✅ 已体现</td><td>MCP口径41→52人(+27%)</td><td>人均交付稀释(0.27→0.23)，缺陷参与人56→58，但缺陷总量+34%，人均缺陷上升</td></tr>
     </tbody>
   </table>
   <p class="small-note" style="margin-top:0.8rem;">⚠️ 产品侧响应恶化是本月最突出变化。等待周期+118%直接推高交付总周期，抵消了研发侧效率改善。建议本月重点关注产品侧产能瓶颈。</p>
@@ -155,7 +155,7 @@
   <div class="small-note" style="margin-top:1rem;">5月平均交付周40天，环比-7%，结束4月+63.6%反弹。本月改善由开发(-50%)和测试(-50%)驱动，但被等待(+118%)部分抵消。</div>
 </div>
 <div class="two-column">
-<div class="data-table"><h3 style="margin-bottom:0.8rem;">📋 交付周期明细 (天)</h3>
+<div class="data-table"><h3 style="margin-bottom:0.8rem;">📋 需求需求交付周期明细 (天)</h3>
 <table><thead><tr><th>月份</th><th>交付数</th><th>平均周期</th><th>开发</th><th>测试</th><th>产品</th><th>等待</th></tr></thead>
 <tbody><tr><td>2025-12</td><td>10</td><td>37</td><td>9</td><td>9</td><td>10</td><td>8</td></tr>
 <tr><td>2026-01</td><td>12</td><td>43</td><td>17</td><td>11</td><td>5</td><td>10</td></tr>
@@ -210,10 +210,10 @@
 <li>评估产品侧是否需增加人力或减少并行项目 — 项目负责人 6月第3周</li>
 </ul></div>
 <div class="issue-box two">
-<div class="issue-title">🚩 问题二：人均缺陷+30%——缺陷总量增长快于参与人变化</div>
+<div class="issue-title">🚩 问题二：人均缺陷+30%——缺陷产出压力增大</div>
 <p><span class="linkage-tag">人均缺陷</span><span class="linkage-tag">缺陷密度</span><span class="linkage-tag">人均交付</span></p>
-<p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均缺陷13.04→16.97个(+30.34%)。但每需求缺陷密度仅64→67(+4.7%)，远低于基线79。缺陷总量增加是主因（缺陷密度64→67，+4.7%）。人均缺陷=完成缺陷数÷参与A陷人员，上升说明缺陷产出速度快于人员扩充速度。质量本身微增但仍低于基线79，整体可控</p>
-<p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>MCP"参与人数"统计口径波动（41→52），可能含新加入成员或临时参与人员。参与人数增多但缺陷总量增幅更大释放导致人均指标被稀释。</p>
+<p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均缺陇13.02→16.97个(+30.34%)。缺陷参与人员56→58(+3.6%)，但完成缺陷总量增幅约34%（729→984），说明缺陷产出速度远快于人员扩充。每需求缺陷密度64→67(+4.7%)，仍低于基线79，质量整体可控但需关注缺陷总量上升趋势。<strong>注意：</strong>人均缺陷的分母是缺陷参与人员(56→58)，与人均交付的分母需求参与人员(41→52)是不同口径。</p>
+<p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>MCP"参与人数"统计口径波动（41→52），可能含新加入成员或临时参与人员。缺陷参与人56→58，但缺陷总量+34%，人均缺陷上升释放导致人均指标被稀释。</p>
 <ul class="measures"><h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
 <li>确认团队实际人力变动：是新人入职还是统计口径变化 — 项目负责人 6月第2周</li>
 <li>持续跟踪缺陷来源分类（测试发现 vs 线上），评估质量趋势 — QA负责人 6月第2周</li>
