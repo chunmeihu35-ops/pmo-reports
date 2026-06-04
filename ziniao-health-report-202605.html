@@ -125,7 +125,7 @@
   </div>
 </div>
 <div class="springfest-note">
-  📊 <strong>数据口径说明：</strong>统计范围为大版本执行需求（不含临时需求）。团队规模约52人（MCP统计口径：月度交付数÷人均交付数，非真实编制）。5月工作日20天。本月核心变化：等待周期从11→24天(+118%)，产品前端响应成为显著系统瓶颈；开发/测试效率同步大幅改善。
+  📊 <strong>数据口径说明：</strong>统计范围为大版本执行需求��不含临时需求）。团队规模约52人（MCP统计口径：月度交付数÷人均交付数，非真实编制）。5月工作日20天。本月核心变化：等待周期从11→24天(+118%)，产品前端响应成为显著系统瓶颈；开发/测试效率同步大幅改善。
 </div>
 
 <div class="chart-title">📋 上月措施跟进 <span>4月报告提出的行动项</span></div>
@@ -155,7 +155,7 @@
   <div class="small-note" style="margin-top:1rem;">5月平均交付周期33.42天，环比-7.4%，结束4月+63.6%反弹。本月改善由开发(-50%)和测试(-50%)驱动，但被等待(+118%)部分抵消。</div>
 </div>
 <div class="two-column">
-<div class="data-table"><h3 style="margin-bottom:0.8rem;">📋 需求交付周期明细 (天)</h3>
+<div class="data-table"><h3 style="margin-bottom:0.8rem;">📋 需���交付周期明细 (天)</h3>
 <table><thead><tr><th>月份</th><th>交付数</th><th>平均周期</th><th>开发</th><th>测试</th><th>产品</th><th>等待</th></tr></thead>
 <tbody><tr><td>2025-12</td><td>10</td><td>37</td><td>9</td><td>9</td><td>10</td><td>8</td></tr>
 <tr><td>2026-01</td><td>12</td><td>43</td><td>17</td><td>11</td><td>5</td><td>10</td></tr>
@@ -186,7 +186,7 @@
 <tr><td>2026-04</td><td>100%</td><td>64</td></tr>
 <tr><td>2026-05</td><td>100%</td><td>67</td></tr>
 </tbody></table>
-<p class="small-note">验收通过率连续4个月保持100%。缺陷密度64→67(+4.7%)微增，仍低于6月基线79。趋势：103→107→81→52→64→67，整体收敛向好。</p>
+<p class="small-note">验收通过率连续4个月保持100%。缺陷密度64→67(+4.7%)微���，仍低于6月基线79。趋势：103→107→81→52→64→67，整体收敛向好。</p>
 </div>
 <div class="chart-title">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div>
 <div class="meego-chart"><div id="chart-meego-trend" style="width:100%;height:300px;"></div>
@@ -273,7 +273,8 @@
 <script>
 document.addEventListener("DOMContentLoaded",function(){
 var c1=new VChart.default({type:"bar",padding:{left:20,right:20,top:30,bottom:10},data:[{id:"d",values:[{month:"2025-12",value:10,hl:"normal"},{month:"2026-01",value:12,hl:"normal"},{month:"2026-02",value:6,hl:"normal"},{month:"2026-03",value:16,hl:"normal"},{month:"2026-04",value:11,hl:"normal"},{month:"2026-05",value:12,hl:"current"}]}],xField:"month",yField:"value",bar:{style:{cornerRadius:[6,6,0,0],fill:function(d){return d.hl==="current"?"#2d7eb5":"#8bb8d9";}}},label:{visible:true,position:"top",style:{fill:"#335e83",fontSize:14,fontWeight:700}},axes:[{orient:"bottom",label:{visible:true,style:{fill:"#506c8a",fontSize:11}}},{orient:"left",visible:false}],crosshair:{xField:{visible:true,line:{type:"rect",style:{fill:"rgba(45,126,181,0.08)"}}}}},{dom:"chart-delivery-trend"});c1.renderSync();
-var c3=new VChart.default({type:"common",padding:{left:10,right:10,top:40,bottom:10},data:[{id:"durData",values:[{month:"2025-12",duration:2.9},{month:"2026-01",duration:3.3},{month:"2026-02",duration:3},{month:"2026-03",duration:2.8},{month:"2026-04",duration:3},{month:"2026-05",duration:1.9}]},{id:"cntData",values:[{month:"2025-12",count:1254},{month:"2026-01",count:815},{month:"2026-02",count:825},{month:"2026-03",count:1250},{month:"2026-04",count:1075},{month:"2026-05",count:1009}]}],series:[{type:"bar",id:"durBar",name:"平均时长",dataId:"durData",xField:"month",yField:"duration",bar:{style:{cornerRadius:[6,6,0,0],fill:{gradient:"linear",x0:0.5,y0:0,x1:0.5,y1:1,stops:[{offset:0,color:"#d79c4a"},{offset:1,color:"#b57c2d"}]}}},label:{visible:true,position:"top",style:{fill:"#7a5a1e",fontSize:13,fontWeight:700},formatMethod:function(v){return v+"天";}}},{type:"line",id:"cntLine",name:"操作次数",dataId:"cntData",xField:"month",yField:"count",line:{styl6c8a",lineWidth:2,lineDash:[6,3]}},point:{style:{fill:"#506c8a",stroke:"#fff",lineWidth:2,size:7}},label:{visible:true,position:"top",offset:8,style:{fill:"#506c8a",fontSize:11},formatMethod:function(v){return v+"次";}}}],axes:[{orient:"bottom",type:"band",label:{visible:true,style:{fill:"#506c8a",fontSize:11}}},{orient:"left",type:"linear",seriesId:["durBar"],title:{visible:true,text:"平均时长(天)",style:{fill:"#7a5a1e"}},min:0},{orient:"right",type:"linear",seriesId:["cntLine"],title:{visible:true,text:"操作次数",style:{fill:"#506c8a"}},grid:{visible:false},min:0}],legends:{visible:true,orient:"top",position:"end"},crosshair:{xField:{visible:true,line:{type:"rect",style:{fill:"rgba(181,124,45,0.08)"}}}}},{dom:"chart-meego-trend"});c3.renderSync();
+var c2=new VChart.default({type:"bar",padding:{left:20,right:20,top:30,bottom:10},data:[{id:"growthData",values:[{month:"2026-01",growth:16.2,color:"positive"},{month:"2026-02",growth:-4.7,color:"negative"},{month:"2026-03",growth:-26.8,color:"negative"},{month:"2026-04",growth:30.0,color:"positive"},{month:"2026-05",growth:2.6,color:"positive"}]}],xField:"month",yField:"growth",bar:{style:{cornerRadius:[4,4,4,4],fill:function(d){return d.color==="positive"?"#4caf92":"#e86b6b";}}},label:{visible:true,position:"outside",style:{fontSize:11,fontWeight:600},formatter:function(text,datum){var v=datum.growth;return (v>0?"+":"")+v.toFixed(1)+"%";}},axes:[{orient:"bottom",label:{visible:true,style:{fill:"#506c8a",fontSize:11}}},{orient:"left",visible:false}],crosshair:{xField:{visible:true,line:{type:"rect",style:{fill:"rgba(0,0,0,0.04)"}}}}},{dom:"chart-cycle-growth"});c2.renderSync();
+var c3=new VChart.default({type:"common",padding:{left:10,right:10,top:40,bottom:10},data:[{id:"durData",values:[{month:"2025-12",duration:2.9},{month:"2026-01",duration:3.3},{month:"2026-02",duration:3},{month:"2026-03",duration:2.8},{month:"2026-04",duration:3},{month:"2026-05",duration:1.9}]},{id:"cntData",values:[{month:"2025-12",count:1254},{month:"2026-01",count:815},{month:"2026-02",count:825},{month:"2026-03",count:1250},{month:"2026-04",count:1075},{month:"2026-05",count:1009}]}],series:[{type:"bar",id:"durBar",name:"平均时长",dataId:"durData",xField:"month",yField:"duration",bar:{style:{cornerRadius:[6,6,0,0],fill:{gradient:"linear",x0:0.5,y0:0,x1:0.5,y1:1,stops:[{offset:0,color:"#d79c4a"},{offset:1,color:"#b57c2d"}]}}},label:{visible:true,position:"top",style:{fill:"#7a5a1e",fontSize:13,fontWeight:700},formatter:function(text,datum){return datum.duration+"天";}}},{type:"line",id:"cntLine",name:"操作次数",dataId:"cntData",xField:"month",yField:"count",line:{style:{stroke:"#506c8a",lineWidth:2,lineDash:[6,3]}},point:{style:{fill:"#506c8a",stroke:"#fff",lineWidth:2,size:7}},label:{visible:true,position:"top",offset:8,style:{fill:"#506c8a",fontSize:11},formatter:function(text,datum){return datum.count+"次";}}}],axes:[{orient:"bottom",type:"band",label:{visible:true,style:{fill:"#506c8a",fontSize:11}}},{orient:"left",type:"linear",seriesId:["durBar"],title:{visible:true,text:"平均时长(天)",style:{fill:"#7a5a1e"}},min:0},{orient:"right",type:"linear",seriesId:["cntLine"],title:{visible:true,text:"操作次数",style:{fill:"#506c8a"}},grid:{visible:false},min:0}],legends:{visible:true,orient:"top",position:"end"},crosshair:{xField:{visible:true,line:{type:"rect",style:{fill:"rgba(181,124,45,0.08)"}}}}},{dom:"chart-meego-trend"});c3.renderSync();
 });
 </script>
 
