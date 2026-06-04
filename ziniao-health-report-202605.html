@@ -271,11 +271,98 @@
 (function(){var s=document.querySelectorAll(".chart-title,.issue-box,h2");var n=document.getElementById("navDots");s.forEach(function(sec,i){sec.id=sec.id||"section-"+i;var d=document.createElement("div");d.className="nav-dot";d.setAttribute("title",sec.textContent.trim().substring(0,20));d.onclick=function(){sec.scrollIntoView({behavior:"smooth"});};n.appendChild(d);});window.addEventListener("scroll",function(){var dots=document.querySelectorAll(".nav-dot");var cur=0;s.forEach(function(sec,i){if(window.scrollY>=sec.offsetTop-200)cur=i;});dots.forEach(function(dot,i){dot.classList.toggle("active",i===cur);});});})();
 </script>
 <script>
-document.addEventListener("DOMContentLoaded",function(){
-var c1=new VChart.default({type:"bar",padding:{left:20,right:20,top:30,bottom:10},data:[{id:"d",values:[{month:"2025-12",value:10,hl:"normal"},{month:"2026-01",value:12,hl:"normal"},{month:"2026-02",value:6,hl:"normal"},{month:"2026-03",value:16,hl:"normal"},{month:"2026-04",value:11,hl:"normal"},{month:"2026-05",value:12,hl:"current"}]}],xField:"month",yField:"value",bar:{style:{cornerRadius:[6,6,0,0],fill:function(d){return d.hl==="current"?"#2d7eb5":"#8bb8d9";}}},label:{visible:true,position:"top",style:{fill:"#335e83",fontSize:14,fontWeight:700}},axes:[{orient:"bottom",label:{visible:true,style:{fill:"#506c8a",fontSize:11}}},{orient:"left",visible:false}],crosshair:{xField:{visible:true,line:{type:"rect",style:{fill:"rgba(45,126,181,0.08)"}}}}},{dom:"chart-delivery-trend"});c1.renderSync();
-var c2=new VChart.default({type:"bar",padding:{left:20,right:20,top:30,bottom:10},data:[{id:"growthData",values:[{month:"2025-12",growth:-16,color:"negative"},{month:"2026-01",growth:13,color:"positive"},{month:"2026-02",growth:-18,color:"negative"},{month:"2026-03",growth:-35,color:"negative"},{month:"2026-04",growth:64,color:"positive"},{month:"2026-05",growth:-7,color:"negative"}]}],xField:"month",yField:"growth",bar:{style:{cornerRadius:[4,4,4,4],fill:function(d){return d.color==="positive"?"#4caf92":"#e86b6b";}}},label:{visible:true,position:"outside",style:{fontSize:11,fontWeight:600},formatter:function(text,datum){var v=datum.growth;return (v>0?"+":"")+v+"%";}},axes:[{orient:"bottom",label:{visible:true,style:{fill:"#506c8a",fontSize:11}}},{orient:"left",visible:false}],crosshair:{xField:{visible:true,line:{type:"rect",style:{fill:"rgba(0,0,0,0.04)"}}}}},{dom:"chart-cycle-growth"});c2.renderSync();
-var c3=new VChart.default({type:"common",padding:{left:10,right:10,top:40,bottom:10},data:[{id:"durData",values:[{month:"2025-12",duration:2.9},{month:"2026-01",duration:3.3},{month:"2026-02",duration:3},{month:"2026-03",duration:2.8},{month:"2026-04",duration:3},{month:"2026-05",duration:1.9}]},{id:"cntData",values:[{month:"2025-12",count:1254},{month:"2026-01",count:815},{month:"2026-02",count:825},{month:"2026-03",count:1250},{month:"2026-04",count:1075},{month:"2026-05",count:1013}]}],series:[{type:"bar",id:"durBar",name:"平均时长",dataId:"durData",xField:"month",yField:"duration",bar:{style:{cornerRadius:[6,6,0,0],fill:{gradient:"linear",x0:0.5,y0:0,x1:0.5,y1:1,stops:[{offset:0,color:"#d79c4a"},{offset:1,color:"#b57c2d"}]}}},label:{visible:true,position:"top",style:{fill:"#7a5a1e",fontSize:13,fontWeight:700},formatter:function(text,datum){return datum.duration+"天";}}},{type:"line",id:"cntLine",name:"操作次数",dataId:"cntData",xField:"month",yField:"count",line:{style:{stroke:"#506c8a",lineWidth:2,lineDash:[6,3]}},point:{style:{fill:"#506c8a",stroke:"#fff",lineWidth:2,size:7}},label:{visible:true,position:"top",offset:8,style:{fill:"#506c8a",fontSize:11},formatter:function(text,datum){return datum.count+"次";}}}],axes:[{orient:"bottom",type:"band",label:{visible:true,style:{fill:"#506c8a",fontSize:11}}},{orient:"left",type:"linear",seriesId:["durBar"],title:{visible:true,text:"平均时长(天)",style:{fill:"#7a5a1e"}},min:0},{orient:"right",type:"linear",seriesId:["cntLine"],title:{visible:true,text:"操作次数",style:{fill:"#506c8a"}},grid:{visible:false},min:0}],legends:{visible:true,orient:"top",position:"end"},crosshair:{xField:{visible:true,line:{type:"rect",style:{fill:"rgba(181,124,45,0.08)"}}}}},{dom:"chart-meego-trend"});c3.renderSync();
+document.addEventListener('DOMContentLoaded', function() {
+  // === Chart 1: Delivery Trend ===
+  var deliverySpec = {
+    type: 'bar',
+    padding: { left: 20, right: 20, top: 30, bottom: 10 },
+    data: [{ id: 'd', values: [
+      { month: '2025-12', value: 10, hl: 'normal' },
+      { month: '2026-01', value: 12, hl: 'normal' },
+      { month: '2026-02', value: 6, hl: 'normal' },
+      { month: '2026-03', value: 16, hl: 'normal' },
+      { month: '2026-04', value: 11, hl: 'normal' },
+      { month: '2026-05', value: 12, hl: 'current' }
+    ]}],
+    xField: 'month', yField: 'value',
+    bar: { style: { cornerRadius: [6,6,0,0], fill: function(d){ return d.hl==='current' ? '#2d7eb5' : '#8bb8d9'; } } },
+    label: { visible: true, position: 'top', style: { fill: '#335e83', fontSize: 14, fontWeight: 700 } },
+    axes: [
+      { orient: 'bottom', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
+      { orient: 'left', visible: false }
+    ],
+    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(45,126,181,0.08)' } } } }
+  };
+  var c1 = new VChart.default(deliverySpec, { dom: 'chart-delivery-trend' }); c1.renderSync();
+
+  // === Chart 2: Growth Rate ===
+  var growthSpec = {
+    type: 'bar',
+    padding: { left: 20, right: 20, top: 30, bottom: 10 },
+    data: [{ id: 'd', values: [
+      { month: '2025-12', growth: -16, c: 'neg' },
+      { month: '2026-01', growth: 13, c: 'pos' },
+      { month: '2026-02', growth: -18, c: 'neg' },
+      { month: '2026-03', growth: -35, c: 'neg' },
+      { month: '2026-04', growth: 64, c: 'pos' },
+      { month: '2026-05', growth: -7, c: 'neg' }
+    ]}],
+    xField: 'month', yField: 'growth',
+    bar: { style: { cornerRadius: [4,4,4,4], fill: function(d){ return d.c==='pos' ? '#4caf92' : '#e86b6b'; } } },
+    label: { visible: true, position: 'outside', style: { fontSize: 12, fontWeight: 600 }, formatMethod: function(v){ return (v>0?'+':'')+v+'%'; } },
+    axes: [
+      { orient: 'bottom', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
+      { orient: 'left', visible: false }
+    ],
+    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(0,0,0,0.04)' } } } }
+  };
+  var c2 = new VChart.default(growthSpec, { dom: 'chart-cycle-growth' }); c2.renderSync();
+
+  // === Chart 3: Meego Duration + Count ===
+  var meegoSpec = {
+    type: 'common',
+    padding: { left: 10, right: 10, top: 40, bottom: 10 },
+    data: [
+      { id: 'durData', values: [
+        { month: '2025-12', duration: 2.9 },
+        { month: '2026-01', duration: 3.3 },
+        { month: '2026-02', duration: 3 },
+        { month: '2026-03', duration: 2.8 },
+        { month: '2026-04', duration: 3 },
+        { month: '2026-05', duration: 1.9 }
+      ]},
+      { id: 'cntData', values: [
+        { month: '2025-12', count: 1254 },
+        { month: '2026-01', count: 815 },
+        { month: '2026-02', count: 825 },
+        { month: '2026-03', count: 1250 },
+        { month: '2026-04', count: 1075 },
+        { month: '2026-05', count: 1013 }
+      ]}
+    ],
+    series: [
+      { type: 'bar', id: 'durBar', name: '\u5E73\u5747\u65F6\u957F', dataId: 'durData', xField: 'month', yField: 'duration',
+        bar: { style: { cornerRadius: [6,6,0,0], fill: { gradient: 'linear', x0:0.5, y0:0, x1:0.5, y1:1, stops:[{offset:0,color:'#d79c4a'},{offset:1,color:'#b57c2d'}] } } },
+        label: { visible: true, position: 'top', style: { fill: '#7a5a1e', fontSize: 13, fontWeight: 700 }, formatMethod: function(v){return v+'\u5929';} }
+      },
+      { type: 'line', id: 'cntLine', name: '\u64CD\u4F5C\u6B21\u6570', dataId: 'cntData', xField: 'month', yField: 'count',
+        line: { style: { stroke: '#506c8a', lineWidth: 2, lineDash: [6,3] } },
+        point: { style: { fill: '#506c8a', stroke: '#fff', lineWidth: 2, size: 7 } },
+        label: { visible: true, position: 'top', offset: 8, style: { fill: '#506c8a', fontSize: 11 }, formatMethod: function(v){return v+'\u6B21';} }
+      }
+    ],
+    axes: [
+      { orient: 'bottom', type: 'band', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
+      { orient: 'left', type: 'linear', seriesId: ['durBar'], title: { visible: true, text: '\u5E73\u5747\u65F6\u957F(\u5929)', style: { fill: '#7a5a1e' } }, min: 0 },
+      { orient: 'right', type: 'linear', seriesId: ['cntLine'], title: { visible: true, text: '\u64CD\u4F5C\u6B21\u6570', style: { fill: '#506c8a' } }, grid: { visible: false }, min: 0 }
+    ],
+    tooltip: { trigger: 'axis' },
+    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(181,124,45,0.08)' } } } },
+    legends: { visible: true, orient: 'top', position: 'end' }
+  };
+  var c3 = new VChart.default(meegoSpec, { dom: 'chart-meego-trend' }); c3.renderSync();
 });
+
 </script>
 
 </div>
