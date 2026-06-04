@@ -137,7 +137,7 @@
       <tr><td>对比3/4月需求复杂度，量化差异</td><td>🔄 待确认</td><td>5月开发7天(-50%)、测试4天(-50%)</td><td>研发效率改善明显，复杂度或降低</td></tr>
       <tr><td>缺陷来源分类（测试vs线上）</td><td>🔄 进行中</td><td>缺陷密度64→67(+4.7%)，仍低于基线79</td><td>质量整体可控，待分类确认</td></tr>
       <tr><td>CR覆盖率≥80%确认</td><td>🔄 进行中</td><td>无MCP可量化数据</td><td>待研发Leader反馈</td></tr>
-      <tr><td>核实团队人力调整</td><td>✅ 已体现</td><td>MCP口径41→52人(+27%)</td><td>人均交付稀释(0.27→0.23)，参与人增多稀释人均指标</td></tr>
+      <tr><td>核实团队人力调整</td><td>✅ 已体现</td><td>MCP口径41→52人(+27%)</td><td>人均交付稀释(0.27→0.23)，参与人数增多但缺陷总量增幅更大</td></tr>
     </tbody>
   </table>
   <p class="small-note" style="margin-top:0.8rem;">⚠️ 产品侧响应恶化是本月最突出变化。等待周期+118%直接推高交付总周期，抵消了研发侧效率改善。建议本月重点关注产品侧产能瓶颈。</p>
@@ -210,10 +210,10 @@
 <li>评估产品侧是否需增加人力或减少并行项目 — 项目负责人 6月第3周</li>
 </ul></div>
 <div class="issue-box two">
-<div class="issue-title">🚩 问题二：人均缺陷+30%——参与人员增多稀释人均指标</div>
+<div class="issue-title">🚩 问题二：人均缺陷+30%——缺陷总量增长快于参与人变化</div>
 <p><span class="linkage-tag">人均缺陷</span><span class="linkage-tag">缺陷密度</span><span class="linkage-tag">人均交付</span></p>
-<p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均缺陷13.04→16.97个(+30.34%)。但每需求缺陷密度仅64→67(+4.7%)，远低于基线79。团队MCP口径41→52人(+27%)，人均交付0.27→0.23(-14.81%)。<strong>交叉验证：人均缺陷升主要由参与人员增多+分母稀释非质量恶化。</strong></p>
-<p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>MCP"参与人数"统计口径波动（41→52），可能含新加入成员或临时参与人员。参与人增多稀释人均指标释放导致人均指标被稀释。</p>
+<p style="margin-top:0.8rem;"><strong>数据表现：</strong>人均缺陷13.04→16.97个(+30.34%)。但每需求缺陷密度仅64→67(+4.7%)，远低于基线79。缺陷总量增加是主因（缺陷密度64→67，+4.7%）。人均缺陷=完成缺陷数÷参与A陷人员，上升说明缺陷产出速度快于人员扩充速度。质量本身微增但仍低于基线79，整体可控</p>
+<p style="margin-top:0.5rem;"><strong>⚠️ 判断前提：</strong>MCP"参与人数"统计口径波动（41→52），可能含新加入成员或临时参与人员。参与人数增多但缺陷总量增幅更大释放导致人均指标被稀释。</p>
 <ul class="measures"><h4 style="margin-bottom:0.8rem;">✅ 可落地整改措施</h4>
 <li>确认团队实际人力变动：是新人入职还是统计口径变化 — 项目负责人 6月第2周</li>
 <li>持续跟踪缺陷来源分类（测试发现 vs 线上），评估质量趋势 — QA负责人 6月第2周</li>
@@ -262,7 +262,7 @@
 <h3 style="color:#1e3a5f;margin-bottom:1rem;">📊 指标建议优化</h3>
 <p style="margin-bottom:0.8rem;"><strong>1. 新增"产品侧响应时效"监控（高优）</strong>：需求规划+待设计合计22.83天，占等待周期95%。建议拆分监控并设阈值预警。</p>
 <p style="margin-bottom:0.8rem;"><strong>2. 区分"等待"类型（中优）</strong>：当前等待周期24天是各环节等待总和，需区分可控等待(排期)vs不可控等待(依赖)。</p>
-<p><strong>3. 上月建议延续：缺陷来源分类高优）</strong>：连续2月未完成，升级提醒。需区分测试缺陷和线上缺陷。</p>
+<p><strong>3. 上月建议延续：缺陷来源分类（高优）</strong>：连续2月未完成，升级提醒。需区分测试缺陷和线上缺陷。</p>
 </div>
 <div style="margin-top:2.5rem;font-size:0.8rem;color:#6d8bb0;text-align:right;border-top:1px solid #c9d9e9;padding-top:1rem;">数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年5月 · 团队规模：约52人(MCP口径) · 本报告由PMO生成 · 分析模型：Claude Opus 4.6</div>
 <nav class="nav-dots" id="navDots"></nav>
