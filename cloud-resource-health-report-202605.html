@@ -116,7 +116,7 @@
 </div>
 </div>
 <div class="springfest-note">
-📊 <strong>数据口径说明：</strong>统计范围为执行需求+创新需求（不含临时），团队规模约17人（MCP口径）。人均缺陷=完成缺陷数÷缺陷参与人（2人），独立于需求参与人。4月交付周期异常低（6天）为统计口径偏差，本月12.72天回归正常区间（基线15.17天）。
+📊 <strong>数据口径说明：</strong>统计范围为全部需求类型，团队规模约17人（MCP口径）。人均缺陷=完成缺陷数÷缺陷参与人（2人），独立于需求参与人。4月交付周期异常低（6天）为统计口径偏差，本月12.72天回归正常区间（基线15.17天）。
 </div>
 <div class="chart-title">📋 上月措施跟进 <span>4月报告提出的4项措施</span></div>
 <div class="followup-table"><table>
@@ -190,6 +190,26 @@
 <div><span class="linkage-tag">人均操作</span> 5.29 | 4月 4.83 | <strong style="color:#1e7b48;">+9.5%</strong></div>
 <div><span class="linkage-tag">操作时长</span> 1.6天 | 4月 2.3天 | <strong style="color:#1e7b48;">-30.4%</strong></div>
 </div>
+
+<hr>
+<div class="expert-section">
+<h3>🧠 专家视角</h3>
+<h4 style="margin:1rem 0m;">📊 模式识别</h4>
+<p>云资源近6个月交付周期呈现"V型反转"：从2月高点25天持续下降至4月6天（异常低），5月回归至12天。这不是恶化，而是均值回归。真正值得关注的是开发周期的结构性变化：从2月11天→3月5天→4月4天→5月8天，4-5月的波动可能反映需求复杂度的自然波动。</p>
+<h4 style="margin:1.5rem 0 0.5rem;">🔮 场景推演</h4>
+<table class="scenario-table">
+<thead><tr><th>方案</th><th>预期影响</th></tr></thead>
+<tbody>
+<tr><td>维持现状</td><td>周期在10-15天间波动，处于基线范围内，风险可控</td></tr>
+<tr><td>需求拆分标准化</td><td>降低单需求复杂度，开发周期趋稳在5-6天，但拆分本身有管理成本</td></tr>
+<tr><td>强化并行开发</td><td>缩短等待，但需关注质量风险（当前质量优秀可尝试）</td></tr>
+</tbody></table>
+<h4 style="margin:1.5rem 0 0.5rem;">💡 反思问题</h4>
+<ol style="padding-left:1.5rem;color:#335e83;">
+<li style="margin-bottom:0.5rem;">开发周期4→8天的跳升，是5月需求本身更复杂，还是4月口径异常导致对比失真？</li>
+<li style="margin-bottom:0.5rem;">人均交付1.94接近目标2.0，团队扩编1人后何时能看到人均值回升至基线2.19？</li>
+<li>等待周期从历史高位12天降至2天，这一改善是否可持续？驱动因素是什么？</li>
+</ol></div>
 <hr>
 <div style="margin:2.5rem 0;">
 <h2 style="font-size:1.8rem;margin-bottom:0.5rem;">🔍 核心问题定位 (三类) 及落地整改</h2>
@@ -236,24 +256,7 @@
 <p style="margin-bottom:0.8rem;"><strong>QA负责人：</strong>维持质量水平，评估缺陷线上化可行性 — 持续</p>
 <p><strong>全体成员：</strong>保持Meego操作及时性（当前1.6天/操作，持续改善中）</p>
 </div></div>
-<div class="expert-section">
-<h3>🧠 专家视角</h3>
-<h4 style="margin:1rem 0m;">📊 模式识别</h4>
-<p>云资源近6个月交付周期呈现"V型反转"：从2月高点25天持续下降至4月6天（异常低），5月回归至12天。这不是恶化，而是均值回归。真正值得关注的是开发周期的结构性变化：从2月11天→3月5天→4月4天→5月8天，4-5月的波动可能反映需求复杂度的自然波动。</p>
-<h4 style="margin:1.5rem 0 0.5rem;">🔮 场景推演</h4>
-<table class="scenario-table">
-<thead><tr><th>方案</th><th>预期影响</th></tr></thead>
-<tbody>
-<tr><td>维持现状</td><td>周期在10-15天间波动，处于基线范围内，风险可控</td></tr>
-<tr><td>需求拆分标准化</td><td>降低单需求复杂度，开发周期趋稳在5-6天，但拆分本身有管理成本</td></tr>
-<tr><td>强化并行开发</td><td>缩短等待，但需关注质量风险（当前质量优秀可尝试）</td></tr>
-</tbody></table>
-<h4 style="margin:1.5rem 0 0.5rem;">💡 反思问题</h4>
-<ol style="padding-left:1.5rem;color:#335e83;">
-<li style="margin-bottom:0.5rem;">开发周期4→8天的跳升，是5月需求本身更复杂，还是4月口径异常导致对比失真？</li>
-<li style="margin-bottom:0.5rem;">人均交付1.94接近目标2.0，团队扩编1人后何时能看到人均值回升至基线2.19？</li>
-<li>等待周期从历史高位12天降至2天，这一改善是否可持续？驱动因素是什么？</li>
-</ol></div>
+
 <div style="margin:2rem 0;background:#f8faff;border:1px solid #d0ddee;border-radius:24px;padding:1.5rem 2rem;">
 <h3 style="color:#1e3a5f;margin-bottom:1rem;">📊 指标建议优化</h3>
 <p style="margin-bottom:0.8rem;"><strong>1. 开发周期拆解监控（中优）</strong>：开发周期波动较大（4-11天），建议拆解为编码/评审/返工等子阶段，定位波动来源。</p>
