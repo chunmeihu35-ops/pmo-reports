@@ -218,7 +218,7 @@
 <h3 style="color:#1e3a5f; margin-bottom:1rem;">📊 指标建议优化</h3>
 <p style="margin-bottom:0.8rem;"><strong>1. 调整效率维持目标（高优）：</strong>当前目标≤10天基于4月异常低值设定，建议调整为≤12天（基线15.17天的80%）。当前已达标。</p>
 <p style="margin-bottom:0.8rem;"><strong>2. 产能目标微调评估（中优）：</strong>人均交付连续2月接近2.0未突破，若继续如此可考虑调整为≥1.9（基线2.19的87%）。</p>
-<p><strong>3. 积压率数据采集（高优）：5月积压率=1.39（创建46÷完成33），超目标≤1.2，需关注需求创建节奏或提升完成产能。</p>
+<p><strong>3. 积压率数据采集（高优）：</strong>5月积压率=1.39（创建46÷完成33），超目标≤1.2，需关注需求创建节奏或提升完成产能。</p>
 </div>
 <div style="margin-top:2.5rem; font-size:0.8rem; color:#6d8bb0; text-align:right; border-top:1px solid #c9d9e9; padding-top:1rem;">
 数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年5月 · 团队规模：约17人（需求参与）/ 2人（缺陷参与） · 本报告由PMO生成
@@ -283,5 +283,37 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <nav class="nav-dots" id="navDots"></nav>
+<style>
+.nav-dots { position:fixed; right:1.5rem; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:0.75rem; z-index:100; }
+.nav-dot { width:10px; height:10px; border-radius:50%; background:#c9d9e9; cursor:pointer; transition:all 0.3s ease; }
+.nav-dot:hover,.nav-dot.active { background:#2d7eb5; transform:scale(1.5); box-shadow:0 0 8px rgba(45,126,181,0.5); }
+@media (max-width:768px) { .nav-dots { display:none; } }
+@media print { .nav-dots { display:none; } }
+</style>
+<script>
+(function(){
+    var sections=document.querySelectorAll('.chart-title,.issue-box,h2');
+    var navDots=document.getElementById('navDots');
+    if(!navDots) return;
+    sections.forEach(function(section,i){
+        section.id=section.id||'section-'+i;
+        var dot=document.createElement('div');
+        dot.className='nav-dot';
+        var label=section.textContent.trim().replace(/[\n\r]/g,'').substring(0,20);
+        dot.setAttribute('title',label);
+        dot.onclick=function(){section.scrollIntoView({behavior:'smooth'});};
+        navDots.appendChild(dot);
+    });
+    window.addEventListener('scroll',function(){
+        var dots=document.querySelectorAll('.nav-dot');
+        var current=0;
+        sections.forEach(function(section,i){
+            if(window.scrollY>=section.offsetTop-200) current=i;
+        });
+        dots.forEach(function(dot,i){dot.classList.toggle('active',i===current);});
+    });
+})();
+</script>
+
 </body>
 </html>
