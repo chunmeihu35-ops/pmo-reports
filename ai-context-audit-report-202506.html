@@ -1241,5 +1241,45 @@
             });
         })();
     </script>
+
+<!-- 右侧导航圆点 -->
+<nav class="nav-dots" id="navDots"></nav>
+<style>
+.nav-dots { position:fixed; right:1.5rem; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:0.75rem; z-index:1000; }
+.nav-dot { width:10px; height:10px; border-radius:50%; background:#c9d9e9; cursor:pointer; transition:all 0.3s ease; position:relative; }
+.nav-dot:hover,.nav-dot.active { background:#6366f1; transform:scale(1.5); box-shadow:0 0 8px rgba(99,102,241,0.5); }
+.nav-tooltip { position:absolute; right:20px; top:50%; transform:translateY(-50%); background:#1f2937; color:white; padding:4px 10px; border-radius:6px; font-size:12px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.2s; }
+.nav-dot:hover .nav-tooltip { opacity:1; }
+@media (max-width:768px) { .nav-dots { display:none; } }
+@media print { .nav-dots { display:none; } }
+</style>
+<script>
+(function(){
+    var sections=document.querySelectorAll('section.section h2');
+    var navDots=document.getElementById('navDots');
+    sections.forEach(function(section,i){
+        section.id=section.id||'nav-section-'+i;
+        var dot=document.createElement('div');
+        dot.className='nav-dot';
+        var label=section.textContent.trim().replace(/[\n\r]/g,'').substring(0,20);
+        dot.setAttribute('title',label);
+        dot.onclick=function(){section.scrollIntoView({behavior:'smooth',block:'start'});};
+        var tooltip=document.createElement('span');
+        tooltip.className='nav-tooltip';
+        tooltip.textContent=label;
+        dot.appendChild(tooltip);
+        navDots.appendChild(dot);
+    });
+    window.addEventListener('scroll',function(){
+        var dots=document.querySelectorAll('.nav-dot');
+        var current=0;
+        sections.forEach(function(section,i){
+            if(window.scrollY>=section.offsetTop-200) current=i;
+        });
+        dots.forEach(function(dot,i){dot.classList.toggle('active',i===current);});
+    });
+})();
+</script>
+
 </body>
 </html>
