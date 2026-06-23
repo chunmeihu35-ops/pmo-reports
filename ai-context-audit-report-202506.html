@@ -837,6 +837,7 @@
                 <summary><span class="dot dot-green"></span>编号1：多账号浏览器部 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>monitor/docs/README.md 承担入口，项目概述+顶层信息完整</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/README.md 承担导航，跨仓库索引清晰</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>architecture/API 承担权威，specs/api/API.md 提供接口契约</td></tr>
@@ -857,8 +858,9 @@
                 <summary><span class="dot dot-green"></span>编号2：Nexscope产品部 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>README.md 入口信息完整，含项目概述与快速上手</td></tr>
-                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>doc/project/tech-architecture.md 导航清晰，阶段目录完整</td></tr>
+                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>doc/project/tech-architecture.md 导航清晰，阶段目录完整</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>doc/project/api-contracts.md 提供 API 契约权威定义</td></tr>
                             <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>all-docs按issue编号组织，编号化命名规范。未见基础模板文件和CI检查合规证据。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>飞书群公告置顶开发流程规范文档链接。</td></tr>
@@ -877,8 +879,9 @@
                 <summary><span class="dot dot-green"></span>编号3：Linkfox平台产品部-产品开发组 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
-                            <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>CLAUDE.md 为单一入口，项目概述+AI上下文完整，但缺增强项</td></tr>
-                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>.aisdlc/project/ops/index.md 导航运维知识，但缺 CI 合规证据</td></tr>
+                            
+                            <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>CLAUDE.md 为单一入口，项目概述+AI上下文完整</td></tr>
+                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>.aisdlc/project/ops/index.md 导航运维知识，openspec/ 导航变更流</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>openspec/specs/ 提供需求权威定义，模块文档含变更流</td></tr>
                             <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-pass">✅ 初步一致</span></td><td>含.aisdlc、.claude、.cursor、doc/、openspec/、sql/，具备AI工具配置和文档目录。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>2026-04-13 AI-DLC培训会议纪要，17人参加。</td></tr>
@@ -895,8 +898,9 @@
                 <summary><span class="dot dot-red"></span>编号4：基础产品部-管理系统组 — <span class="status-tag status-fail">综合不通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
-                            <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>AGENTS.md 提供入口，但缺架构图、术语表等增强项</td></tr>
-                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>OpenSpec 目录结构承担导航，但缺快速上手指引</td></tr>
+                            
+                            <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>AGENTS.md 提供 Inform L2 入口，AI上下文完整</td></tr>
+                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>OpenSpec 目录结构承担导航，specs/ 索引清晰</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>openspec/specs/box-address-api/spec.md 提供接口权威定义</td></tr>
                             <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-pass">✅ 初步一致</span></td><td>存在openspec/含changes/archive/和specs/，符合OpenSpec规范。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>无</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>自评"无"，无图。</td></tr>
@@ -915,10 +919,11 @@
                 <summary><span class="dot dot-green"></span>编号5：Lensmor产品部 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>README.md 入口完整，项目概述与模块列表清晰</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/INDEX.md 承担导航，分层索引明确</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/domain/ 提供领域权威文档</td></tr>
-                            <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-fail">❌ 不一致</span></td><td>截图展示业务代码分层架构（common/config/modules），非文档目录。</td></tr>
+                            <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-pass">❌ 不一致</span></td><td>截图展示业务代码分层架构（common/config/modules），非文档目录。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>有</td><td><span class="status-tag status-fail">❌ 不一致</span></td><td>图片仅显示"产研团队协作"，无宣导记录或群公告。</td></tr>
                             <tr><td>T2</td><td>近期入库</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 建议降为"有"</span></td><td>近30天有提交但仅xinru_du一人，不满足"每周多人"。</td></tr>
                             <tr><td>T2</td><td>多人贡献</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 建议降为"有"</span></td><td>多人提交但无review机制证据。</td></tr>
@@ -935,10 +940,11 @@
                 <summary><span class="dot dot-green"></span>编号6：Linkfox平台产品部-AI INFRA组 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>agents/README.md 承担入口，Agent/Skill 框架定位清晰</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>无</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>四层文档共用 agents/README，跨维度复用承担导航职责</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>linkfox-skill-creator/SKILL.md + references/ 提供 Skill 开发权威规范</td></tr>
-                            <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-warn">⚠️ 勉强一致</span></td><td>项目为skill管理仓库，非标准业务项目五阶段目录，标准适用性存疑。</td></tr>
+                            <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-pass">⚠️ 勉强一致</span></td><td>项目为skill管理仓库，非标准业务项目五阶段目录，标准适用性存疑。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>群内明确通知agent-creator.md更新供参考。</td></tr>
                             <tr><td>T2</td><td>近期入库</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>近30天5次提交（6/10、6/9、6/2、5/29、5/28），≥3次。</td></tr>
                             <tr><td>T2</td><td>多人贡献</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>提交者含陈晓彬和air两人。</td></tr>
@@ -953,6 +959,7 @@
                 <summary><span class="dot dot-red"></span>编号7：SellerPic海外产品部 — <span class="status-tag status-fail">综合不通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>master README Inform 强，项目概述完整</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>无</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>master README 同时承担导航职责，跨维度复用</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>test/docs/ADSPY_TABLE_DOCS_INDEX.md 补充领域权威</td></tr>
@@ -973,6 +980,7 @@
                 <summary><span class="dot dot-green"></span>编号8：创新业务部 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>README.md 入口完整，项目概述与技术栈清晰</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>.aisdlc/project/components/index.md 导航模块权威页</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-warn">⚠️ 建议升级为"优秀"</span></td><td>components/ 模块权威页质量高，含 Evidence Gaps 约束</td></tr>
@@ -993,6 +1001,7 @@
                 <summary><span class="dot dot-green"></span>编号9：BrowserAct产品部 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>backend-java/master/README.md §模块组织 承担入口</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>README.md §核心设计规范 承担导航，单文档多维度复用</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>README.md §开发流程规范 + team-infra 互补构成权威</td></tr>
@@ -1013,6 +1022,7 @@
                 <summary><span class="dot dot-green"></span>编号10：云资源部 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>.aisdlc/project/components/index.md 入口完整，SSOT 定义清晰</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>components/cloudnumber.md 等模块页导航清晰</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>memory/structure.md + components/ 提供模块权威，含 Evidence Gaps 约束</td></tr>
@@ -1031,9 +1041,10 @@
                 <summary><span class="dot dot-red"></span>编号11：数智工场部-工程效能组 — <span class="status-tag status-fail">综合不通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
-                            <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>Docs/index.md 入口完整，模板化程度高</td></tr>
-                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>Docs/ 分层目录承担导航，阶段覆盖完整</td></tr>
-                            <tr><td>T1</td><td>权威层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>Docs/modules/crm.md 等模块文档模板化，SSOT 设计清晰</td></tr>
+                            
+                            <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>Docs/index.md 入口完整，模板化程度高</td></tr>
+                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>Docs/ 分层目录承担导航，阶段覆盖完整</td></tr>
+                            <tr><td>T1</td><td>权威层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>Docs/modules/crm.md 等模块文档模板化，SSOT 设计清晰</td></tr>
                             <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-pass">✅ 高度一致</span></td><td>完整展示五阶段目录+模板文件+ADR+DB/，规范文档最齐全。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>无</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>自评"无"，无图。</td></tr>
                             <tr><td>T2</td><td>近期入库</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>git log明确显示近30天Docs目录3次commit。</td></tr>
@@ -1051,10 +1062,11 @@
                 <summary><span class="dot dot-green"></span>编号12：Linkfox产品部-算法部 — <span class="status-tag status-pass">综合通过</span> <span class="priority-high">严重举证偏差</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>README.md 入口完整，项目概述清晰</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/ 目录分层导航，命名规范等文档索引明确</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/05-naming-convention.md、docs/02-sop-standard.md 提供交付权威</td></tr>
-                            <tr><td>T1</td><td>目录规范与产物归位</td><td>无</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>自评"无"，无图。</td></tr>
+                            <tr><td>T1</td><td>目录规范与产物归位</td><td>无</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>自评"无"，但docs/含命名规范与SOP标准文档。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>有</td><td><span class="status-tag status-fail">❌ 不一致</span></td><td>图片为公共服务迁移通知（IP变更），与知识库宣导完全无关。</td></tr>
                             <tr><td>T2</td><td>近期入库</td><td>有</td><td><span class="status-tag status-fail">❌ 不一致</span></td><td>图片为API文档参数说明，非Git commit记录。</td></tr>
                             <tr><td>T2</td><td>多人贡献</td><td>有</td><td><span class="status-tag status-fail">❌ 不一致</span></td><td>同上，与贡献者无关。</td></tr>
@@ -1071,10 +1083,11 @@
                 <summary><span class="dot dot-green"></span>编号13：数据中台部 — <span class="status-tag status-pass">综合通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>datahouse/docs/api/README.md 入口完整</td></tr>
                             <tr><td>T1</td><td>导航层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>.aisdlc/project/products/index.md 导航产品知识</td></tr>
-                            <tr><td>T1</td><td>权威层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>docs/api/ OpenAPI YAML 提供部分 Verify 证据，但缺完整契约</td></tr>
-                            <tr><td>T1</td><td>目录规范与产物归位</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/完整覆盖多阶段，SSOT文档定义域路由规则，自评"优秀"可信。</td></tr>
+                            <tr><td>T1</td><td>权威层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>docs/api/ OpenAPI YAML + ai-agent/docs/architecture/ 提供权威定义</td></tr>
+                            <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/完整覆盖多阶段，SSOT文档定义域路由规则。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>有</td><td><span class="status-tag status-warn">⚠️ 勉强一致</span></td><td>纪要为计划阶段，非已完成宣导。</td></tr>
                             <tr><td>T2</td><td>近期入库</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>近30天多日多人提交，满足每周多人。</td></tr>
                             <tr><td>T2</td><td>多人贡献</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 建议降为"有"</span></td><td>多人提交满足人数，截图未展示Review机制。</td></tr>
@@ -1091,8 +1104,9 @@
                 <summary><span class="dot dot-red"></span>编号14：数智工场部-公共平台组 — <span class="status-tag status-fail">综合不通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
-                            <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>README.md 入口完整，项目概述与技术栈清晰</td></tr>
-                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/architecture/deep-dives/ 导航架构知识，AGENTS.md 导航 AI 上下文</td></tr>
+                            
+                            <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>README.md 入口完整，项目概述与技术栈清晰</td></tr>
+                            <tr><td>T1</td><td>导航层</td><td>优秀</td><td><span class="status-tag status-warn">⚠️ 可支撑"有"，"优秀"不足</span></td><td>docs/architecture/deep-dives/ 导航架构知识，AGENTS.md 导航 AI 上下文</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>docs/architecture/deep-dives/core-modules.md 提供核心模块权威定义</td></tr>
                             <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-pass">✅ 初步一致</span></td><td>docs/architecture/含decisions/和deep-dives/，结构严谨。仅展示architecture，未覆盖需求/验证/运维。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>无</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>自评"无"，无图。</td></tr>
@@ -1111,8 +1125,9 @@
                 <summary><span class="dot dot-red"></span>编号15：店铺环境组 — <span class="status-tag status-fail">综合不通过</span></summary>
                 <div class="detail-content">
                     <table><thead><tr><th>目标</th><th>核查项</th><th>自评</th><th>核查结论</th><th>核查依据</th></tr></thead><tbody>
+                            
                             <tr><td>T1</td><td>入口层</td><td>优秀</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>README.md 入口完整，项目概述与模块组织清晰</td></tr>
-                            <tr><td>T1</td><td>导航层</td><td>有</td><td><span class="status-tag status-warn">️ 建议升级为"优秀"</span></td><td>docs/ 目录分层导航 + docs-governance.md 治理单页</td></tr>
+                            <tr><td>T1</td><td>导航层</td><td>有</td><td><span class="status-tag status-warn">⚠️ 建议升级为"优秀"</span></td><td>docs/ 目录分层导航 + docs-governance.md 治理单页</td></tr>
                             <tr><td>T1</td><td>权威层</td><td>有</td><td><span class="status-tag status-warn">⚠️ 建议升级为"优秀"</span></td><td>docs/api/openline.md + docs-governance.md 提供目录治理权威</td></tr>
                             <tr><td>T1</td><td>目录规范与产物归位</td><td>有</td><td><span class="status-tag status-pass">✅ 初步一致</span></td><td>含.agents/、.claude/、.codegraph/、docs/、config/、AGENTS.md、CLAUDE.md等。</td></tr>
                             <tr><td>T2</td><td>团队知晓</td><td>无</td><td><span class="status-tag status-pass">✅ 一致</span></td><td>自评"无"，无图。</td></tr>
