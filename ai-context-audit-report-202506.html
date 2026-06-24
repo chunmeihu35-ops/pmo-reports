@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -1181,19 +1181,130 @@
             </div>
 
             <h3 style="margin-top:24px;">3.2 改进建议</h3>
-            <div class="table-wrap">
-                <table>
-                    <thead><tr><th>优先级</th><th>建议</th><th>适用部门</th></tr></thead>
-                    <tbody>
-                        <tr><td><span class="priority-high">🔴 紧急</span></td><td>重新举证：图片必须与核查项直接对应，避免无关截图</td><td>4, 12</td></tr>
-                        <tr><td><span class="priority-high">🔴 紧急</span></td><td>补充AI闭环证据：提供AI工具配置文件截图 + AI实际消费案例（如AI引用项目文档的对话截图）</td><td>4, 7, 11, 14, 15</td></tr>
-                        <tr><td><span class="priority-mid">🟡 重要</span></td><td>团队宣导留痕：建立正式的文档规范宣导机制（群公告/会议纪要/培训记录），而非仅靠日常讨论</td><td>1, 5, 9, 11, 13</td></tr>
-                        <tr><td><span class="priority-mid">🟡 重要</span></td><td>目录规范治理单页：为项目建立独立的目录命名规则/模板治理文档，而非仅依赖README中的零散说明</td><td>3, 5, 7</td></tr>
-                        <tr><td><span class="priority-low">🟢 建议</span></td><td>标杆参考：部门2（Nexscope）目标1四维度均扎实，可作为标杆供其他部门参考</td><td>全部</td></tr>
-                        <tr><td><span class="priority-low">🟢 建议</span></td><td>优秀升级：部门5/9/10/13的T1维度质量较高，建议补充证据后升级为"优秀"</td><td>5, 9, 10, 13</td></tr>
-                    </tbody>
-                </table>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:12px;">
+                <div style="background:#fef2f2;border-radius:var(--radius-sm);padding:18px 20px;border-left:4px solid #ef4444;">
+                    <strong>🔴 强化团队共识（目标2）</strong>
+                    <p style="margin-top:6px;font-size:13px;color:#7f1d1d;">对不通过部门强制补齐"团队知晓"（群公告、onboarding文档）和"多人贡献"。建立文档更新SLA，确保近30天≥3次docs提交。</p>
+                    <p style="margin-top:8px;font-size:12px;color:#991b1b;"><strong>不通过部门：</strong>基础产品部-管理系统组、数智工场部-工程效能组、Linkfox产品部-算法部、数智工场部-公共平台组、店铺环境组</p>
+                </div>
+                <div style="background:#fef2f2;border-radius:var(--radius-sm);padding:18px 20px;border-left:4px solid #ef4444;">
+                    <strong>🔴 补充AI闭环证据（目标3）</strong>
+                    <p style="margin-top:6px;font-size:13px;color:#7f1d1d;">提供AI工具配置文件截图 + AI实际消费案例（如AI引用项目文档的对话截图）。</p>
+                    <p style="margin-top:8px;font-size:12px;color:#991b1b;"><strong>不通过部门：</strong>基础产品部-管理系统组、SellerPic海外产品部、数智工场部-工程效能组、Linkfox产品部-算法部、数智工场部-公共平台组、店铺环境组</p>
+                </div>
+                <div style="background:#fffbeb;border-radius:var(--radius-sm);padding:18px 20px;border-left:4px solid #f59e0b;">
+                    <strong>🟡 提升举证质量</strong>
+                    <p style="margin-top:6px;font-size:13px;color:#92400e;">提供标准化举证示例，避免"题不对图"。自评"优秀"需对应"审查机制""每周多人""层级设计"等具体证据。</p>
+                    <p style="margin-top:8px;font-size:12px;color:#92400e;"><strong>重点部门：</strong>基础产品部-管理系统组、Linkfox产品部-算法部（举证偏差严重，需重新举证）</p>
+                </div>
+                <div style="background:#fffbeb;border-radius:var(--radius-sm);padding:18px 20px;border-left:4px solid #f59e0b;">
+                    <strong>🟡 团队宣导留痕</strong>
+                    <p style="margin-top:6px;font-size:13px;color:#92400e;">建立正式的文档规范宣导机制（群公告/会议纪要/培训记录），而非仅靠日常讨论。</p>
+                    <p style="margin-top:8px;font-size:12px;color:#92400e;"><strong>证据偏弱部门：</strong>多账号浏览器部、Lensmor产品部、BrowserAct产品部、数据中台部</p>
+                </div>
+                <div style="background:#eff6ff;border-radius:var(--radius-sm);padding:18px 20px;border-left:4px solid #3b82f6;">
+                    <strong>🔵 落实AI上下文接入</strong>
+                    <p style="margin-top:6px;font-size:13px;color:#1e40af;">优先为未配置.cursor/rules/或AGENTS.md的团队强制接入，参考数智工场部-工程效能组的reference-docs.mdc模板。鼓励收集AI消费日常案例。</p>
+                    <p style="margin-top:8px;font-size:12px;color:#1e40af;"><strong>AI实际消费缺失：</strong>多账号浏览器部、Linkfox平台产品部-AI INFRA组、SellerPic海外产品部、BrowserAct产品部</p>
+                </div>
+                <div style="background:#f0fdf4;border-radius:var(--radius-sm);padding:18px 20px;border-left:4px solid #22c55e;">
+                    <strong>🟢 推进目录规范标准化</strong>
+                    <p style="margin-top:6px;font-size:13px;color:#166534;">参考数智工场部-工程效能组的完整五阶段目录模板向全公司推广。对"代码架构"代替"文档目录"的团队进行一对一纠正。</p>
+                    <p style="margin-top:8px;font-size:12px;color:#166534;"><strong>需治理单页：</strong>Linkfox平台产品部-产品开发组、Lensmor产品部、SellerPic海外产品部</p>
+                </div>
             </div>
+
+            3.3 共性发现</h3>
+            <div style="background:#f8fafc;border-radius:var(--radius-sm);padding:20px 24px;border:1px solid var(--border);margin-top:12px;">
+                <h4 style="color:#4338ca;margin-bottom:10px;">📐 目标1：统一架构与规范</h4>
+                <ul style="margin-left:20px;color:#4b5563;margin-bottom:14px;">
+                    <li><strong>Inform L2 已普遍达成：</strong>Checklist 推动了入口、导航与目录分层，多数团队 AI 不再需全仓盲搜。</li>
+                    <li><strong>六维共性短板：</strong>Verify（断链/占位词 CI）和 Correct（last_verified_at + 过期降级）几乎全员缺失；Observe（断链率、stale 率、阻塞原因）仅个别团队萌芽。</li>
+                    <li><strong>结构标杆 ≠ 维护成熟：</strong>多团队目录结构完整（Inform L2），但无保鲜机制、无 CI 门禁，长期维护靠人肉（Entropy L1）。</li>
+                    <li><strong>单文档多维度复用是可行路径：</strong>编号9（BrowserAct）证明不必为每层独立建文件，但需配套抗熵机制。</li>
+                </ul>
+                <h4 style="color:#4338ca;margin-bottom:10px;">🤝 目标2：团队共识与遵从</h4>
+                <ul style="margin-left:20px;color:#4b5563;margin-bottom:14px;">
+                    <li><strong>团队知晓度两极分化：</strong>部分团队通过群公告、onboarding 文档有效宣导，但仍有5个部门团队知晓为"无"。</li>
+                    <li><strong>文档更新 SLA 缺失：</strong>多数团队无明确的文档更新频率要求，导致"近期入库"项证据不足。</li>
+                    <li><strong>多人贡献机制薄弱：</strong>部分团队仅1-2人维护文档，缺乏 Code Review 或多人协作机制。</li>
+                    <li><strong>举证质量参差：</strong>部分团队举证图片与核查项无关（如运维通知、API文档），需提升举证规范性。</li>
+                </ul>
+                <h4 style="color:#4338ca;margin-bottom:10px;">🤖 目标3：AI可用性闭环</h4>
+                <ul style="margin-left:20px;color:#4b5563;">
+                    <li><strong>AI工具接入率较高：</strong>多数团队已配置 .cursor/rules/ 或 AGENTS.md，但部分团队缺配置文件截图证据。</li>
+                    <li><strong>AI实际消费案例不足：</strong>部分团队自评"有"但举证图片为静态文档，非 AI 实际引用案例。</li>
+                    <li><strong>上下文层级设计缺失：</strong>多数团队未展示 AI 上下文层级设计（如不同层级引用不同文档）。</li>
+                </ul>
+            </div><h3 style="margin-top:28px;">3.4 推荐做得好</h3>
+            <div style="background:#f0fdf4;border-radius:var(--radius-sm);padding:20px 24px;border:1px solid #bbf7d0;margin-top:12px;">
+                <h4 style="color:#166534;margin-bottom:10px;"> 目标1：结构与维护标杆</h4>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:16px;">
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号10 云资源部（7.0/10）</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">少见具备 Stale 判定、DoD 门禁与 Evidence Gaps 约束，最接近 L3 态。</p>
+                    </div>
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号8 创新业务部（7.0/10）</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">.aisdlc Spec Pack 与模块权威页最接近 L3 结构，全链路模块覆盖。</p>
+                    </div>
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号15 店铺环境组（7.0/10）</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">docs-governance.md 为最规范的治理单页之一，具备 Verify 萌芽。</p>
+                    </div>
+                </div>
+                <h4 style="color:#166534;margin-bottom:10px;">🤝 目标2：团队共识标杆</h4>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:16px;">
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号8 创新业务部</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">群内多次宣导 AI-DLC 培训，17人参加，团队知晓度高。</p>
+                    </div>
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号2 Nexscope产品部</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">飞书群公告置顶开发流程规范文档链接，近期入库与多人贡献证据充分。</p>
+                    </div>
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号11 数智工场-工程效能组</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">git log 明确显示近30天 Docs 目录3次 commit，多人贡献机制清晰。</p>
+                    </div>
+                </div>
+                <h4 style="color:#166534;margin-bottom:10px;">🤖 目标3：AI可用性标杆</h4>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号11 数智工场-工程效能组</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">.cursor/rules/reference-docs.mdc 明确引用项目文档路径，设 alwaysApply:true。</p>
+                    </div>
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号10 云资源部</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">AI 完成检查点报告，输出详细改动路径、验收规则、阻塞项。</p>
+                    </div>
+                    <div style="background:white;border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid #22c55e;">
+                        <strong>🏆 编号15 店铺环境组</strong>
+                        <p style="margin-top:6px;font-size:13px;color:#166534;">Codex 排查调度策略问题，主动调用 skill、检索 config、查询 codegraph。</p>
+                    </div>
+                </div>
+                <p style="margin-top:14px;font-size:13px;color:#6b7280;"><strong>注意：</strong>结构标杆 ≠ 维护成熟。ai_lib.md 建议多数业务团队稳在 L3、关键域触 L4 即为合理目标，不必追求 L5。</p>
+            </div><h3 style="margin-top:28px;">3.5 结论</h3>
+            <div class="conclusion-box">
+                <ul>
+                    <li><strong>综合达标率：</strong>66.7%（10/15）</li>
+                    <li><strong>目标1（统一架构与规范）：</strong>15/15 全部达标（100%），Harness 质量均分 5.9/10，中位数 6.0，无团队达 L3 完整可验证态</li>
+                    <li><strong>目标2（团队共识与遵从）：</strong>11/15 达标（73.3%），主要短板为团队知晓度低、文档更新停滞、多人贡献缺失</li>
+                    <li><strong>目标3（AI可用性闭环）：</strong>14/15 达标（93.3%），主要短板为 AI 实际消费案例不足、上下文层级设计缺失</li>
+                    <li><strong>不通过部门：</strong>基础产品部-管理系统组、SellerPic海外产品部、数智工场部-工程效能组、数智工场部-公共平台组、店铺环境组（共5个，均因目标2不达标）</li>
+                    <li><strong>下一步建议：</strong>
+                        <ul style="margin-top:6px;margin-left:20px;">
+                            <li>目标1：全体优先补 Verify（断链/占位词 CI）与 Correct（last_verified_at + 过期降级），再考虑 Observe 三指标</li>
+                            <li>目标2：不通过部门限期补齐"团队知晓"和"多人贡献"证据，建立文档更新 SLA</li>
+                            <li>目标3：未配置 AI 工具的团队强制接入，鼓励收集 AI 消费日常案例</li>
+                        </ul>
+                    </li>
+                    <li><strong>举证规范：</strong>按重点问题清单对举证偏差严重的部门（如Linkfox产品部-算法部等）强制重新提交证据</li>
+                </ul>
+            </div></section>
+
+        
+
         </section>
 
         <!-- Footer -->
@@ -1297,6 +1408,7 @@
 
 </body>
 </html>
+
 
 
 
