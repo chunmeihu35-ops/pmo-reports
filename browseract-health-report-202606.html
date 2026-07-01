@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var growthSpec = {
     type: 'bar',
     padding: { left: 20, right: 20, top: 30, bottom: 10 },
-    data: [{ id: 'd', values: [{month:'2026-01',growth:null,c:'zero'},{month:'2026-02',growth:-59.51,c:'neg'},{month:'2026-03',growth:76.16,c:'pos'},{month:'2026-04',growth:33.07,c:'pos'},{month:'2026-05',growth:-24.11,c:'neg'},{month:'2026-06',growth:5.88,c:'pos'}]}],
+    data: [{ id: 'd', values: [{month:'2026-01',growth:110,c:'pos'},{month:'2026-02',growth:-59.51,c:'neg'},{month:'2026-03',growth:76.16,c:'pos'},{month:'2026-04',growth:33.07,c:'pos'},{month:'2026-05',growth:-24.11,c:'neg'},{month:'2026-06',growth:5.88,c:'pos'}]}],
     xField: 'month', yField: 'growth',
     bar: { style: { cornerRadius: [4,4,4,4], fill: function(d){ return d.c==='pos' ? '#4caf92' : '#e86b6b'; } } },
     label: { visible: true, position: 'outside', style: { fontSize: 12, fontWeight: 600 }, formatMethod: function(v){ return (v>0?'+':'')+v.toFixed(1)+'%'; } },
