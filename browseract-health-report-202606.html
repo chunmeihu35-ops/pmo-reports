@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrowserAct · 产研健康诊断报告 · 2026年3月</title>
+    <script src="https://cdn.jsdelivr.net/npm/@visactor/vchart/build/index.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif; }
+        body { background:#f2f5f9; padding:2rem 1.5rem; color:#1e293b; }
+        .report-container { max-width:1440px; margin:0 auto; background:white; border-radius:32px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.2); overflow:hidden; padding:2rem 2.5rem; }
+        h1 { font-size:2rem; font-weight:600; letter-spacing:-0.01em; background:linear-gradient(135deg,#0f2b4b,#1e4a6f); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:0.4rem; }
+        .subhead { color:#5b687c; font-size:1rem; font-weight:400; border-bottom:1px solid #e6edf4; padding-bottom:1.5rem; margin-bottom:2rem; display:flex; justify-content:space-between; align-items:flex-end; }
+        .date-badge { background:#d4e2f0; padding:0.3rem 1rem; border-radius:40px; font-size:0.85rem; color:#1e3a5f; font-weight:500; }
+        .project-type-badge { background:#e8f5e9; color:#2e7d32; padding:0.3rem 1rem; border-radius:40px; font-size:0.85rem; font-weight:500; margin-left:0.5rem; border:1px solid #c8e6c9; }
+        .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-bottom:2.5rem; }
+        .kpi-card { background:#f9fcff; border:1px solid #e2eaf2; border-radius:24px; padding:1.5rem 1.2rem; transition:all 0.25s ease; box-shadow:0 2px 5px rgba(0,0,0,0.02); }
+        .kpi-card:hover { border-color:#2d7eb5; transform:translateY(-4px); box-shadow:0 8px 20px rgba(45,126,181,0.2); background:#f0f7ff; }
+        .kpi-label { font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.02em; color:#4a6f8f; margin-bottom:0.5rem; }
+        .kpi-main { display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.5rem; }
+        .kpi-value { font-size:2.5rem; font-weight:700; color:#0c2d4b; line-height:1; }
+        .trend { font-size:0.9rem; font-weight:600; padding:0.25rem 0.6rem; border-radius:30px; background:#e8f0f9; }
+        .trend.up { background:#e0f2e1; color:#1e7b48; }
+        .trend.down { background:#ffe8e8; color:#b33838; }
+        .kpi-benchmark { font-size:0.9rem; color:#506c8a; border-top:1px dashed #cbd6e4; padding-top:0.7rem; margin-top:0.3rem; display:flex; justify-content:space-between; }
+        .chart-title { font-size:1.3rem; font-weight:600; margin:2rem 0 1rem 0; color:#1e3a5f; display:flex; align-items:center; gap:0.8rem; }
+        .chart-title span { background:#dee9f2; font-size:0.8rem; padding:0.2rem 1rem; border-radius:30px; font-weight:400; color:#2b4b6f; }
+        .bar-chart { background:#ffffff; border:1px solid #dde5ed; border-radius:24px; padding:1.8rem 1.5rem; margin-bottom:2rem; box-shadow:0 6px 12px -8px rgba(0,32,64,0.08); }
+        .chart-row { display:flex; align-items:center; gap:1rem; margin:1rem 0; }
+        .chart-label { width:5rem; font-weight:600; color:#335e83; }
+        .bar-container { flex:1; height:30px; background:#eef3f9; border-radius:18px; overflow:hidden; display:flex; }
+        .bar-fill { height:100%; background:linear-gradient(90deg,#2d7eb5,#5090c5); border-radius:18px; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; color:white; font-size:0.8rem; font-weight:600; text-shadow:0 1px 2px rgba(0,0,0,0.2); }
+        .two-column { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin:2rem 0; }
+        .data-table { background:#f9fcfe; border-radius:20px; border:1px solid #dde5ed; padding:1.2rem; font-size:0.85rem; }
+        .data-table table { width:100%; border-collapse:collapse; }
+        .data-table th { text-align:left; padding:0.6rem 0.3rem; color:#38658b; font-weight:600; border-bottom:1px solid #c9d9e9; }
+        .data-table td { padding:0.5rem 0.3rem; border-bottom:1px solid #e0eaf3; }
+        .issue-box { background:#f1f7fd; border-left:6px solid; border-radius:18px; padding:1.8rem 2rem; margin:2rem 0; transition:all 0.25s ease; }
+        .issue-box:hover { transform:translateX(6px); box-shadow:0 6px 16px rgba(0,0,0,0.08); background:#f8fbff; }
+        .issue-box.one { border-color:#cd3b3b; }
+        .issue-box.two { border-color:#e68a2e; }
+        .issue-box.three { border-color:#2b7a62; }
+        .issue-title { font-size:1.25rem; font-weight:700; margin-bottom:0.8rem; display:flex; align-items:center; gap:0.5rem; }
+        .measures { background:white; border-radius:16px; padding:1.5rem; margin-top:1.2rem; list-style-type:none; }
+        .measures li { margin-bottom:1rem; padding-left:1.8rem; position:relative; font-weight:450; }
+        .measures li:before { content:"✓"; color:#1e8650; font-weight:800; position:absolute; left:0; }
+        .footnote { margin-top:3rem; background:#eaf1fa; border-radius:20px; padding:1.5rem 2rem; color:#2d4f71; font-size:0.9rem; }
+        hr { border:none; border-top:2px solid #d0ddee; margin:2rem 0; }
+        .small-note { color:#7089a8; font-size:0.8rem; margin-top:0.3rem; }
+        .linkage-tag { background:#cbddec; color:#1d4468; padding:0.2rem 0.8rem; border-radius:50px; font-size:0.7rem; font-weight:600; display:inline-block; margin-right:0.5rem; }
+        .springfest-note { background:#fef4e6; border-radius:16px; padding:0.8rem 1.5rem; margin:1rem 0; border-left:5px solid #f5a623; font-size:0.95rem; }
+        .quality-table { background:#f0f5fc; border-radius:20px; padding:1.2rem; margin:1.5rem 0; }
+        .quality-table table { width:100%; border-collapse:collapse; }
+        .quality-table th { background:#d6e3f0; padding:0.5rem; text-align:center; }
+        .quality-table td { padding:0.4rem; text-align:center; border-bottom:1px solid #bdd1e6; }
+        .growth-chart { background:#ffffff; border:1px solid #dde5ed; border-radius:24px; padding:1.8rem 1.5rem; margin:2rem 0; }
+        .growth-bar { display:flex; align-items:center; gap:1rem; margin:0.8rem 0; }
+        .growth-label { width:5rem; font-weight:600; color:#335e83; }
+        .growth-bar-container { flex:1; height:30px; background:#eef3f9; border-radius:18px; overflow:hidden; display:flex; position:relative; }
+        .growth-fill-positive { height:100%; background:#4caf92; border-radius:18px; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; color:white; font-size:0.8rem; font-weight:600; }
+        .growth-fill-negative { height:100%; background:#e86b6b; border-radius:18px; display:flex; align-items:center; padding-left:10px; color:white; font-size:0.8rem; font-weight:600; }
+        .meego-chart { background:#ffffff; border:1px solid #dde5ed; border-radius:24px; padding:1.8rem 1.5rem; margin:2rem 0; }
+        .meego-bar { display:flex; align-items:center; gap:1rem; margin:0.8rem 0; }
+        .meego-label { width:5rem; font-weight:600; color:#335e83; }
+        .meego-bar-container { flex:1; height:30px; background:#eef3f9; border-radius:18px; overflow:hidden; }
+        .meego-bar-fill { height:100%; background:linear-gradient(90deg,#b57c2d,#d79c4a); border-radius:18px; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; color:white; font-size:0.8rem; font-weight:600; }
+        .followup-table { background:#f9fcfe; border-radius:20px; border:1px solid #dde5ed; padding:1.2rem; font-size:0.85rem; margin:1.5rem 0; }
+        .followup-table table { width:100%; border-collapse:collapse; }
+        .followup-table th { text-align:left; padding:0.6rem 0.5rem; color:#38658b; font-weight:600; border-bottom:1px solid #c9d9e9; }
+        .followup-table td { padding:0.5rem 0.5rem; border-bottom:1px solid #e0eaf3; }
+        .expert-section { background:#f8faff; border:1px solid #d0ddee; border-radius:24px; padding:2rem; margin:2rem 0; }
+        .expert-section h3 { color:#1e3a5f; margin-bottom:1rem; }
+        .scenario-table { width:100%; border-collapse:collapse; margin:1rem 0; }
+        .scenario-table th { background:#e3ecf5; padding:0.6rem; text-align:left; }
+        .scenario-table td { padding:0.6rem; border-bottom:1px solid #dde5ed; }
+        @media (max-width:1024px) { .kpi-grid { grid-template-columns:repeat(2,1fr); } .two-column { grid-template-columns:1fr; } }
+        @media (max-width:768px) { body { padding:1rem; } .report-container { padding:1rem 1.2rem; border-radius:16px; } h1 { font-size:1.4rem; } .kpi-grid { grid-template-columns:1fr; gap:1rem; } .kpi-value { font-size:2rem; } .subhead { flex-direction:column; gap:0.5rem; align-items:flex-start; } }
+        @media print { body { padding:0; background:white; } .report-container { box-shadow:none; max-width:100%; border-radius:0; } .kpi-card,.issue-box,.bar-chart { break-inside:avoid; } .kpi-grid { grid-template-columns:repeat(2,1fr); } .nav-dots { display:none; } }
+    </style>
+</head>
+<body>
+<div class="report-container">
+
+    <!-- 报告头部 -->
+<h1>BrowserAct · 产研健康诊断报告</h1><div class="subhead"><span>分析周期：2026年6月 <span class="project-type-badge">MVP型项目</span></span><span class="date-badge">PMO 分析 · 2026.07.01</span></div>
+    <!-- 核心KPI卡片区 -->
+<div class="kpi-grid">
+<div class="kpi-card"><div class="kpi-label">月度需求交付个数</div><div class="kpi-main"><span class="kpi-value">2</span><span class="trend down">▼50%</span></div><div class="kpi-benchmark"><span>5月 4</span> <span>基线 7.17个/月</span></div></div>
+<div class="kpi-card"><div class="kpi-label">人均交付个数</div><div class="kpi-main"><span class="kpi-value">0.4</span><span class="trend down">▼20%</span></div><div class="kpi-benchmark"><span>5月 0.5</span> <span>基线 0.82个/人/月</span></div></div>
+<div class="kpi-card"><div class="kpi-label">人均完成时长 (天)</div><div class="kpi-main"><span class="kpi-value">5.4</span><span class="trend up">▼15.36%</span></div><div class="kpi-benchmark"><span>5月 6.38</span> <span>基线 日均2.06h/人</span></div></div>
+<div class="kpi-card"><div class="kpi-label">人均缺陷数</div><div class="kpi-main"><span class="kpi-value">12.94</span><span class="trend up">▼33.13%</span></div><div class="kpi-benchmark"><span>5月 19.35</span> <span>基线 32.5个/需求</span></div></div>
+</div>
+    <!-- 基数效应说明 -->
+<div class="springfest-note">📅 <strong>6月工作日21天</strong>（端午节6/19-21放假3天）。团队MCP口径5人（交付数÷人均交付，非真实编制）。数据范围：执行需求+创新，不含临时。⚠️ 6月交付量仅2个，小样本数据波动较大，趋势判断需谨慎。</div>
+    <!-- 上月措施跟进 -->
+<div class="chart-title">📋 上月措施跟进 <span>5月报告提出的措施</span></div><div class="followup-table"><table><thead><tr><th>上月措施</th><th>采纳情况</th><th>本月数据变化</th><th>效果评估</th></tr></thead><tbody><tr><td>Bug-Pilot质量验证：建立AI生成代码质量门禁</td><td>❌ 未采纳</td><td>缺陷密度 62→81（+30.6%）</td><td>⚠️ AI修复引入新缺陷问题加剧</td></tr><tr><td>测试周期优化：引入自动化回归测试</td><td>❌ 未采纳</td><td>测试周期 8→13天（+62.5%）</td><td>⚠️ 测试瓶颈加剧</td></tr><tr><td>交付量恢复：控制缺陷修复WIP</td><td>❌ 未采纳</td><td>月度交付 4→2个（-50%）</td><td>⚠️ 缺陷修复反噬产能未改善</td></tr></tbody></table><p class="small-note" style="margin-top:0.8rem">⚠️ 5月3项措施均未获确认反馈。三项核心指标全面恶化，建议本月立即执行。</p></div>
+    <!-- 需求交付数量趋势 -->
+<div class="chart-title">📊 需求交付数量趋势 <span>规模-效率联动</span></div><div class="bar-chart"><div id="chart-delivery-trend" style="width:100%;height:300px"></div><div class="small-note" style="margin-top:1rem">近6月交付量持续萎缩：10→6→8→5→4→2个，6月仅2个创历史新低。人均0.4个远低于基线0.82。</div></div>
+    <!-- 需求交付周期增长率趋势 -->
+<div class="chart-title">📉 需求交付周期增长率趋势 <span>整体周期变化</span></div><div class="growth-chart"><div id="chart-cycle-growth" style="width:100%;height:300px"></div><div class="small-note" style="margin-top:1rem">交付周期"锯齿形"震荡：18→7→13→17→13→14天。6月平均周期14天，环比+5.9%。测试周期13天创历史新高，已成周期主要构成。</div></div>
+    <!-- 联动分析表 -->
+<div class="two-column"><div class="data-table"><h3 style="margin-bottom:0.8rem">📋 需求交付周期明细 (天)</h3><table><thead><tr><th>月份</th><th>交付数</th><th>平均周期</th><th>开发</th><th>测试</th><th>其他</th></tr></thead><tbody><tr><td>1月</td><td>10</td><td>18</td><td>3</td><td>15</td><td>0</td></tr>
+<tr><td>2月</td><td>6</td><td>7</td><td>5</td><td>3</td><td>-1 ⚠️</td></tr>
+<tr><td>3月</td><td>8</td><td>13</td><td>9</td><td>4</td><td>0</td></tr>
+<tr><td>4月</td><td>5</td><td>17</td><td>12</td><td>2</td><td>3 ⚠️</td></tr>
+<tr><td>5月</td><td>4</td><td>13</td><td>6</td><td>8</td><td>-1 ⚠️</td></tr>
+<tr style="background:#f0f7ff;"><td>6月</td><td>2</td><td>14</td><td>1</td><td>13</td><td>0</td></tr></tbody></table><p class="small-note">6月交付量仅2个（小样本），平均周期14天。开发周期骤降至1天，测试周期飙升至13天——开发快速交付但测试成为严重瓶颈。近6月开发周期：3→5→9→12→6→1，波动极大；测试周期：15→3→4→2→8→13，6月创历史新高。</p></div><div class="data-table"><h3 style="margin-bottom:0.8rem">🔄 跨角色协作响应 (天)</h3><table><thead><tr><th>月份</th><th>待开始→开发中</th><th>开发→测试</th></tr></thead><tbody><tr><td>1月</td><td>1.1</td><td>1.6</td></tr>
+<tr><td>2月</td><td>1.17</td><td>1</td></tr>
+<tr><td>3月</td><td>1</td><td>2</td></tr>
+<tr><td>4月</td><td>3.2</td><td>2.6</td></tr>
+<tr><td>5月</td><td>1.5</td><td>1.25</td></tr>
+<tr style="background:#f0f7ff;"><td>6月</td><td>1</td><td>1.5</td></tr></tbody></table><p class="small-note">6月"待开始→开发中"间隔1天，较5月（1.5天）改善。开发→测试间隔1.5天，较5月（1.25天）略增。协作间隔整体合理，非主要瓶颈。</p></div></div>
+    <!-- 需求质量数据 -->
+<div class="quality-table"><h3 style="margin-bottom:1rem">📐 需求质量数据</h3><table><thead><tr><th>月份</th><th>需求交付缺陷密度</th><th>一次验收通过率</th></tr></thead><tbody><tr><td>1月</td><td>29</td><td>90.00%</td></tr>
+<tr><td>2月</td><td>18</td><td>83.33%</td></tr>
+<tr><td>3月</td><td>22</td><td>100%</td></tr>
+<tr><td>4月</td><td style="color:#e68a2e;font-weight:700">44</td><td>100%</td></tr>
+<tr><td>5月</td><td style="color:#e86b6b;font-weight:700">62</td><td>100%</td></tr>
+<tr style="background:#f0f7ff;"><td>6月</td><td style="color:#e86b6b;font-weight:700">81</td><td>100%</td></tr></tbody></table><p class="small-note">缺陷密度连续3月恶化：44→62→81，6月达81个/需求，远超基线均值32.5，创历史新高。一次验收通过率连续3月100%（参考价值有限）。Bug-Pilot引入后（4月起）缺陷密度翻倍式增长，AI辅助开发质量问题已成最严峻挑战。</p></div>
+    <!-- Meego核心操作平均时长趋势 -->
+<div class="chart-title">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div><div class="meego-chart"><div id="chart-meego-trend" style="width:100%;height:300px"></div><div class="small-note" style="margin-top:1rem">6月Meego核心操作平均时长2.4天，较5月（2.1天）+14.3%。总操作236次，较5月（316次）-25.3%。人均有效操作13.88次，较5月（16.63次）-16.5%。</div></div>
+    <!-- 工具效率快照 -->
+<div style="display:flex;gap:1.5rem;flex-wrap:wrap;background:#fff;border:1px solid #cbddec;border-radius:20px;padding:1rem 2rem;margin:1.5rem 0;font-size:0.88rem"><div><span class="linkage-tag">操作次数</span> 236次|日均11.2</div><div><span class="linkage-tag">人均操作</span> 13.88|5月 16.63|<strong style="color:#e86b6b">▼16.54%</strong></div><div><span class="linkage-tag">操作时长</span> 2.4天|5月 2.1天|<strong style="color:#e68a2e">+14.3%</strong></div></div>
+    <!-- 核心问题定位 -->
+<div style="margin:2.5rem 0"><h2 style="font-size:1.8rem;margin-bottom:0.5rem">🔍 核心问题定位 (三类) 及落地整改</h2><p style="color:#476788;margin-bottom:2rem">依据"投入-产出双维度""质量双维度""协作-周期瓶颈"联动解读</p></div>
+    <!-- 问题1：红色 -->
+<div class="issue-box one"><div class="issue-title">🚩 问题一：缺陷密度连续3月恶化，6月创历史新高（81个/需求）</div><p><span class="linkage-tag">缺陷密度</span><span class="linkage-tag">人均缺陷数</span><span class="linkage-tag">Bug-Pilot</span></p><p style="margin-top:0.8rem"><strong>数据表现：</strong>缺陷密度从4月44→5月62→6月81，连续3月翻倍式增长，81个/需求远超基线32.5（+149%）。人均缺陷数从19.35降至12.94（-33.1%），但这是交付量从4降至2导致分母缩小，实际质量在恶化。Bug-Pilot（AI自动修复缺陷）4月引入后，缺陷密度从22→44→62→81。</p><p style="margin-top:0.5rem"><strong>⚠️ 判断前提：</strong>缺陷密度上升完全由Bug-Pilot导致——需验证是否有其他因素（需求复杂度增加、测试覆盖不足、开发周期压缩导致质量让步）。6月开发周期仅1天，可能存在"快速编码→大量缺陷→测试返工"模式。</p><ul class="measures"><h4 style="margin-bottom:0.8rem">✅ 可落地整改措施</h4><li>对Bug-Pilot生成代码增加静态扫描+人工Review双门禁 — 技术负责人 7月第2周</li><li>建立AI代码缺陷追踪标签，区分人工vs AI生成代码的缺陷密度 — 技术负责人 7月第3周</li><li>评估Bug-Pilot的ROI：若修复引入缺陷成本超过节省开发时间，需调整策略 — PMO 7月第2周</li></ul></div>
+    <!-- 问题2：橙色 -->
+<div class="issue-box two"><div class="issue-title">🚩 问题二：交付量持续萎缩（1月→6月：10→2），团队陷入"救火模式"</div><p><span class="linkage-tag">月度交付数量</span><span class="linkage-tag">人均交付数量</span><span class="linkage-tag">缺陷修复WIP</span></p><p style="margin-top:0.8rem"><strong>数据表现：</strong>月度交付从1月峰值10个降至6月仅2个（-80%），人均交付0.4个远低于基线0.82。投入-产出判定：人均时长5.4天（低）+ 人均交付0.4个（低）= 人力冗余或效率双重问题。日均投入0.51天/工作日，实际工作负荷不高。</p><p style="margin-top:0.5rem"><strong>⚠️ 判断前提：</strong>交付量下降主要因缺陷修复占用产能。需验证：团队是否将主要精力投入缺陷修复而非新需求？缺陷修复WIP是否失控？</p><ul class="measures"><h4 style="margin-bottom:0.8rem">✅ 可落地整改措施</h4><li>限制并行缺陷修复数量（≤3个），优先保障新需求交付 — 项目经理 立即执行</li><li>梳理积压需求优先级，7月目标恢复至4个/月 — 产品+技术 7月第1周</li><li>建立"缺陷修复时间盒"：每迭代20%时间缺陷修复，80%新需求 — Scrum Master 7月第2周</li></ul></div>
+    <!-- 问题3：绿色 -->
+<div class="issue-box three"><div class="issue-title">🚩 问题三：测试周期异常膨胀（5月→6月：8→13天），成为最大交付瓶颈</div><p><span class="linkage-tag">测试周期</span><span class="linkage-tag">开发周期</span><span class="linkage-tag">开发→测试间隔</span></p><p style="margin-top:0.8rem"><strong>数据表现：</strong>测试周期从5月8天飙升至6月13天（+62.5%），创历史新高。同期开发周期从6天骤降至1天。开发快速交付（1天）但测试成为严重瓶颈（13天），形成"开发1天→测试13天"极端不对称。瓶颈已从开发转移至测试。</p><p style="margin-top:0.5rem"><strong>⚠️ 判断前提：</strong>测试周期膨胀与AI生成代码验证复杂度增加有关。需验证：测试资源不足？回归测试工作量大？AI代码质量导致反复reopen？</p><ul class="measures"><h4 style="margin-bottom:0.8rem">✅ 可落地整改措施</h4><li>引入自动化回归测试，减少人工验证工作量 — 测试负责人 7月第3周</li><li>分析13天测试周期构成（等待/执行/返工），定位可压缩环节 — 测试负责人 7月第2周</li><li>评估测试资源充足性：2个需求13天测试，人均6.5天/需求是否合理 — QA负责人 7月第2周</li></ul></div>
+    <!-- 专家视角 -->
+<div class="expert-section"><h3>🧠 专家视角</h3><h4 style="margin:1rem 0 0.5rem">📊 模式识别</h4><p>BrowserAct近6个月呈现"交付量持续萎缩+缺陷密度持续恶化+测试周期持续膨胀"三重恶化模式。Bug-Pilot引入后（4月起），缺陷密度22→44→62→81，测试周期2→8→13天，交付量5→4→2个。AI辅助开发在加速编码的同时，可能正在制造"质量债务"。</p><p style="margin-top:0.5rem">6月数据极端分化：开发周期1天（历史最低）vs 测试周期13天（历史最高）。暗示团队可能在"快速编码→大量缺陷→测试返工"恶性循环中。开发周期骤降不一定是效率提升，更可能是质量让步信号。</p><h4 style="margin:1.5rem 0 0.5rem">🔮 场景推演</h4><table class="scenario-table"><thead><tr><th>方案</th><th>预期影响</th></tr></thead><tbody><tr><td>维持现状</td><td>缺陷密度继续攀升，测试周期进一步膨胀，交付量可能降至0-1个/月</td></tr><tr><td>暂停Bug-Pilot，回归人工修复</td><td>短期开发周期回升至5-6天，但缺陷密度有望回落，测试周期逐步恢复</td></tr><tr><td>Bug-Pilot+质量门禁（静态扫描+人工Review）</td><td>保留AI加速优势，控制缺陷引入率。预计缺陷密度可控制在40-50区间</td></tr><tr><td>引入自动化回归测试</td><td>测试周期可从13天压缩至5-7天，但需1-2月建设期</td></tr></tbody></table><h4 style="margin:1.5rem 0 0.5rem">💡 反思问题</h4><ol style="padding-left:1.5rem;color:#335e83"><li style="margin-bottom:0.5rem">Bug-Pilot是否真正提升了整体交付效率？若测试13天成本超过开发1天收益，是否需重新评估AI策略？</li><li style="margin-bottom:0.5rem">开发1天+测试13天的极端分化，是测试资源不足还是AI代码验证复杂度增加？如何根本解决？</li><li>交付量从10个/月降至2个/月，团队是否在"救火模式"？如何打破"修bug→没时间做需求→更多bug"循环？</li></ol></div>
+    <!-- 行动计划 -->
+<div style="display:flex;gap:2rem;flex-wrap:wrap;background:#fff;border-radius:32px;padding:2rem;border:1px solid #c5d8ec"><div style="flex:1"><h3 style="margin-bottom:1.2rem">📈 基于联动解读的优化方向</h3><ul style="list-style-type:none"><li style="margin-bottom:1rem">✅ <strong>AI代码质量门禁</strong> — 目标：缺陷密度从81降至≤50（7月底）</li><li style="margin-bottom:1rem">✅ <strong>测试效率提升</strong> — 目标：测试周期从13天降至≤7天（7月底）</li><li style="margin-bottom:1rem">✅ <strong>交付量恢复</strong> — 目标：月度交付从2个恢复至4个（7月）</li><li style="margin-bottom:1rem">✅ <strong>投入产出平衡</strong> — 目标：人均交付≥0.6个/人（7月）</li></ul></div><div style="flex:1;border-left:2px solid #b7cde0;padding-left:2rem"><h3 style="margin-bottom:1.2rem">⏱️ 责任人 &amp; 时间节点</h3><p style="margin-bottom:0.8rem"><strong>技术负责人：</strong>Bug-Pilot生成代码静态扫描+人工Review双门禁；AI代码缺陷追踪标签 — 7月第2-3周</p><p style="margin-bottom:0.8rem"><strong>测试负责人：</strong>分析13天测试周期构成；引入自动化回归测试 — 7月第2-3周</p><p style="margin-bottom:0.8rem"><strong>项目经理：</strong>限制缺陷修复WIP≤3个；梳理积压需求优先级 — 立即执行</p><p><strong>产品+技术：</strong>制定7月交付计划，目标4个/月 — 7月第1周</p></div></div>
+    <!-- 指标建议优化模块 -->
+<div style="margin:2rem 0;background:#f8faff;border:1px solid #d0ddee;border-radius:24px;padding:1.5rem 2rem"><h3 style="color:#1e3a5f;margin-bottom:1rem">📊 指标建议优化</h3><p style="margin-bottom:0.8rem"><strong>1. 新增"AI代码缺陷率"（高优）</strong>：区分人工vs AI生成代码的缺陷密度。计算来源=缺陷关联的提交标记。</p><p style="margin-bottom:0.8rem"><strong>2. 新增"测试自动化覆盖率"（高优）</strong>：衡量回归测试自动化程度。计算来源=自动化用例数/总用例数。</p><p style="margin-bottom:0.8rem"><strong>3. 新增"缺陷修复返工率"（中优）</strong>：reopen次数/总修复次数。计算来源=飞书项目缺陷状态流转记录。</p><p><strong>4. 延续上月：开发周期拆解</strong>：开发周期波动极大（1→12天），需拆解为编码/评审/返工/等待子阶段。</p></div>
+    <!-- 报告脚注 -->
+<div style="margin-top:2.5rem;font-size:0.8rem;color:#6d8bb0;text-align:right;border-top:1px solid #c9d9e9;padding-top:1rem">数据来源：飞书项目MCP（自动获取） · 分析周期：2026年6月 · 特殊因素：端午假期（6/19-21） · 团队规模：MCP口径5人 · 本报告由PMO生成 · 分析日期：2026.07.01</div>
+    <!-- 右侧导航圆点 -->
+<nav class="nav-dots" id="navDots"></nav>
+<style>
+.nav-dots { position:fixed; right:1.5rem; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:0.75rem; z-index:100; }
+.nav-dot { width:10px; height:10px; border-radius:50%; background:#c9d9e9; cursor:pointer; transition:all 0.3s ease; }
+.nav-dot:hover,.nav-dot.active { background:#2d7eb5; transform:scale(1.5); box-shadow:0 0 8px rgba(45,126,181,0.5); }
+@media (max-width:768px) { .nav-dots { display:none; } }
+@media print { .nav-dots { display:none; } }
+</style>
+<script>
+(function(){
+    var sections=document.querySelectorAll('.chart-title,.issue-box,h2');
+    var navDots=document.getElementById('navDots');
+    sections.forEach(function(section,i){
+        section.id=section.id||'section-'+i;
+        var dot=document.createElement('div');
+        dot.className='nav-dot';
+        var label=section.textContent.trim().replace(/[\n\r]/g,'').substring(0,20);
+        dot.setAttribute('title',label);
+        dot.onclick=function(){section.scrollIntoView({behavior:'smooth'});};
+        var tooltip=document.createElement('span');
+        tooltip.className='nav-tooltip';
+        tooltip.textContent=label;
+        dot.appendChild(tooltip);
+        navDots.appendChild(dot);
+    });
+    window.addEventListener('scroll',function(){
+        var dots=document.querySelectorAll('.nav-dot');
+        var current=0;
+        sections.forEach(function(section,i){
+            if(window.scrollY>=section.offsetTop-200) current=i;
+        });
+        dots.forEach(function(dot,i){dot.classList.toggle('active',i===current);});
+    });
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // === 图表1：需求交付数量趋势 ===
+  var deliverySpec = {
+    type: 'bar',
+    padding: { left: 20, right: 20, top: 30, bottom: 10 },
+    data: [{ id: 'd', values: [{month:'2026-01',value:10,hl:'normal'},{month:'2026-02',value:6,hl:'normal'},{month:'2026-03',value:8,hl:'normal'},{month:'2026-04',value:5,hl:'normal'},{month:'2026-05',value:4,hl:'normal'},{month:'2026-06',value:2,hl:'current'}]}],
+    xField: 'month', yField: 'value',
+    bar: { style: { cornerRadius: [6,6,0,0], fill: function(d){ return d.hl==='current' ? '#2d7eb5' : '#8bb8d9'; } } },
+    label: { visible: true, position: 'top', style: { fill: '#335e83', fontSize: 14, fontWeight: 700 } },
+    axes: [
+      { orient: 'bottom', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
+      { orient: 'left', visible: false, max: 13 }
+    ],
+    tooltip: { trigger: 'mark', mark: { title: { visible: true }, content: [{ key: '交付数量', value: function(d){ return d.value + ' 个'; } }] } },
+    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(45,126,181,0.08)' } } } }
+  };
+  var c1 = new VChart.default(deliverySpec, { dom: 'chart-delivery-trend' }); c1.renderSync();
+
+  // === 图表2：交付周期增长率 ===
+  var growthSpec = {
+    type: 'bar',
+    padding: { left: 20, right: 20, top: 30, bottom: 10 },
+    data: [{ id: 'd', values: [
+      { month: '2025-10', growth: 9.8, c: 'pos' },
+      { month: '2025-11', growth: 51.5, c: 'pos' },
+      { month: '2025-12', growth: -40.4, c: 'neg' },
+      { month: '2026-01', growth: 110.0, c: 'pos' },
+      { month: '2026-02', growth: -59.5, c: 'neg' },
+      { month: '2026-03', growth: 76.2, c: 'pos' }
+    ]}],
+    xField: 'month', yField: 'growth',
+    bar: { style: { cornerRadius: [4,4,4,4], fill: function(d){ return d.c==='pos' ? '#4caf92' : '#e86b6b'; } } },
+    label: { visible: true, position: 'outside', style: { fontSize: 12, fontWeight: 600 }, formatMethod: function(v){ return (v>0?'+':'')+v.toFixed(1)+'%'; } },
+    axes: [
+      { orient: 'bottom', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
+      { orient: 'left', visible: false }
+    ],
+    tooltip: { trigger: 'mark', mark: { content: [{ key: '环比变化', value: function(d){ return (d.growth>0?'+':'')+d.growth.toFixed(1)+'%'; } }] } },
+    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(0,0,0,0.04)' } } } }
+  };
+  var c2 = new VChart.default(growthSpec, { dom: 'chart-cycle-growth' }); c2.renderSync();
+
+  // === 图表3：Meego操作时长+次数（独立数据源） ===
+  var meegoSpec = {
+    type: 'common',
+    padding: { left: 10, right: 10, top: 40, bottom: 10 },
+    data: [
+      { id: 'durData', values: [{month:'2026-01',duration:1.8},{month:'2026-02',duration:1.7},{month:'2026-03',duration:1.7},{month:'2026-04',duration:2.8},{month:'2026-05',duration:2.1},{month:'2026-06',duration:2.4}]},
+      { id: 'cntData', values: [{month:'2026-01',count:230},{month:'2026-02',count:110},{month:'2026-03',count:219},{month:'2026-04',count:189},{month:'2026-05',count:316},{month:'2026-06',count:236}]}
+    ],
+    series: [
+      { type: 'bar', id: 'durBar', name: '平均时长', dataId: 'durData', xField: 'month', yField: 'duration',
+        bar: { style: { cornerRadius: [6,6,0,0], fill: { gradient: 'linear', x0:0.5,y0:0, x1:0.5,y1:1, stops:[{offset:0,color:'#d79c4a'},{offset:1,color:'#b57c2d'}] } } },
+        label: { visible: true, position: 'top', style: { fill: '#7a5a1e', fontSize: 13, fontWeight: 700 }, formatMethod: function(v){return v+'天';} }
+      },
+      { type: 'line', id: 'cntLine', name: '操作次数', dataId: 'cntData', xField: 'month', yField: 'count',
+        line: { style: { stroke: '#506c8a', lineWidth: 2, lineDash: [6,3] } },
+        point: { style: { fill: '#506c8a', stroke: '#fff', lineWidth: 2, size: 7 } },
+        label: { visible: true, position: 'top', offset: 8, style: { fill: '#506c8a', fontSize: 11 }, formatMethod: function(v){return v+'次';} }
+      }
+    ],
+    axes: [
+      { orient: 'bottom', type: 'band', label: { visible: true, style: { fill: '#506c8a', fontSize: 11 } } },
+      { orient: 'left', type: 'linear', seriesId: ['durBar'], title: { visible: true, text: '平均时长(天)', style: { fill: '#7a5a1e' } }, min: 0, max: 3.5 },
+      { orient: 'right', type: 'linear', seriesId: ['cntLine'], title: { visible: true, text: '操作次数', style: { fill: '#506c8a' } }, grid: { visible: false }, min: 0 }
+    ],
+    tooltip: { trigger: 'axis' },
+    crosshair: { xField: { visible: true, line: { type: 'rect', style: { fill: 'rgba(181,124,45,0.08)' } } } },
+    legends: { visible: true, orient: 'top', position: 'end' }
+  };
+  var c3 = new VChart.default(meegoSpec, { dom: 'chart-meego-trend' }); c3.renderSync();
+});
+</script>
+</body>
+</html>
