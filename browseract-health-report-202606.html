@@ -80,7 +80,7 @@
         @media (max-width:1024px) { .kpi-grid { grid-template-columns:repeat(2,1fr); } .two-column { grid-template-columns:1fr; } }
         @media (max-width:768px) { body { padding:1rem; } .report-container { padding:1rem 1.2rem; border-radius:16px; } h1 { font-size:1.4rem; } .kpi-grid { grid-template-columns:1fr; gap:1rem; } .kpi-value { font-size:2rem; } .subhead { flex-direction:column; gap:0.5rem; align-items:flex-start; } }
         @media print { body { padding:0; background:white; } .report-container { box-shadow:none; max-width:100%; border-radius:0; } .kpi-card,.issue-box,.bar-chart { break-inside:avoid; } .kpi-grid { grid-template-columns:repeat(2,1fr); } .nav-dots { display:none; } }
-    </style>
+    .nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:0.75rem;z-index:100;}.nav-dot{width:10px;height:10px;border-radius:50%;background:#c9d9e9;cursor:pointer;transition:all 0.3s ease;}.nav-dot:hover,.nav-dot.active{background:#2d7eb5;transform:scale(1.5);box-shadow:0 0 8px rgba(45,126,181,0.5);}.nav-tooltip{display:none;}@media(max-width:768px){.nav-dots{display:none;}}@media print{.nav-dots{display:none;}}</style>
 </head>
 <body>
 <div class="report-container">
@@ -91,11 +91,11 @@
 <div class="kpi-grid">
 <div class="kpi-card"><div class="kpi-label">月度需求交付个数</div><div class="kpi-main"><span class="kpi-value">2</span><span class="trend down">▼50%</span></div><div class="kpi-benchmark"><span>5月 4</span> <span>基线 7.17个/月</span></div></div>
 <div class="kpi-card"><div class="kpi-label">人均交付个数</div><div class="kpi-main"><span class="kpi-value">0.4</span><span class="trend down">▼20%</span></div><div class="kpi-benchmark"><span>5月 0.5</span> <span>基线 0.82个/人/月</span></div></div>
-<div class="kpi-card"><div class="kpi-label">人均完成时长 (天)</div><div class="kpi-main"><span class="kpi-value">5.4</span><span class="trend up">▼15.36%</span></div><div class="kpi-benchmark"><span>5月 6.38</span> <span>基线 日均2.06h/人</span></div></div>
-<div class="kpi-card"><div class="kpi-label">人均缺陷数</div><div class="kpi-main"><span class="kpi-value">12.94</span><span class="trend up">▼33.13%</span></div><div class="kpi-benchmark"><span>5月 19.35</span> <span>基线 32.5个/需求</span></div></div>
+<div class="kpi-card"><div class="kpi-label">人均完成时长 (天)</div><div class="kpi-main"><span class="kpi-value">5.4</span><span class="trend down">▼15.36%</span></div><div class="kpi-benchmark"><span>5月 6.38天</span> <span>差异 -0.98天</span></div></div>
+<div class="kpi-card"><div class="kpi-label">人均缺陷数</div><div class="kpi-main"><span class="kpi-value">12.94</span><span class="trend down">▼33.13%</span></div><div class="kpi-benchmark"><span>5月 19.35个</span> <span>差异 -6.41个</span></div></div>
 </div>
     <!-- 基数效应说明 -->
-<div class="springfest-note">📅 <strong>6月工作日21天</strong>（端午节6/19-21放假3天）。团队MCP口径5人（交付数÷人均交付，非真实编制）。数据范围：执行需求+创新，不含临时。⚠️ 6月交付量仅2个，小样本数据波动较大，趋势判断需谨慎。</div>
+<div class="springfest-note">📅 <strong>6月工作日21天</strong>（端午节6/19-21放假3天）。团队MCP口径5人（交付数÷人均交付，非真实编制）。⚠️ 6月交付量仅2个，小样本数据波动较大，趋势判断需谨慎。</div>
     <!-- 上月措施跟进 -->
 <div class="chart-title">📋 上月措施跟进 <span>5月报告提出的措施</span></div><div class="followup-table"><table><thead><tr><th>上月措施</th><th>采纳情况</th><th>本月数据变化</th><th>效果评估</th></tr></thead><tbody><tr><td>Bug-Pilot质量验证：建立AI生成代码质量门禁</td><td>❌ 未采纳</td><td>缺陷密度 62→81（+30.6%）</td><td>⚠️ AI修复引入新缺陷问题加剧</td></tr><tr><td>测试周期优化：引入自动化回归测试</td><td>❌ 未采纳</td><td>测试周期 8→13天（+62.5%）</td><td>⚠️ 测试瓶颈加剧</td></tr><tr><td>交付量恢复：控制缺陷修复WIP</td><td>❌ 未采纳</td><td>月度交付 4→2个（-50%）</td><td>⚠️ 缺陷修复反噬产能未改善</td></tr></tbody></table><p class="small-note" style="margin-top:0.8rem">⚠️ 5月3项措施均未获确认反馈。三项核心指标全面恶化，建议本月立即执行。</p></div>
     <!-- 需求交付数量趋势 -->
@@ -103,24 +103,24 @@
     <!-- 需求交付周期增长率趋势 -->
 <div class="chart-title">📉 需求交付周期增长率趋势 <span>整体周期变化</span></div><div class="growth-chart"><div id="chart-cycle-growth" style="width:100%;height:300px"></div><div class="small-note" style="margin-top:1rem">交付周期"锯齿形"震荡：18→7→13→17→13→14天。6月平均周期14天，环比+5.9%。测试周期13天创历史新高，已成周期主要构成。</div></div>
     <!-- 联动分析表 -->
-<div class="two-column"><div class="data-table"><h3 style="margin-bottom:0.8rem">📋 需求交付周期明细 (天)</h3><table><thead><tr><th>月份</th><th>交付数</th><th>平均周期</th><th>开发</th><th>测试</th><th>其他</th></tr></thead><tbody><tr><td>1月</td><td>10</td><td>18</td><td>3</td><td>15</td><td>0</td></tr>
-<tr><td>2月</td><td>6</td><td>7</td><td>5</td><td>3</td><td>-1 ⚠️</td></tr>
-<tr><td>3月</td><td>8</td><td>13</td><td>9</td><td>4</td><td>0</td></tr>
-<tr><td>4月</td><td>5</td><td>17</td><td>12</td><td>2</td><td>3 ⚠️</td></tr>
-<tr><td>5月</td><td>4</td><td>13</td><td>6</td><td>8</td><td>-1 ⚠️</td></tr>
-<tr style="background:#f0f7ff;"><td>6月</td><td>2</td><td>14</td><td>1</td><td>13</td><td>0</td></tr></tbody></table><p class="small-note">6月交付量仅2个（小样本），平均周期14天。开发周期骤降至1天，测试周期飙升至13天——开发快速交付但测试成为严重瓶颈。近6月开发周期：3→5→9→12→6→1，波动极大；测试周期：15→3→4→2→8→13，6月创历史新高。</p></div><div class="data-table"><h3 style="margin-bottom:0.8rem">🔄 跨角色协作响应 (天)</h3><table><thead><tr><th>月份</th><th>待开始→开发中</th><th>开发→测试</th></tr></thead><tbody><tr><td>1月</td><td>1.1</td><td>1.6</td></tr>
-<tr><td>2月</td><td>1.17</td><td>1</td></tr>
-<tr><td>3月</td><td>1</td><td>2</td></tr>
-<tr><td>4月</td><td>3.2</td><td>2.6</td></tr>
-<tr><td>5月</td><td>1.5</td><td>1.25</td></tr>
-<tr style="background:#f0f7ff;"><td>6月</td><td>1</td><td>1.5</td></tr></tbody></table><p class="small-note">6月"待开始→开发中"间隔1天，较5月（1.5天）改善。开发→测试间隔1.5天，较5月（1.25天）略增。协作间隔整体合理，非主要瓶颈。</p></div></div>
+<div class="two-column"><div class="data-table"><h3 style="margin-bottom:0.8rem">📋 需求交付周期明细 (天)</h3><table><thead><tr><th>月份</th><th>交付数</th><th>平均周期</th><th>开发</th><th>测试</th><th>其他</th></tr></thead><tbody><tr><td>2026-01</td><td>10</td><td>18</td><td>3</td><td>15</td><td>0</td></tr>
+<tr><td>2026-02</td><td>6</td><td>7</td><td>5</td><td>3</td><td>-1 ⚠️</td></tr>
+<tr><td>2026-03</td><td>8</td><td>13</td><td>9</td><td>4</td><td>0</td></tr>
+<tr><td>2026-04</td><td>5</td><td>17</td><td>12</td><td>2</td><td>3 ⚠️</td></tr>
+<tr><td>2026-05</td><td>4</td><td>13</td><td>6</td><td>8</td><td>-1 ⚠️</td></tr>
+<tr style="background:#f0f7ff;"><td>2026-06</td><td>2</td><td>14</td><td>1</td><td>13</td><td>0</td></tr></tbody></table><p class="small-note">6月交付量仅2个（小样本），平均周期14天。开发周期骤降至1天，测试周期飙升至13天——开发快速交付但测试成为严重瓶颈。近6月开发周期：3→5→9→12→6→1，波动极大；测试周期：15→3→4→2→8→13，6月创历史新高。</p></div><div class="data-table"><h3 style="margin-bottom:0.8rem">🔄 跨角色协作响应 (天)</h3><table><thead><tr><th>月份</th><th>待开始→开发中</th><th>开发→测试</th></tr></thead><tbody><tr><td>2026-01</td><td>1.1</td><td>1.6</td></tr>
+<tr><td>2026-02</td><td>1.17</td><td>1</td></tr>
+<tr><td>2026-03</td><td>1</td><td>2</td></tr>
+<tr><td>2026-04</td><td>3.2</td><td>2.6</td></tr>
+<tr><td>2026-05</td><td>1.5</td><td>1.25</td></tr>
+<tr style="background:#f0f7ff;"><td>2026-06</td><td>1</td><td>1.5</td></tr></tbody></table><p class="small-note">6月"待开始→开发中"间隔1天，较5月（1.5天）改善。开发→测试间隔1.5天，较5月（1.25天）略增。协作间隔整体合理，非主要瓶颈。</p></div></div>
     <!-- 需求质量数据 -->
-<div class="quality-table"><h3 style="margin-bottom:1rem">📐 需求质量数据</h3><table><thead><tr><th>月份</th><th>需求交付缺陷密度</th><th>一次验收通过率</th></tr></thead><tbody><tr><td>1月</td><td>29</td><td>90.00%</td></tr>
-<tr><td>2月</td><td>18</td><td>83.33%</td></tr>
-<tr><td>3月</td><td>22</td><td>100%</td></tr>
-<tr><td>4月</td><td style="color:#e68a2e;font-weight:700">44</td><td>100%</td></tr>
-<tr><td>5月</td><td style="color:#e86b6b;font-weight:700">62</td><td>100%</td></tr>
-<tr style="background:#f0f7ff;"><td>6月</td><td style="color:#e86b6b;font-weight:700">81</td><td>100%</td></tr></tbody></table><p class="small-note">缺陷密度连续3月恶化：44→62→81，6月达81个/需求，远超基线均值32.5，创历史新高。一次验收通过率连续3月100%（参考价值有限）。Bug-Pilot引入后（4月起）缺陷密度翻倍式增长，AI辅助开发质量问题已成最严峻挑战。</p></div>
+<div class="quality-table"><h3 style="margin-bottom:1rem"> 需求质量数据</h3><table><thead><tr><th>月份</th><th>一次验收通过率</th><th>需求交付缺陷密度</th></tr></thead><tbody><tr><td>2026-01</td><td>90.00%</td><td>29</td></tr>
+<tr><td>2026-02</td><td>83.33%</td><td>18</td></tr>
+<tr><td>2026-03</td><td>100%</td><td>22</td></tr>
+<tr><td>2026-04</td><td>100%</td><td style="color:#e68a2e;font-weight:700">44</td></tr>
+<tr><td>2026-05</td><td>100%</td><td style="color:#e86b6b;font-weight:700">62</td></tr>
+<tr style="background:#f0f7ff;"><td>2026-06</td><td>100%</td><td style="color:#e86b6b;font-weight:700">81</td></tr></tbody></table><p class="small-note">缺陷密度连续3月恶化：44→62→81，6月达81个/需求，远超基线均值32.5，创历史新高。一次验收通过率连续3月100%（参考价值有限）。Bug-Pilot引入后（4月起）缺陷密度翻倍式增长，AI辅助开发质量问题已成最严峻挑战。</p></div>
     <!-- Meego核心操作平均时长趋势 -->
 <div class="chart-title">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div><div class="meego-chart"><div id="chart-meego-trend" style="width:100%;height:300px"></div><div class="small-note" style="margin-top:1rem">6月Meego核心操作平均时长2.4天，较5月（2.1天）+14.3%。总操作236次，较5月（316次）-25.3%。人均有效操作13.88次，较5月（16.63次）-16.5%。</div></div>
     <!-- 工具效率快照 -->
@@ -200,14 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var growthSpec = {
     type: 'bar',
     padding: { left: 20, right: 20, top: 30, bottom: 10 },
-    data: [{ id: 'd', values: [
-      { month: '2025-10', growth: 9.8, c: 'pos' },
-      { month: '2025-11', growth: 51.5, c: 'pos' },
-      { month: '2025-12', growth: -40.4, c: 'neg' },
-      { month: '2026-01', growth: 110.0, c: 'pos' },
-      { month: '2026-02', growth: -59.5, c: 'neg' },
-      { month: '2026-03', growth: 76.2, c: 'pos' }
-    ]}],
+    data: [{ id: 'd', values: [{month:'2026-01',growth:0,c:'zero'},{month:'2026-02',growth:-59.51,c:'neg'},{month:'2026-03',growth:76.16,c:'pos'},{month:'2026-04',growth:33.07,c:'pos'},{month:'2026-05',growth:-24.11,c:'neg'},{month:'2026-06',growth:5.88,c:'pos'}]}],
     xField: 'month', yField: 'growth',
     bar: { style: { cornerRadius: [4,4,4,4], fill: function(d){ return d.c==='pos' ? '#4caf92' : '#e86b6b'; } } },
     label: { visible: true, position: 'outside', style: { fontSize: 12, fontWeight: 600 }, formatMethod: function(v){ return (v>0?'+':'')+v.toFixed(1)+'%'; } },
