@@ -215,444 +215,133 @@
 数据来源：Meego飞书项目（MCP自动获取） · 分析周期：2026年6月 · 本报告由PMO生成 · 分析模型：Claude Opus 4</div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-var deliverySpec = {
-  "type": "bar",
-  "padding": {
-    "left": 20,
-    "right": 20,
-    "top": 30,
-    "bottom": 10
-  },
-  "data": [
-    {
-      "id": "d",
-      "values": [
-        {
-          "month": "2026-01",
-          "value": 26,
-          "hl": "normal"
-        },
-        {
-          "month": "2026-02",
-          "value": 19,
-          "hl": "normal"
-        },
-        {
-          "month": "2026-03",
-          "value": 31,
-          "hl": "normal"
-        },
-        {
-          "month": "2026-04",
-          "value": 70,
-          "hl": "normal"
-        },
-        {
-          "month": "2026-05",
-          "value": 29,
-          "hl": "normal"
-        },
-        {
-          "month": "2026-06",
-          "value": 44,
-          "hl": "current"
-        }
-      ]
-    }
-  ],
-  "xField": "month",
-  "yField": "value",
-  "bar": {
-    "style": {
-      "cornerRadius": [
-        6,
-        6,
-        0,
-        0
-      ],
-      "fill": "function(d){return d.hl==='current'?'#2d7eb5':'#8bb8d9';}"
-    }
-  },
-  "label": {
-    "visible": true,
-    "position": "top",
-    "style": {
-      "fill": "#335e83",
-      "fontSize": 14,
-      "fontWeight": 700
-    }
-  },
-  "axes": [
-    {
-      "orient": "bottom",
-      "label": {
-        "visible": true,
-        "style": {
-          "fill": "#506c8a",
-          "fontSize": 11
-        }
-      }
-    },
-    {
-      "orient": "left",
-      "visible": false,
-      "max": 80
-    }
-  ],
-  "tooltip": {
-    "trigger": "mark",
-    "mark": {
-      "title": {
-        "visible": true
+  var deliverySpec = {
+    type: "bar",
+    padding: { left: 20, right: 20, top: 30, bottom: 10 },
+    data: [{ id: "d", values: [
+      { month: "2026-01", value: 26, hl: "normal" },
+      { month: "2026-02", value: 19, hl: "normal" },
+      { month: "2026-03", value: 31, hl: "normal" },
+      { month: "2026-04", value: 70, hl: "normal" },
+      { month: "2026-05", value: 29, hl: "normal" },
+      { month: "2026-06", value: 44, hl: "current" }
+    ]}],
+    xField: "month", yField: "value",
+    bar: { style: { cornerRadius: [6,6,0,0], fill: function(d){ return d.hl==="current" ? "#2d7eb5" : "#8bb8d9"; } } },
+    label: { visible: true, position: "top", style: { fill: "#335e83", fontSize: 14, fontWeight: 700 } },
+    axes: [
+      { orient: "bottom", label: { visible: true, style: { fill: "#506c8a", fontSize: 11 } } },
+      { orient: "left", visible: false, max: 80 }
+    ],
+    tooltip: { trigger: "mark", mark: { title: { visible: true }, content: [{ key: "交付数量", value: function(d){ return d.value + "个"; } }] } },
+    crosshair: { xField: { visible: true, line: { type: "rect", style: { fill: "rgba(45,126,181,0.08)" } } } }
+  };
+  var c1 = new VChart.default(deliverySpec, { dom: "chart-delivery-trend" }); c1.renderSync();
+
+  var growthSpec = {
+    type: "bar",
+    padding: { left: 20, right: 20, top: 30, bottom: 10 },
+    data: [{ id: "d", values: [
+      { month: "2026-01", growth: -6.34, c: "neg" },
+      { month: "2026-02", growth: 6.34, c: "pos" },
+      { month: "2026-03", growth: -33.39, c: "neg" },
+      { month: "2026-04", growth: 10.1, c: "pos" },
+      { month: "2026-05", growth: 34.85, c: "pos" },
+      { month: "2026-06", growth: 24.57, c: "pos" }
+    ]}],
+    xField: "month", yField: "growth",
+    bar: { style: { cornerRadius: [4,4,4,4], fill: function(d){ return d.c==="pos" ? "#4caf92" : "#e86b6b"; } } },
+    label: { visible: true, position: "outside", style: { fontSize: 12, fontWeight: 600 }, formatMethod: function(v){ return (v>0?"+":"")+v.toFixed(1)+"%"; } },
+    axes: [
+      { orient: "bottom", label: { visible: true, style: { fill: "#506c8a", fontSize: 11 } } },
+      { orient: "left", visible: false }
+    ],
+    tooltip: { trigger: "mark", mark: { content: [{ key: "环比变化", value: function(d){ return (d.growth>0?"+":"")+d.growth.toFixed(1)+"%"; } }] } },
+    crosshair: { xField: { visible: true, line: { type: "rect", style: { fill: "rgba(0,0,0,0.04)" } } } }
+  };
+  var c2 = new VChart.default(growthSpec, { dom: "chart-cycle-growth" }); c2.renderSync();
+
+  var meegoSpec = {
+    type: "common",
+    padding: { left: 10, right: 10, top: 40, bottom: 10 },
+    data: [
+      { id: "durData", values: [
+        { month: "2026-01", duration: 2.2 },
+        { month: "2026-02", duration: 2.5 },
+        { month: "2026-03", duration: 2.8 },
+        { month: "2026-04", duration: 3.8 },
+        { month: "2026-05", duration: 2 },
+        { month: "2026-06", duration: 1.7 }
+      ]},
+      { id: "cntData", values: [
+        { month: "2026-01", count: 370 },
+        { month: "2026-02", count: 251 },
+        { month: "2026-03", count: 362 },
+        { month: "2026-04", count: 401 },
+        { month: "2026-05", count: 571 },
+        { month: "2026-06", count: 937 }
+      ]}
+    ],
+    series: [
+      { type: "bar", id: "durBar", name: "平均时长", dataId: "durData", xField: "month", yField: "duration",
+        bar: { style: { cornerRadius: [6,6,0,0], fill: { gradient: "linear", x0: 0.5, y0: 0, x1: 0.5, y1: 1, stops: [{offset: 0, color: "#d79c4a"}, {offset: 1, color: "#b57c2d"}] } },
+        label: { visible: true, position: "top", style: { fill: "#7a5a1e", fontSize: 13, fontWeight: 700 }, formatMethod: function(v){ return v + "天"; } }
       },
-      "content": [
-        {
-          "key": "交付数量",
-          "value": "function(d){return d.value+'个';}"
-        }
-      ]
-    }
-  },
-  "crosshair": {
-    "xField": {
-      "visible": true,
-      "line": {
-        "type": "rect",
-        "style": {
-          "fill": "rgba(45,126,181,0.08)"
-        }
+      { type: "line", id: "cntLine", name: "操作次数", dataId: "cntData", xField: "month", yField: "count",
+        line: { style: { stroke: "#506c8a", lineWidth: 2, lineDash: [6,3] } },
+        point: { style: { fill: "#506c8a", stroke: "#fff", lineWidth: 2, size: 7 } },
+        label: { visible: true, position: "top", offset: 8, style: { fill: "#506c8a", fontSize: 11 }, formatMethod: function(v){ return v + "次"; } }
       }
-    }
-  }
-};
-var c1 = new VChart.default(deliverySpec, { dom: "chart-delivery-trend" }); c1.renderSync();
-var growthSpec = {
-  "type": "bar",
-  "padding": {
-    "left": 20,
-    "right": 20,
-    "top": 30,
-    "bottom": 10
-  },
-  "data": [
-    {
-      "id": "d",
-      "values": [
-        {
-          "month": "2026-01",
-          "growth": -6.34,
-          "c": "neg"
-        },
-        {
-          "month": "2026-02",
-          "growth": 6.34,
-          "c": "pos"
-        },
-        {
-          "month": "2026-03",
-          "growth": -33.39,
-          "c": "neg"
-        },
-        {
-          "month": "2026-04",
-          "growth": 10.1,
-          "c": "pos"
-        },
-        {
-          "month": "2026-05",
-          "growth": 34.85,
-          "c": "pos"
-        },
-        {
-          "month": "2026-06",
-          "growth": 24.57,
-          "c": "pos"
-        }
-      ]
-    }
-  ],
-  "xField": "month",
-  "yField": "growth",
-  "bar": {
-    "style": {
-      "cornerRadius": [
-        4,
-        4,
-        4,
-        4
-      ],
-      "fill": "function(d){return d.c==='pos'?'#4caf92':'#e86b6b';}"
-    }
-  },
-  "label": {
-    "visible": true,
-    "position": "outside",
-    "style": {
-      "fontSize": 12,
-      "fontWeight": 600
-    },
-    "formatMethod": "function(v){return (v>0?'+':'')+v.toFixed(1)+'%';}"
-  },
-  "axes": [
-    {
-      "orient": "bottom",
-      "label": {
-        "visible": true,
-        "style": {
-          "fill": "#506c8a",
-          "fontSize": 11
-        }
-      }
-    },
-    {
-      "orient": "left",
-      "visible": false
-    }
-  ],
-  "tooltip": {
-    "trigger": "mark",
-    "mark": {
-      "content": [
-        {
-          "key": "环比变化",
-          "value": "function(d){return (d.growth>0?'+':'')+d.growth.toFixed(1)+'%';}"
-        }
-      ]
-    }
-  },
-  "crosshair": {
-    "xField": {
-      "visible": true,
-      "line": {
-        "type": "rect",
-        "style": {
-          "fill": "rgba(0,0,0,0.04)"
-        }
-      }
-    }
-  }
-};
-var c2 = new VChart.default(growthSpec, { dom: "chart-cycle-growth" }); c2.renderSync();
-var meegoSpec = {
-  "type": "common",
-  "padding": {
-    "left": 10,
-    "right": 10,
-    "top": 40,
-    "bottom": 10
-  },
-  "data": [
-    {
-      "id": "durData",
-      "values": [
-        {
-          "month": "2026-01",
-          "duration": 2.2
-        },
-        {
-          "month": "2026-02",
-          "duration": 2.5
-        },
-        {
-          "month": "2026-03",
-          "duration": 2.8
-        },
-        {
-          "month": "2026-04",
-          "duration": 3.8
-        },
-        {
-          "month": "2026-05",
-          "duration": 2
-        },
-        {
-          "month": "2026-06",
-          "duration": 1.7
-        }
-      ]
-    },
-    {
-      "id": "cntData",
-      "values": [
-        {
-          "month": "2026-01",
-          "count": 370
-        },
-        {
-          "month": "2026-02",
-          "count": 251
-        },
-        {
-          "month": "2026-03",
-          "count": 362
-        },
-        {
-          "month": "2026-04",
-          "count": 401
-        },
-        {
-          "month": "2026-05",
-          "count": 571
-        },
-        {
-          "month": "2026-06",
-          "count": 937
-        }
-      ]
-    }
-  ],
-  "series": [
-    {
-      "type": "bar",
-      "id": "durBar",
-      "name": "平均时长",
-      "dataId": "durData",
-      "xField": "month",
-      "yField": "duration",
-      "bar": {
-        "style": {
-          "cornerRadius": [
-            6,
-            6,
-            0,
-            0
-          ],
-          "fill": {
-            "gradient": "linear",
-            "x0": 0.5,
-            "y0": 0,
-            "x1": 0.5,
-            "y1": 1,
-            "stops": [
-              {
-                "offset": 0,
-                "color": "#d79c4a"
-              },
-              {
-                "offset": 1,
-                "color": "#b57c2d"
-              }
-            ]
-          }
-        }
-      },
-      "label": {
-        "visible": true,
-        "position": "top",
-        "style": {
-          "fill": "#7a5a1e",
-          "fontSize": 13,
-          "fontWeight": 700
-        },
-        "formatMethod": "function(v){return v+'天';}"
-      }
-    },
-    {
-      "type": "line",
-      "id": "cntLine",
-      "name": "操作次数",
-      "dataId": "cntData",
-      "xField": "month",
-      "yField": "count",
-      "line": {
-        "style": {
-          "stroke": "#506c8a",
-          "lineWidth": 2,
-          "lineDash": [
-            6,
-            3
-          ]
-        }
-      },
-      "point": {
-        "style": {
-          "fill": "#506c8a",
-          "stroke": "#fff",
-          "lineWidth": 2,
-          "size": 7
-        }
-      },
-      "label": {
-        "visible": true,
-        "position": "top",
-        "offset": 8,
-        "style": {
-          "fill": "#506c8a",
-          "fontSize": 11
-        },
-        "formatMethod": "function(v){return v+'次';}"
-      }
-    }
-  ],
-  "axes": [
-    {
-      "orient": "bottom",
-      "type": "band",
-      "label": {
-        "visible": true,
-        "style": {
-          "fill": "#506c8a",
-          "fontSize": 11
-        }
-      }
-    },
-    {
-      "orient": "left",
-      "type": "linear",
-      "seriesId": [
-        "durBar"
-      ],
-      "title": {
-        "visible": true,
-        "text": "平均时长(天)",
-        "style": {
-          "fill": "#7a5a1e"
-        }
-      },
-      "min": 0,
-      "max": 4.5
-    },
-    {
-      "orient": "right",
-      "type": "linear",
-      "seriesId": [
-        "cntLine"
-      ],
-      "title": {
-        "visible": true,
-        "text": "操作次数",
-        "style": {
-          "fill": "#506c8a"
-        }
-      },
-      "grid": {
-        "visible": false
-      },
-      "min": 0
-    }
-  ],
-  "tooltip": {
-    "trigger": "axis"
-  },
-  "crosshair": {
-    "xField": {
-      "visible": true,
-      "line": {
-        "type": "rect",
-        "style": {
-          "fill": "rgba(181,124,45,0.08)"
-        }
-      }
-    }
-  },
-  "legends": {
-    "visible": true,
-    "orient": "top",
-    "position": "end"
-  }
-};
-var c3 = new VChart.default(meegoSpec, { dom: "chart-meego-trend" }); c3.renderSync();
+    ],
+    axes: [
+      { orient: "bottom", type: "band", label: { visible: true, style: { fill: "#506c8a", fontSize: 11 } } },
+      { orient: "left", type: "linear", seriesId: ["durBar"], title: { visible: true, text: "平均时长(天)", style: { fill: "#7a5a1e" } }, min: 0, max: 4.5 },
+      { orient: "right", type: "linear", seriesId: ["cntLine"], title: { visible: true, text: "操作次数", style: { fill: "#506c8a" } }, grid: { visible: false }, min: 0 }
+    ],
+    tooltip: { trigger: "axis" },
+    crosshair: { xField: { visible: true, line: { type: "rect", style: { fill: "rgba(181,124,45,0.08)" } } } },
+    legends: { visible: true, orient: "top", position: "end" }
+  };
+  var c3 = new VChart.default(meegoSpec, { dom: "chart-meego-trend" }); c3.renderSync();
 });
+</script>
+<nav class="nav-dots" id="navDots"></nav>
+<style>
+.nav-dots { position:fixed; right:1.5rem; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:0.75rem; z-index:100; }
+.nav-dot { width:10px; height:10px; border-radius:50%; background:#c9d9e9; cursor:pointer; transition:all 0.3s ease; }
+.nav-dot:hover,.nav-dot.active { background:#2d7eb5; transform:scale(1.5); box-shadow:0 0 8px rgba(45,126,181,0.5); }
+.nav-dot { position:relative; }
+.nav-tooltip { position:absolute; right:20px; top:50%; transform:translateY(-50%); background:#2d7eb5; color:#fff; padding:4px 10px; border-radius:4px; font-size:12px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.2s; }
+.nav-dot:hover .nav-tooltip { opacity:1; }
+@media (max-width:768px) { .nav-dots { display:none; } }
+@media print { .nav-dots { display:none; } }
+</style>
+<script>
+(function(){
+  var sections=document.querySelectorAll(".chart-title,.issue-box,h2");
+  var navDots=document.getElementById("navDots");
+  sections.forEach(function(section,i){
+    section.id=section.id||"section-"+i;
+    var dot=document.createElement("div");
+    dot.className="nav-dot";
+    var label=section.textContent.trim().replace(/[\n\r]/g,"").substring(0,20);
+    dot.setAttribute("title",label);
+    dot.onclick=function(){section.scrollIntoView({behavior:"smooth"});};
+    var tooltip=document.createElement("span");
+    tooltip.className="nav-tooltip";
+    tooltip.textContent=label;
+    dot.appendChild(tooltip);
+    navDots.appendChild(dot);
+  });
+  window.addEventListener("scroll",function(){
+    var dots=document.querySelectorAll(".nav-dot");
+    var current=0;
+    sections.forEach(function(section,i){
+      if(window.scrollY>=section.offsetTop-200) current=i;
+    });
+    dots.forEach(function(dot,i){dot.classList.toggle("active",i===current);});
+  });
+})();
 </script>
 </div>
 </body>
