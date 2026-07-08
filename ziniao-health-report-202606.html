@@ -100,11 +100,10 @@
         <div class="kpi-card">
             <div class="kpi-label">月度需求交付个数</div>
             <div class="kpi-main">
-                <span class="kpi-value">9个</span>
+                <span class="kpi-value">9</span>
                 <span class="trend down">▼ 25.00%</span>
             </div>
-            <div class="kpi-benchmark"><span>5月 12个</span> <span>差异 -3.00</span></div>
-            <div class="kpi-benchmark"><span>基线 11个/月</span> <span>差异 -2.00</span></div>
+            <div class="kpi-benchmark"><span>5月 12个 | 基线 11个/月</span> <span>差异 -2.00</span></div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">人均交付个数</div>
@@ -112,8 +111,7 @@
                 <span class="kpi-value">0.2</span>
                 <span class="trend down">▼ 13.04%</span>
             </div>
-            <div class="kpi-benchmark"><span>5月 0.23</span> <span>差异 -0.03</span></div>
-            <div class="kpi-benchmark"><span>基线 0.215个/人/月</span> <span>差异 -0.01</span></div>
+            <div class="kpi-benchmark"><span>5月 0.23个 | 基线 0.215个/人/月</span> <span>差异 -0.01</span></div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">人均完成时长 (天)</div>
@@ -121,8 +119,7 @@
                 <span class="kpi-value">9.01</span>
                 <span class="trend up">▼ 7.21%</span>
             </div>
-            <div class="kpi-benchmark"><span>5月 9.71</span> <span>差异 -0.70</span></div>
-            <div class="kpi-benchmark"><span>基线 40.83天</span> <span>差异 -31.82</span></div>
+            <div class="kpi-benchmark"><span>5月 9.71天</span> <span>差异 -0.70</span></div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">人均缺陷数</div>
@@ -130,9 +127,13 @@
                 <span class="kpi-value">20.52</span>
                 <span class="trend down">▲ 20.92%</span>
             </div>
-            <div class="kpi-benchmark"><span>5月 16.97</span> <span>差异 +3.55</span></div>
-            <div class="kpi-benchmark"><span>基线 </span> <span>差异 +20.52</span></div>
+            <div class="kpi-benchmark"><span>5月 16.97个</span> <span>差异 +3.55</span></div>
         </div>
+    </div>
+
+    <!-- 数据口径说明 -->
+    <div class="springfest-note">
+        📊 <strong>数据口径说明：</strong>统计范围为执行需求+创新需求（不含临时需求）。团队规模按MCP口径计算（月度交付÷人均交付=45人），该口径反映参与大版本的人员数量，非真实编制，参与人数波动不等于扩编/缩编。人均完成时长按工作日统计（6月22个工作日，5月20个）。缺陷密度直接使用MCP返回值，禁止二次计算。一次验收通过率参考价值有限（业务上基本不回滚），质量判断以缺陷密度为主。
     </div>
 
     <!-- 上月措施跟进 -->
@@ -403,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var growthSpec = {
     type: 'bar',
     padding: { left: 20, right: 20, top: 30, bottom: 10 },
-    data: [{ id: 'd', values: [{"month":"2026-02","growth":-17.91,"color":"negative"},{"month":"2026-03","growth":-35.11,"color":"negative"},{"month":"2026-04","growth":63.58,"color":"positive"},{"month":"2026-05","growth":-7.41,"color":"negative"},{"month":"2026-06","growth":37.32,"color":"positive"}] }],
+    data: [{ id: 'd', values: [{"month":"2026-01","growth":13.47,"color":"positive"},{"month":"2026-02","growth":-17.91,"color":"negative"},{"month":"2026-03","growth":-35.11,"color":"negative"},{"month":"2026-04","growth":63.58,"color":"positive"},{"month":"2026-05","growth":-7.41,"color":"negative"},{"month":"2026-06","growth":37.32,"color":"positive"}] }],
     xField: 'month', yField: 'growth',
     bar: { style: { cornerRadius: [4,4,4,4], fill: function(d){ return d.color === 'positive' ? '#4caf92' : '#e86b6b'; } } },
     label: { visible: true, position: 'outside', style: { fontSize: 12, fontWeight: 600 }, formatMethod: function(v){ return (v>0?'+':'')+v.toFixed(1)+'%'; } },
