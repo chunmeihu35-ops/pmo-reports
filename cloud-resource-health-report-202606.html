@@ -93,16 +93,16 @@
 <div class="kpi-card"><div class="kpi-label">人均缺陷</div><div class="kpi-main"><span class="kpi-value">5</span><span class="trend up">▲ 66.67%</span></div><div class="kpi-benchmark"><span>上月 3</span> <span></span></div></div>
 </div>
 <div class="springfest-note">
-📊 <strong>统计范围：需求交付（全部类型） | 团队口径：MCP参与人员（14人，非真实编制） | 工作日：6月22天，5月20天 | 缺陷密度：完成缺陷数÷交付需求数</strong></div>
+📊 <strong>统计范围：需求交付（全部类型） | 团队口径：MCP参与人员（月度交付÷人均交付=14人），该口径反映参与大版本的人员数量，非真实编制，参与人数波动不等于扩编/缩编 | 工作日：6月22个工作日，5月20个 | 缺陷密度=完成缺陷数÷交付需求数，云资源缺陷主要靠线下沟通，MCP数据可能不完整</strong></div>
 <div class="chart-title">📋 上月措施跟进 <span>2026年5月</span></div>
 <div class="followup-table">
 <table style="width:100%; border-collapse:collapse;"><thead><tr><th style="text-align:left; padding:0.5rem; border-bottom:1px solid #d0ddee;">上月行动项</th><th style="text-align:left; padding:0.5rem; border-bottom:1px solid #d0ddee;">状态</th><th style="text-align:left; padding:0.5rem; border-bottom:1px solid #d0ddee;">本月数据变化</th></tr></thead><tbody><tr><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">分析开发8天的需求复杂度分布</td><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">✅已落实</td><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">开发周期8→6天（▼25%），改善明显</td></tr><tr><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">跟踪积压率(目标≤1.2)</td><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">✅达标(1.15)</td><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">1.39→1.15，改善达标</td></tr><tr><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">保持Meego操作及时性(≤1.6天/操作)</td><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">🟠未达标(2.8天)</td><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">2.1→2.8天，恶化</td></tr><tr><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">效率维持≤10天</td><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">🟠未达标(14天)</td><td style="padding:0.5rem; border-bottom:1px solid #eef2f7;">12.72→14.05天，建议调整目标≤15天</td></tr><tr><td style="padding:0.5rem;">产能回升≥2.0</td><td style="padding:0.5rem;">🟡接近(1.93)</td><td style="padding:0.5rem;">1.94→1.93，微降</td></tr></tbody></table></div>
 <div class="chart-title">📊 需求交付数量趋势 <span>规模-效率联动</span></div>
 <div class="bar-chart"><div id="chart-delivery-trend" style="width:100%;height:300px;"></div>
-<div class="small-note" style="margin-top:1rem;">6月交付27个，较5月33个下降18%。日均交付1.23个/工作日（5月1.65个）。</div></div>
+<div class="small-note" style="margin-top:1rem;">近6个月交付量在14-33个之间波动，6月交付27个环比下降18%（33→27），略低于基线均值32.5个。日均交付1.23个/工作日（5月1.65个），投入强度下降。作为事务型项目，交付量波动受需求粒度影响显著，需结合需求创建量判断——6月需求创建31个（5月44个，-30%），与交付量下降趋势一致。</div></div>
 <div class="chart-title">📉 需求交付周期增长率趋势 <span>整体周期变化</span></div>
 <div class="growth-chart"><div id="chart-cycle-growth" style="width:100%;height:300px;"></div>
-<div class="small-note" style="margin-top:1rem;">6月周期增长率+44.74%，连续2个月正增长。等待周期暴涨是主要驱动因素。</div></div>
+<div class="small-note" style="margin-top:1rem;">交付周期呈"锯齿形"震荡：1月17天→2月25天→3月17天→4月6天→5月12天→6月17天。6月环比增长+44.74%（12→17天），连续2个月正增长。拆解：等待周期2→9天（+350%）是主要膨胀点，贡献了周期增长5天中的7天；开发周期8→6天（-25%）反而改善；测试周期2天持平。等待周期占总周期53%，高于基线均值41%。</div></div>
 <div class="two-column">
 <div class="data-table">
 <h3 style="margin-bottom:0.8rem;">📋 需求交付周期明细 (天)</h3>
@@ -115,7 +115,7 @@
 <tr><td>2026-05</td><td>33</td><td>12</td><td>8</td><td>2</td><td>2</td></tr>
 <tr><td>2026-06</td><td>27</td><td>17</td><td>6</td><td>2</td><td>9</td></tr>
 </tbody></table>
-<p class="small-note">开发周期6天（▼2天），等待周期9天（▲7天）。等待占总周期53%。</p></div>
+<p class="small-note">6月平均周期17天为半年次高值（仅次于2月25天），环比+44.74%。拆解：开发周期6天（▼2天，低于基线6.67天），测试2天（持平，低于基线2.33天），等待9天（▲7天，高于基线6.17天）。等待占总周期53%，是周期膨胀的唯一驱动因素。各阶段之和（6+2+9=17天）=平均周期17天，校验通过。</p></div>
 <div class="data-table">
 <h3 style="margin-bottom:0.8rem;">🔄 跨角色协作响应 (天)</h3>
 <table><thead><tr><th>月份</th><th>创建→启动</th><th>测试→发布</th></tr></thead>
@@ -127,7 +127,7 @@
 <tr><td>2026-05</td><td>1.73</td><td>0.45</td></tr>
 <tr><td>2026-06</td><td>1.96</td><td>2.41</td></tr>
 </tbody></table>
-<p class="small-note">测试→发布间隔2.41天，为近6个月最高值（历史均值0.56天）。设计→开发和开发→测试间隔均为0，未展示。</p></div>
+<p class="small-note">6月协作链路分化：创建→启动1.96天（vs 5月1.73天，+13.3%），仍低于历史均值4.55天，正常范围。测试→发布2.41天（vs 5月0.45天，+436%），为近6个月最高值（此前最高0.93天），历史均值仅0.56天，发布环节出现明显阻塞。设计→开发和开发→测试间隔均为0，未展示。</p></div>
 </div>
 <div class="quality-table">
 <h3 style="margin-bottom:1rem;">🎯 需求质量数据</h3>
@@ -140,12 +140,12 @@
 <tr><td>2026-05</td><td>96.97%</td><td>0</td></tr>
 <tr><td>2026-06</td><td>96.30%</td><td>0</td></tr>
 </tbody></table>
-<p class="small-note">一次验收通过率96.3%，与5月基本持平。缺陷密度为0，质量指标稳定。</p>
+<p class="small-note">一次验收通过率96.3%（vs 5月96.97%），近6个月在93.75%-100%之间波动，稳定。缺陷密度连续3个月为0（4/5/6月），但人均缺陷从3→5（+66.67%），说明缺陷绝对量增加但被交付量稀释。云资源缺陷主要靠线下沟通，MCP数据可能不完整，缺陷密度为0不代表无质量问题。</p>
 </div>
 <div class="chart-title">⏱️ Meego核心操作平均时长趋势 <span>操作熟练度</span></div>
 <div class="meego-chart"><div id="chart-meego-trend" style="width:100%;height:300px;"></div>
-<div class="small-note" style="margin-top:1rem;">6月操作次数198次（▲53%），平均时长2.8天（▲33%）。操作量增加但效率有所下降。</div></div>
-<div style="display:flex; gap:1.5rem; margin:1.5rem 0;"><div style="flex:1; background:#f0f7ff; border-radius:12px; padding:1rem; text-align:center;"><div style="font-size:0.85rem; color:#506c8a;">操作次数</div><div style="font-size:1.5rem; font-weight:700; color:#1e3a5f;">198次</div><div style="font-size:0.8rem; color:#4caf92;">▲53.5% vs 129</div></div><div style="flex:1; background:#f0f7ff; border-radius:12px; padding:1rem; text-align:center;"><div style="font-size:0.85rem; color:#506c8a;">人均操作</div><div style="font-size:1.5rem; font-weight:700; color:#1e3a5f;">8.61次</div><div style="font-size:0.8rem; color:#4caf92;">▲60.0% vs 5.38</div></div><div style="flex:1; background:#f0f7ff; border-radius:12px; padding:1rem; text-align:center;"><div style="font-size:0.85rem; color:#506c8a;">操作时长</div><div style="font-size:1.5rem; font-weight:700; color:#1e3a5f;">2.8天</div><div style="font-size:0.8rem; color:#4caf92;">▲33.3% vs 2.1</div></div></div>
+<div class="small-note" style="margin-top:1rem;">Meego核心操作平均时长2.8天，环比2.1→2.8天（+33.3%），结束连续3个月下降趋势（8.7→10.5→2.6→2.3→2.1）。总操作次数198次（vs 5月129次，+53.5%），为半年第二高（仅次于1月225次）。人均操作8.61次（vs 5月5.38次，+60.0%），操作频次显著提升。操作量增加与任务创建量激增（84→167，+99%）一致，说明6月任务粒度工作量增大。单次操作效率2.8天仍优于基线均值4.23天，工具使用熟练度未退化。</div></div>
+<div style="display:flex; gap:1.5rem; margin:1.5rem 0;"><div style="flex:1; background:#f0f7ff; border-radius:12px; padding:1rem; text-align:center;"><div style="font-size:0.85rem; color:#506c8a;">操作次数</div><div style="font-size:1.5rem; font-weight:700; color:#1e3a5f;">198次</div><div style="font-size:0.8rem; color:#506c8a;">日均9.0次 | 5月6.5次</div></div><div style="flex:1; background:#f0f7ff; border-radius:12px; padding:1rem; text-align:center;"><div style="font-size:0.85rem; color:#506c8a;">人均操作</div><div style="font-size:1.5rem; font-weight:700; color:#1e3a5f;">8.61次</div><div style="font-size:0.8rem; color:#506c8a;">5月5.38次 | +60.0%</div></div><div style="flex:1; background:#f0f7ff; border-radius:12px; padding:1rem; text-align:center;"><div style="font-size:0.85rem; color:#506c8a;">操作时长</div><div style="font-size:1.5rem; font-weight:700; color:#1e3a5f;">2.8天</div><div style="font-size:0.8rem; color:#506c8a;">5月2.1天 | +33.3%</div></div></div>
 <hr>
 <div style="margin:2.5rem 0;">
 <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">🔍 核心问题定位 (三类) 及落地整改</h2>
@@ -231,6 +231,37 @@ document.addEventListener('DOMContentLoaded', function() {
   spec3.series[1].label.formatMethod = (v) => v + '次';
   var c3 = new VChart.default(spec3, { dom: 'chart-meego-trend' }); c3.renderSync();
 });
+</script>
+<nav class="nav-dots" id="navDots"></nav>
+<style>
+.nav-dots { position:fixed; right:1.5rem; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:0.75rem; z-index:100; }
+.nav-dot { width:10px; height:10px; border-radius:50%; background:#c9d9e9; cursor:pointer; transition:all 0.3s ease; }
+.nav-dot:hover,.nav-dot.active { background:#2d7eb5; transform:scale(1.5); box-shadow:0 0 8px rgba(45,126,181,0.5); }
+@media (max-width:768px) { .nav-dots { display:none; } }
+@media print { .nav-dots { display:none; } }
+</style>
+<script>
+(function(){
+    var sections=document.querySelectorAll(".chart-title,.issue-box,h2");
+    var navDots=document.getElementById("navDots");
+    sections.forEach(function(section,i){
+        section.id=section.id||"section-"+i;
+        var dot=document.createElement("div");
+        dot.className="nav-dot";
+        var label=section.textContent.trim().replace(/[\n\r]/g,"").substring(0,20);
+        dot.setAttribute("title",label);
+        dot.onclick=function(){section.scrollIntoView({behavior:"smooth"});};
+        navDots.appendChild(dot);
+    });
+    window.addEventListener("scroll",function(){
+        var dots=document.querySelectorAll(".nav-dot");
+        var current=0;
+        sections.forEach(function(section,i){
+            if(window.scrollY>=section.offsetTop-200) current=i;
+        });
+        dots.forEach(function(dot,i){dot.classList.toggle("active",i===current);});
+    });
+})();
 </script>
 </div>
 </body>
